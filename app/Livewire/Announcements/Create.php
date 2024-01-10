@@ -5,19 +5,30 @@ namespace App\Livewire\Announcements;
 use Livewire\Component;
 use App\Models\Announcement;
 use Illuminate\Support\Facades\Auth;
+use Livewire\Attributes\Validate;
 
 class Create extends Component
 {
 
+    #[Validate('required|min:3|max:150')] 
     public $title;
+
+    #[Validate('required|min:5|max:1000')] 
     public $description;
+
+    #[Validate('required|numeric|between:0,99999.99')] 
     public $price;
+
+    #[Validate('required|exists:categories,id')] 
     public $category_id;
+
+    #[Validate('required|exists:users,id')] 
     public $user_id;
 
     public function store()
     {
         $this->user_id = Auth::id();
+        $this->validate();
         Announcement::create($this->all());
         $this->reset();
         session()->flash('success', 'Annuncio creato correttamente');

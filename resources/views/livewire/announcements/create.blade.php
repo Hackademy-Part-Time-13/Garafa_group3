@@ -1,10 +1,28 @@
 <div class="card position-relative" style="width: 50rem;">
 
-    @if(session()->has('success'))
+    @if (session('status'))
+    <div class="ms-auto me-auto text-center col-6 my-2 alert alert-success">
+        {{ session('status') }}
+    </div>
+
+    @elseif (session()->has('success'))
     <div class="ms-auto me-auto text-center col-6 my-2 alert alert-success">
         {{session('success')}}
     </div>
+
+    @elseif ($errors->any())
+        @foreach ($errors->all() as $error) 
+        <div class="ms-auto me-auto text-center col-6 my-2 alert alert-danger">
+            <li>{{$error}}</li>
+        </div>
+        @endforeach            
+
+    @elseif (session('error'))
+    <div class="ms-auto me-auto text-center col-6 my-2 alert alert-danger">
+        {{ session('error') }}
+    </div>
     @endif
+
 
     <div class="card-body">
     <h4 class="card-title text-center">Inserisci annuncio</h4>
