@@ -12,15 +12,18 @@ class Create extends Component
     public $description;
     public $price;
     public $category_id;
+    public $user_id;
 
     public function store()
     {
+        dd($this->all());
         //Announcement::create([$this->all()]);
         Announcement::create([
             'title'=>$this->title,
             'description'=>$this->description,
             'price'=>$this->price,
             'category_id'=>$this->category_id,
+            'user_id'=>$this->user_id,
         ]);
 
         $this->reset();
