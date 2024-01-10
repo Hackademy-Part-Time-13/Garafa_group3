@@ -6,7 +6,7 @@
 
 <x-main>
 
-    
+    <livewire:announcement.index />
     
    
 
