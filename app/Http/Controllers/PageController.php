@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Announcement;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -19,8 +20,8 @@ public function indexAd(){
     return view('announcement.index');
 }
 
-public function showAd(){
-    return view('announcement.show');
+public function showAd(Announcement $announcement){
+    return view('announcement.show', compact('announcement') ) ;
 }
 
 
