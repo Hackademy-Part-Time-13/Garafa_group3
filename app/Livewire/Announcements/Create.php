@@ -2,8 +2,9 @@
 
 namespace App\Livewire\Announcements;
 
-use App\Models\Announcement;
 use Livewire\Component;
+use App\Models\Announcement;
+use Illuminate\Support\Facades\Auth;
 
 class Create extends Component
 {
@@ -16,16 +17,8 @@ class Create extends Component
 
     public function store()
     {
-        dd($this->all());
-        //Announcement::create([$this->all()]);
-        Announcement::create([
-            'title'=>$this->title,
-            'description'=>$this->description,
-            'price'=>$this->price,
-            'category_id'=>$this->category_id,
-            'user_id'=>$this->user_id,
-        ]);
-
+        $this->user_id = Auth::id();
+        Announcement::create($this->all());
         $this->reset();
         session()->flash('success', 'Annuncio creato correttamente');
     }

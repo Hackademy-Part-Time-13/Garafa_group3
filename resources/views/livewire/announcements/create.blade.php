@@ -44,7 +44,7 @@
             @enderror
         </div>
 
-        <input type="hidden"  wire:model.live="user_id" value="{{auth()->user()->id}}">
+
 
         <button type="submit" class="btn btn-success mt-2">Crea annuncio<i class="bi bi-box-arrow-in-right ms-2"></i></button>
 
