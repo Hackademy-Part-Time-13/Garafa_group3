@@ -10,11 +10,13 @@
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
 
+          {{-- CREA ANNUNCIO --}}
           @auth
           <li class="nav-item">
             <a class="nav-link" href="{{route('announcement.create')}}">Inserisci annuncio</a>
           </li>
           @endauth
+
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -30,6 +32,21 @@
           <li class="nav-item">
             <a class="nav-link disabled" aria-disabled="true">Disabled</a>
           </li>
+
+          {{-- LOGOUT --}}
+          @auth 
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{Auth::user()->name}} </a>
+              <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{{route('logout')}}" onclick="event.preventDefault(); getElementById('form-logout').submit();">Logout</a></li>
+                <form id="form-logout" action="/logout" method="POST" class="d-none">
+                    @csrf
+                </form>
+              </ul>
+          </li>
+          @endauth
+
+          
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
