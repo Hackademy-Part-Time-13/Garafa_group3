@@ -10,8 +10,10 @@ class DatabaseSeeder extends Seeder
     /**
      * Seed the application's database.
      */
-    public function run(): void
-    {
+    public function run(): void {
+
+        $this->categories();
+
         \App\Models\User::create([
             'name' => 'Admin',
             'email' => 'admin@example.it',
@@ -19,12 +21,54 @@ class DatabaseSeeder extends Seeder
         ]);
 
         \App\Models\User::factory(10)->create();
-        \App\Models\Category::factory(10)->create();
+        // \App\Models\Category::factory(10)->create();
         \App\Models\Announcement::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
     }
-}
+
+    public function categories() {
+
+            \App\Models\Category::create([
+                'name' => 'Auto',
+            ]);
+
+            \App\Models\Category::create([
+                'name' => 'Moto e Scooter',
+            ]);
+
+            \App\Models\Category::create([
+                'name' => 'Informatica',
+            ]);
+
+            \App\Models\Category::create([
+                'name' => 'Telefonia',
+            ]);
+
+            \App\Models\Category::create([
+                'name' => 'Console e Videogiochi',
+            ]);
+
+            \App\Models\Category::create([
+                'name' => 'Arredamento',
+            ]);
+
+            \App\Models\Category::create([
+                'name' => 'Giardino ed Esterni',
+            ]);
+
+            \App\Models\Category::create([
+                'name' => 'Animali',
+            ]);
+
+            \App\Models\Category::create([
+                'name' => 'Biciclette',
+            ]);
+
+            \App\Models\Category::create([
+                'name' => 'Appartamenti',
+            ]);
+
+    }
+        
+    }
+
+
