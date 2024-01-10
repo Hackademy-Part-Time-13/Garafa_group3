@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('announcements', function (Blueprint $table) {
             $table->id();
             
-            $table->string('titale',150);
+            $table->string('title',150);
             $table->text('description');
             $table->float('price');
 

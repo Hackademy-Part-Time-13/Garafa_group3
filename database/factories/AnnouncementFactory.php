@@ -17,7 +17,7 @@ class AnnouncementFactory extends Factory
     public function definition(): array
     {
         return [
-            'titale'=>fake()->title(),
+            'title'=>fake()->title(),
             'description'=> fake()->paragraph(),
             'price'=>fake()->randomFloat(2, 20, 30),
             'category_id'=>fake()->numberBetween(1,9),

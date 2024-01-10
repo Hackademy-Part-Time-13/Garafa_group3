@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,5 @@ use Illuminate\Support\Facades\Route;
 
 // BUONA FORTUNA RAGA!
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PageController::class, 'home'])->name('home');
+Route::get('/announcement.create', [PageController::class, 'createAd'])->middleware(['auth'])->name('announcement.create');

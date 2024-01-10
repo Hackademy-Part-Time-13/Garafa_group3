@@ -11,7 +11,7 @@
 
     <x-navbar/>
 
-    <div class="container">
+    <div class="container mt-4">
         {{$slot}} 
     </div>
    

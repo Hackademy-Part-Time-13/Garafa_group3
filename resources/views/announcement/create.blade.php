@@ -1,1 +1,7 @@
-<x-main/>
+<x-main>
+
+    <livewire:announcements.create/>
+    
+   
+
+</x-main>
