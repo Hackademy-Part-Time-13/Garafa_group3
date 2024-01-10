@@ -32,6 +32,7 @@
 
     {{-- indec dei annunci --}}
     <div class="row g-3 px-3">
+        <h1>ciao</h1>
         @foreach ($announcements as $announcement)
 
                 
