@@ -15,4 +15,13 @@ public function createAd(){
     return view('announcement.create');
 }
 
+public function indexAd(){
+    return view('announcement.index');
+}
+
+public function showAd(){
+    return view('announcement.show');
+}
+
+
 }
