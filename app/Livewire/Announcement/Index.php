@@ -9,12 +9,12 @@ use Livewire\Component;
 
 class Index extends Component
 {   
-    public $category;
+    
     public $announcements;
     public $bool = true;
 
     public function sortCategory(Category $category){
-        $this->category = $category;
+        
         $this->announcements = Announcement::where('category_id', $category->id)->get();   
         $this->bool = false;
     }
