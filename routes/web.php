@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GoogleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 
@@ -20,3 +21,6 @@ Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/createAd', [PageController::class, 'createAd'])->middleware(['auth'])->name('ad.create');
 Route::get('/ads', [PageController::class, 'indexAd'])->name('ads.index');
 Route::get('/ad/{ad}', [PageController::class, 'showAd'])->name('ad.show');
+
+Route::get('/auth/google',[GoogleController::class,'redirectToGoogle']);
+Route::get('/auth/google/callback',[GoogleController::class,'handleGoogleCallback']);

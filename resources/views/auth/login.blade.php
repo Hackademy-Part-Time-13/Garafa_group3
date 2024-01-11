@@ -18,5 +18,8 @@
       
         <button type="submit" class="btn btn-primary">login</button>
       </form>
+      <div>
+        <a href="/auth/google">login con google</a>
+      </div>
     
     </x-main>
