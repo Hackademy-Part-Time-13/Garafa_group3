@@ -50,7 +50,7 @@
                       <h6 class="card-subtitle mb-2 text-body-secondary">{{$ad->category->name}}</h6>
                       <p class="card-text">{{Str::limit($ad->description, 50)}}</p>
                       <p class="btn btn-primary">{{$ad->price}}</p>
-                      <a href="{{route('announcement.show',$ad)}}" class="btn btn-primary">Card link</a>
+                      <a href="{{route('ad.show',$ad)}}" class="btn btn-primary">Card link</a>
 
                     </div>
 

@@ -1,6 +1,7 @@
 <x-main>
-
-    <livewire:ads.create/>
+    <livewire:ads.create />
+    
+    
     
    
 

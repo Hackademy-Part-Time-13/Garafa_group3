@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Announcement;
+namespace App\Livewire\Ads;
 
 use App\Models\Ad;
 use App\Models\Category;
