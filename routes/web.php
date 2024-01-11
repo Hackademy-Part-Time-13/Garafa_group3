@@ -17,6 +17,6 @@ use App\Http\Controllers\PageController;
 // BUONA FORTUNA RAGA!
 
 Route::get('/', [PageController::class, 'home'])->name('home');
-Route::get('/announcement.create', [PageController::class, 'createAd'])->middleware(['auth'])->name('announcement.create');
-Route::get('/announcement.index', [PageController::class, 'indexAd'])->name('announcement.index');
-Route::get('/announcement.show/{announcement}', [PageController::class, 'showAd'])->name('announcement.show');
+Route::get('/createAd', [PageController::class, 'createAd'])->middleware(['auth'])->name('announcement.create');
+Route::get('/announcements', [PageController::class, 'indexAd'])->name('announcement.index');
+Route::get('/announcement/{announcement}', [PageController::class, 'showAd'])->name('announcement.show');
