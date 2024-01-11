@@ -19,6 +19,7 @@ class Index extends Component
         $this->bool = false;
     }
 
+    
     public function sortNEW(){
         
         $this->announcements = Announcement::orderBy('id','DESC')->get();
@@ -26,11 +27,27 @@ class Index extends Component
         
         
     }
-
+    
     public function sortOLD(){
         
         $this->announcements = Announcement::all();
         $this->bool = false;
+    }
+    
+    public function expensiveToCheap(){
+        
+        $this->announcements = Announcement::orderBy('price','DESC')->get();
+        $this->bool = false;
+        
+        
+    }
+
+    public function cheapToExpensive(){
+        
+        $this->announcements = Announcement::orderBy('price')->get();
+        $this->bool = false;
+        
+        
     }
 
     public function render()

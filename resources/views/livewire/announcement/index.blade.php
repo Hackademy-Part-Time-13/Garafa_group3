@@ -8,6 +8,10 @@
     <li wire:click="sortNEW" >new/old</li> 
 
     <li wire:click="sortOLD">old/new</li> 
+
+    <li wire:click="expensiveToCheap">expensive/cheap</li> 
+
+    <li wire:click="cheapToExpensive">cheap/expensive</li> 
     
     <li class="nav-item dropdown">
 
@@ -37,14 +41,19 @@
 
                 
                 <div class="card" style="width: 18rem;">
+
                     <img src="https://picsum.photos/300/200" class="card-img-top" alt="...">
+
                     <div class="card-body">
+                        
                       <h5 class="card-title">{{$announcement->title}}</h5>
                       <h6 class="card-subtitle mb-2 text-body-secondary">{{$announcement->category->name}}</h6>
                       <p class="card-text">{{Str::limit($announcement->description, 50)}}</p>
                       <p class="btn btn-primary">{{$announcement->price}}</p>
                       <a href="{{route('announcement.show',$announcement)}}" class="btn btn-primary">Card link</a>
+
                     </div>
+
                 </div>
 
         @endforeach
