@@ -2,7 +2,7 @@
 
 namespace App\Livewire\Announcement;
 
-use App\Models\Announcement;
+use App\Models\Ad;
 use App\Models\Category;
 use Livewire\Component;
 
@@ -15,14 +15,14 @@ class Index extends Component
 
     public function sortCategory(Category $category){
         
-        $this->announcements = Announcement::where('category_id', $category->id)->get();   
+        $this->announcements = Ad::where('category_id', $category->id)->get();   
         $this->bool = false;
     }
 
     
     public function sortNEW(){
         
-        $this->announcements = Announcement::orderBy('id','DESC')->get();
+        $this->announcements = Ad::orderBy('id','DESC')->get();
         $this->bool = false;
         
         
@@ -30,13 +30,13 @@ class Index extends Component
     
     public function sortOLD(){
         
-        $this->announcements = Announcement::all();
+        $this->announcements = Ad::all();
         $this->bool = false;
     }
     
     public function expensiveToCheap(){
         
-        $this->announcements = Announcement::orderBy('price','DESC')->get();
+        $this->announcements = Ad::orderBy('price','DESC')->get();
         $this->bool = false;
         
         
@@ -44,7 +44,7 @@ class Index extends Component
 
     public function cheapToExpensive(){
         
-        $this->announcements = Announcement::orderBy('price')->get();
+        $this->announcements = Ad::orderBy('price')->get();
         $this->bool = false;
         
         
@@ -53,8 +53,8 @@ class Index extends Component
     public function render()
     {   
         if($this->bool){
-            $this->announcements = Announcement::all();
+            $this->announcements = Ad::all();
         }
-        return view('livewire.announcement.index');
+        return view('livewire.ads.index');
     }
 }

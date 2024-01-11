@@ -10,6 +10,6 @@ class Category extends Model
     use HasFactory;
 
     public function announcements() {
-        return $this->hasMany(Announcement::class);
+        return $this->hasMany(Ad::class);
     }
 }

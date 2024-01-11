@@ -2,8 +2,8 @@
 
 namespace App\Livewire\Announcements;
 
+use App\Models\Ad;
 use Livewire\Component;
-use App\Models\Announcement;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\Validate;
 
@@ -29,14 +29,14 @@ class Create extends Component
     {
         $this->user_id = Auth::id();
         $this->validate();
-        Announcement::create($this->all());
+        Ad::create($this->all());
         $this->reset();
         session()->flash('success', 'Annuncio creato correttamente');
     }
 
     public function render()
     {
-        return view('livewire.announcements.create');
+        return view('livewire.ads.create');
     }
 
 }
