@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,14 +16,14 @@ class DatabaseSeeder extends Seeder
         $this->categories();
 
         \App\Models\User::create([
-            'name' => 'Admin',
+            'name' => 'Garafa',
             'email' => 'admin@example.it',
-            'password' => 'abcd1234',
+            'password' => Hash::make('abcd1234'),
         ]);
 
         \App\Models\User::factory(10)->create();
         // \App\Models\Category::factory(10)->create();
-        \App\Models\Announcement::factory(10)->create();
+        \App\Models\Ad::factory(10)->create();
     }
 
     public function categories() {

@@ -5,7 +5,8 @@
         
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-2">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{route('home')}}">Home</a>          </li>
+            <a class="nav-link active" aria-current="page" href="{{route('home')}}">Home</a>          
+          </li>
 
 
           {{-- REGISTER E LOGIN --}}
@@ -19,10 +20,10 @@
           {{-- OPZIONI ANNUNCI --}}
           @auth
           <li class="nav-item">
-            <a class="nav-link" href="{{route('announcement.create')}}">Inserisci annuncio</a>
+            <a class="nav-link" href="{{route('ad.create')}}">Inserisci annuncio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('announcement.index')}}">Tutti gli annunci</a>
+            <a class="nav-link" href="{{route('ads.index')}}">Tutti gli annunci</a>
           </li>
           @endauth
 
@@ -40,15 +41,15 @@
                 <ul class="dropdown-menu">
 
                   <li>
-                    <a class="dropdown-item" href="{{route('announcement.index')}}">Opzione 1</a>
+                    <a class="dropdown-item" href="">Opzione 1</a>
                   </li>
 
                   <li>
-                    <a class="dropdown-item" href="{{route('announcement.index')}}">Opzione 2</a>
+                    <a class="dropdown-item" href="">Opzione 2</a>
                   </li>
 
                   <li>
-                    <a class="dropdown-item" href="{{route('announcement.index')}}">Opzione 3</a>
+                    <a class="dropdown-item" href="">Opzione 3</a>
                   </li>
 
                   {{-- LOGOUT --}}
