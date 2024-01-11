@@ -35,12 +35,12 @@
             
             <div class="col-4">
                 
-                <h3>{{$announcement->category->name}}</h3>
+                <h3>{{$ad->category->name}}</h3>
                 <hr>
-                <h4>{{$announcement->created_at}}</h4>
-                <h1>{{$announcement->title}}</h1>
+                <h4>{{$ad->created_at}}</h4>
+                <h1>{{$ad->title}}</h1>
                 {{-- <h3> luogo</h3>  extra --}}
-                <h3>{{$announcement->price}}</h3>
+                <h3>{{$ad->price}}</h3>
                 
             </div>
         </div>
@@ -52,7 +52,7 @@
         <hr>
         <div>
             <h2>Descrizione</h2>
-            <p>{{$announcement->description}}</p>
+            <p>{{$ad->description}}</p>
         </div>
         
         

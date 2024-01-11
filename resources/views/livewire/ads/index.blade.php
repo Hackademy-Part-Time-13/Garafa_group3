@@ -37,7 +37,7 @@
     {{-- indec dei annunci --}}
     <div class="row g-3 px-3">
         
-        @foreach ($announcements as $announcement)
+        @foreach ($ads as $ad)
 
                 
                 <div class="card" style="width: 18rem;">
@@ -46,11 +46,11 @@
 
                     <div class="card-body">
                         
-                      <h5 class="card-title">{{$announcement->title}}</h5>
-                      <h6 class="card-subtitle mb-2 text-body-secondary">{{$announcement->category->name}}</h6>
-                      <p class="card-text">{{Str::limit($announcement->description, 50)}}</p>
-                      <p class="btn btn-primary">{{$announcement->price}}</p>
-                      <a href="{{route('announcement.show',$announcement)}}" class="btn btn-primary">Card link</a>
+                      <h5 class="card-title">{{$ad->title}}</h5>
+                      <h6 class="card-subtitle mb-2 text-body-secondary">{{$ad->category->name}}</h6>
+                      <p class="card-text">{{Str::limit($ad->description, 50)}}</p>
+                      <p class="btn btn-primary">{{$ad->price}}</p>
+                      <a href="{{route('announcement.show',$ad)}}" class="btn btn-primary">Card link</a>
 
                     </div>
 

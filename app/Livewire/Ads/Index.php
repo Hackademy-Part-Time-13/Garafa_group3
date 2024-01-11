@@ -10,19 +10,19 @@ use Livewire\Component;
 class Index extends Component
 {   
     
-    public $announcements;
+    public $ads;
     public $bool = true;
 
     public function sortCategory(Category $category){
         
-        $this->announcements = Ad::where('category_id', $category->id)->get();   
+        $this->ads = Ad::where('category_id', $category->id)->get();   
         $this->bool = false;
     }
 
     
     public function sortNEW(){
         
-        $this->announcements = Ad::orderBy('id','DESC')->get();
+        $this->ads = Ad::orderBy('id','DESC')->get();
         $this->bool = false;
         
         
@@ -30,13 +30,13 @@ class Index extends Component
     
     public function sortOLD(){
         
-        $this->announcements = Ad::all();
+        $this->ads = Ad::all();
         $this->bool = false;
     }
     
     public function expensiveToCheap(){
         
-        $this->announcements = Ad::orderBy('price','DESC')->get();
+        $this->ads = Ad::orderBy('price','DESC')->get();
         $this->bool = false;
         
         
@@ -44,7 +44,7 @@ class Index extends Component
 
     public function cheapToExpensive(){
         
-        $this->announcements = Ad::orderBy('price')->get();
+        $this->ads = Ad::orderBy('price')->get();
         $this->bool = false;
         
         
@@ -53,7 +53,7 @@ class Index extends Component
     public function render()
     {   
         if($this->bool){
-            $this->announcements = Ad::all();
+            $this->ads = Ad::all();
         }
         return view('livewire.ads.index');
     }
