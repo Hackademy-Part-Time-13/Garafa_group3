@@ -51,7 +51,7 @@
                       <p class="card-text">{{Str::limit($ad->description, 50)}}</p>
                       <p class="btn btn-primary">{{$ad->price}}</p>
                       <a href="{{route('ad.show',$ad)}}" class="btn btn-primary">Card link</a>
-
+                        <livewire:extra.favorites :ad="$ad"/>
                     </div>
 
                 </div>
