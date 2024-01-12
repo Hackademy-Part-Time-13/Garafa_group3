@@ -19,7 +19,9 @@
         <button type="submit" class="btn btn-primary">login</button>
       </form>
       <div>
+        <a href="/auth/github">login con github</a>
         <a href="/auth/google">login con google</a>
+        {{-- <button >login con github</button> --}}
       </div>
     
     </x-main>

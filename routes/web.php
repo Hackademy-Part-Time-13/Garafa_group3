@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\SocialiteController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 
@@ -22,5 +22,8 @@ Route::get('/createAd', [PageController::class, 'createAd'])->middleware(['auth'
 Route::get('/ads', [PageController::class, 'indexAd'])->name('ads.index');
 Route::get('/ad/{ad}', [PageController::class, 'showAd'])->name('ad.show');
 
-Route::get('/auth/google',[GoogleController::class,'redirectToGoogle']);
-Route::get('/auth/google/callback',[GoogleController::class,'handleGoogleCallback']);
+Route::get('/auth/github',[SocialiteController::class,'redirectToGithub']);
+Route::get('/auth/github/callback',[SocialiteController::class,'handleGithubCallback']);
+
+Route::get('/auth/google',[SocialiteController::class,'redirectToGoogle']);
+Route::get('/auth/google/callback',[SocialiteController::class,'handleGoogleCallback']);
