@@ -39,9 +39,10 @@
 
         <div class="col my-2">
             <label class="form-label">Categoria</label>
-            <select class="form-select shadow-sm" wire:model.blur="category_id">
+            <select class="form-select shadow-sm" wire:model="category_id">
+                <option selected value="none">Seleziona categoria</option>
                 @foreach(\App\Models\Category::all() as $category)
-                <option selected value="{{$category->id}}">{{$category->name}}</option>
+                <option value="{{$category->id}}">{{$category->name}}</option>
                 @endforeach
             </select>
         </div>
