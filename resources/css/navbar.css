@@ -1,0 +1,44 @@
+.navbar_main{
+
+    
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar_component{
+    
+    display: flex;
+    justify-content: space-around;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+
+.navbar_component li {
+    padding: 20px 30px;
+    background-color: rgb(255, 255, 255);
+    /* background-color: var(--full-red);
+    border-radius: 0px 0px 10px 10px; */
+}
+
+.navbar_component li:hover{
+    background-color: var(--lite-red);
+    color: white;
+}
+
+.navbar_home_button{
+    background-color: var(--lite-red) !important;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.navbar_start{
+    background-color: var(--lite-red) !important;
+    border-radius: 0px 0px 0px 10px;
+}
+
+.navbar_end{
+    background-color: var(--lite-red);
+    border-radius: 0px 0px 10px 0px;
+}
+

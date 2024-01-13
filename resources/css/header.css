@@ -1,0 +1,30 @@
+header {
+    height: 600px;
+
+    /* background-color: var(--lite-red); */
+    background-image: url(https://images.pexels.com/photos/626986/pexels-photo-626986.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-size: cover;
+    background-position: center;
+
+
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+
+    
+}
+
+.header_div{
+    
+    height: 90%;
+    width: 90%;
+
+    display: flex;
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    /* background-color: aqua; */
+}
+.header_div div {
+    padding: 20px;
+}

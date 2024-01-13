@@ -4,10 +4,10 @@ Sezione profilo:
     - Inserire un dropdown per il profilo utente (nome, foto, articoli pubblicati, etc)
 
 Login google:
-    - Permettere login con Google e GitHub
+    - Permettere login con Google e GitHub (done!!!)
 
 Aggiunta likes:
-    - Possibilità di mettere like, selezionare preferiti, etc
+    - Possibilità di mettere like, selezionare preferiti, etc (done!!!)
 
 Invio mail feedback:
     - Impostare invio automatico di mail per reminder del feedback

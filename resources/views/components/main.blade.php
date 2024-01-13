@@ -9,11 +9,12 @@
 </head>
 <body>
 
-    {{-- <x-navbar/> --}}
-    <x-navbar-main />
-    <div class="container mt-4">
+    <x-navbar/>
+    
+    
+    
         {{$slot}} 
-    </div>
+    
    
     
     

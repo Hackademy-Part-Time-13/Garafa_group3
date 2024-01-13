@@ -1,5 +1,6 @@
 @import "bootstrap";
 @import "bootstrap-icons";
-@import "pic-profile.css";
 @import "main.css";
-@import "box.css";
+@import "pic-profile.css";
+@import "navbar.css";
+@import "header.css";

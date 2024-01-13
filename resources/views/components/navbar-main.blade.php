@@ -1,11 +1,11 @@
-<nav class="container p-0">
+<nav class="container  p-0">
     <div class="navbar_main">
 
-        <div class="navbar_component navbar_home_button">
+        <div class="navbar_component ">
 
             <ul class="">
-                <li>
-                    <a href="">
+                <li class="navbar_home_button">
+                    <a  href="">
                         Presto.it
                     </a>
                 </li>
@@ -17,23 +17,23 @@
 
         <div class="">
             <ul class="navbar_component">
-                <li class="nav-item navbar_start">
-                    <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
+                <li class=" navbar_start text-white">
+                    <a  href="{{ route('home') }}" class="" >Home</a>
                 </li>
 
 
                 {{-- REGISTER E LOGIN --}}
                 @guest
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">Register</a>
+                    <li>
+                        <a  href="{{ route('register') }}">Register</a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Login</a>
+                    <li>
+                        <a  href="{{ route('login') }}">Login</a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('ad.create') }}">Inserisci annuncio</a>
+                    <li class="navbar_end">
+                        <a  href="{{ route('ad.create') }}">Inserisci annuncio</a>
                     </li>
                 @endguest
 
@@ -41,11 +41,11 @@
                 {{-- OPZIONI ANNUNCI --}}
                 @auth
 
-                    <li class="nav-item">
+                    <li>
                         <a class="nav-link" href="{{ route('ad.create') }}">Inserisci annuncio</a>
                     </li>
 
-                    <li class="nav-item">
+                    <li>
                         <a class="nav-link" href="{{ route('ads.index') }}">Tutti gli annunci</a>
                     </li>
 
@@ -53,7 +53,7 @@
 
                 {{-- drpdown --}}
                 @auth
-                    <li class="nav-item dropdown">
+                    <li class=" dropdown navbar_end">
                         <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">{{ Auth::user()->name }} </a>
                         <ul class="dropdown-menu">
@@ -71,7 +71,7 @@
                             </li>
 
                             {{-- LOGOUT --}}
-                            <li><a class="dropdown-item" href="{{ route('logout') }}"
+                            <li><a class="dropdown-item " href="{{ route('logout') }}"
                                     onclick="event.preventDefault(); getElementById('form-logout').submit();">Logout</a>
                             </li>
                             <form id="form-logout" action="/logout" method="POST" class="d-none">

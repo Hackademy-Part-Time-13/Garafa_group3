@@ -5,7 +5,7 @@
     --goald: #e89005;
     --orange: #ec7505;
     --brown: #D84A05;
-    --lite-red: #F42B03;
+    --lite-red: #da392b;
     --full-red: #E70E02;
 }
 
@@ -14,11 +14,17 @@
     margin: 0px;
     font-family: 'Poppins', sans-serif;
     
+    font-weight: 400;
 }
 
 ul{
     margin: 0px;
     padding: 0px;
     list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: black;
 }
 
