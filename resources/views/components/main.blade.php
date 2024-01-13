@@ -9,8 +9,8 @@
 </head>
 <body>
 
-    <x-navbar/>
-
+    {{-- <x-navbar/> --}}
+    <x-navbar-main />
     <div class="container mt-4">
         {{$slot}} 
     </div>

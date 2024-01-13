@@ -14,7 +14,7 @@ class Index extends Component
     public $bool = true;
 
     public function sortCategory(Category $category){
-        
+        // dd($category->id);
         $this->ads = Ad::where('category_id', $category->id)->get();   
         $this->bool = false;
     }

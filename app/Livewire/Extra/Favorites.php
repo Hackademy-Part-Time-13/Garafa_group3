@@ -15,7 +15,9 @@ class Favorites extends Component
         // dd(Like::where('user_id', auth()->user()->id)->exists());
 
         $ads = Favorite::where('ad_id', $this->ad->id)->where('user_id',auth()->user()->id)->get();
+
         // dd($likes);
+        
         foreach ($ads as $ad) {
         
             $ad->delete();
