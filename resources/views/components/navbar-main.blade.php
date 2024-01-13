@@ -1,4 +1,4 @@
-<nav class="container  p-0">
+<nav class="  p-0">
     <div class="navbar_main">
 
         <div class="navbar_component ">
