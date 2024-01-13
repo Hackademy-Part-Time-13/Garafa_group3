@@ -1,6 +1,7 @@
 .navbar_main{
 
     position: fixed;
+    z-index: 2;
     width: 100%;
 
     display: flex;
@@ -22,8 +23,10 @@
 }
 
 .navbar_component li:hover{
+    
     background-color: var(--lite-red);
     color: white;
+    
 }
 
 .navbar_home_button{
