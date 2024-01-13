@@ -30,3 +30,5 @@ Route::get('/auth/google',[SocialiteController::class,'redirectToGoogle']);
 Route::get('/auth/google/callback',[SocialiteController::class,'handleGoogleCallback']);
 
 Route::get('/auth/profile',[UserController::class, 'profile'])->middleware(['auth'])->name('user.auth.profile');
+
+Route::get('/prova', [PageController::class, 'prova']);

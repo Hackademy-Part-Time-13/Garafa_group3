@@ -24,5 +24,9 @@ public function showAd(Ad $ad){
     return view('ads.show', compact('ad') ) ;
 }
 
+public function prova(){
+    return view('prova');
+}
+
 
 }
