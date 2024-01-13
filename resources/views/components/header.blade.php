@@ -1,8 +1,8 @@
-<header class="head_content row">
+<header class="head_content ">
 
-    <div class="col-6 bg-white rounded p-5">
+    <div class="col-6 text-white rounded ">
         
-            <p style="font-weight: 700; font-size:35px;">Lorem ipsum dolor sit amet <span style="color: var(--full-red)">consectetur adipisicing elit. ,
+            <p style="font-weight: 700; font-size:35px;">Shopping <span style="color: var(--full-red)">consectetur adipisicing elit. ,
                 obcaecati officia ?
                 </span></p>
         
@@ -19,9 +19,7 @@
         </div>
     </div>
 
-    <div class="col-5 d-flex justify-content-center ">
-        {{-- <img class="rounded" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;" src="https://picsum.photos/500/300?grayscale" alt=""> --}}
-    </div>
+
 
 
 </header>

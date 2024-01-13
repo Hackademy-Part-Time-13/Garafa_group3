@@ -1,17 +1,13 @@
 header {
-    height: 600px;
-    padding: 30px;
-
-
-    /* background-color: var(--orange); */
+    height: 700px;
     
-     background-image: url(https://images.unsplash.com/photo-1561715276-a2d087060f1d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-    background-size: cover;
-    background-position: center;   
+     background-image: url(https://i.postimg.cc/7PdwKVPJ/harry-cunningham-7q-Ce-Fo19r24-unsplash-rev.jpg);
 
-   
-    /* background: rgb(231,14,2);
-background: linear-gradient(0deg, rgba(231,14,2,1) 0%, rgba(232,144,5,1) 100%); */
+    background-size: cover;
+    /* background-position: 100% 60%; 
+    background-size: 90%;  */
+
+
 }
 
 .head_content{
