@@ -27,3 +27,4 @@ Route::get('/auth/github/callback',[SocialiteController::class,'handleGithubCall
 
 Route::get('/auth/google',[SocialiteController::class,'redirectToGoogle']);
 Route::get('/auth/google/callback',[SocialiteController::class,'handleGoogleCallback']);
+

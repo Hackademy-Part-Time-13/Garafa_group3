@@ -47,8 +47,8 @@ class SocialiteController extends Controller
     {
 
         $userGoogle = Socialite::driver('google')->stateless()->user();
-       
-        
+
+
         $newUser = User::updateOrCreate(
             [
 
@@ -60,8 +60,5 @@ class SocialiteController extends Controller
                 'google_id' => $userGoogle->id,
             ]
         );
-
-        Auth::login($newUser);
-        return redirect(route('ad.create'));
     }
 }
