@@ -3,3 +3,10 @@
   overflow: hidden;
   max-height: 9mm;
 }
+
+.round-profile-imageprofile {
+/* padding-top: 100mm; */
+  border-radius: 50%;
+  
+
+}

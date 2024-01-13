@@ -3,6 +3,7 @@
 use App\Http\Controllers\SocialiteController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,4 @@ Route::get('/auth/github/callback',[SocialiteController::class,'handleGithubCall
 Route::get('/auth/google',[SocialiteController::class,'redirectToGoogle']);
 Route::get('/auth/google/callback',[SocialiteController::class,'handleGoogleCallback']);
 
+Route::get('/auth/profile',[UserController::class, 'profile'])->middleware(['auth'])->name('user.auth.profile');
