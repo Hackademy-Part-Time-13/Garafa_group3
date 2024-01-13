@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ad;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -25,7 +26,13 @@ public function showAd(Ad $ad){
 }
 
 public function prova(){
+    
     return view('prova');
+}
+
+public function adsByCat(Category $category){
+
+    return view('ads.adsByCategory', compact('category'));
 }
 
 

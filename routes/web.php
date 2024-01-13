@@ -32,3 +32,4 @@ Route::get('/auth/google/callback',[SocialiteController::class,'handleGoogleCall
 Route::get('/auth/profile',[UserController::class, 'profile'])->middleware(['auth'])->name('user.auth.profile');
 
 Route::get('/prova', [PageController::class, 'prova']);
+Route::get('/adsByCategory/{category}', [PageController::class, 'adsByCat'])->name('adsByCat');
