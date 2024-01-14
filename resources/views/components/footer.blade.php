@@ -66,7 +66,5 @@
         <a class="text-dark" href="/">Presto.it</a>
       </div>
       <!-- Copyright -->
-    <div></div>
-    <div></div>
-    <div></div>
+    
 </footer>
