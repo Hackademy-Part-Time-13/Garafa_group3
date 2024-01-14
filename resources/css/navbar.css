@@ -15,18 +15,32 @@
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
+.big_nav {
+    border-radius: 0px 0px 10px 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
 
 .navbar_component li {
     padding: 20px 30px;
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(255, 255, 255); */
     
 }
-
 .navbar_component li:hover{
-    
     background-color: var(--lite-red);
     color: white;
-    
+}
+
+ul li:hover{
+    background-color: var(--lite-red);
+    color: white;
+}
+
+
+.dropdown-item:hover{
+    background-color: var(--lite-red);
+    color: white;
 }
 
 .navbar_home_button{
@@ -34,15 +48,17 @@
     border-radius: 0px 0px 10px 10px;
 }
 
-.navbar_start{
-    background-color: var(--lite-red) !important;
+.nav_start{
     border-radius: 0px 0px 0px 10px;
 }
-
-.navbar_end{
-    background-color: var(--lite-red);
+.nav_end{
     border-radius: 0px 0px 10px 0px;
 }
+
+/* .dropdown-menu{
+    position: relative !important;
+    z-index: 3 ;
+} */
 
 
 

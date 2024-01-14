@@ -4,8 +4,8 @@
         <div class="navbar_component ">
 
             <ul class="">
-                <li class="navbar_home_button">
-                    <a  href="">
+                <li class="navbar_home_button" >
+                    <a href="">
                         Presto.it
                     </a>
                 </li>
@@ -13,27 +13,30 @@
 
         </div>
 
-        
 
-        <div class="">
-            <ul class="navbar_component">
-                <li class=" navbar_start text-white">
-                    <a  href="{{ route('home') }}" class="" >Home</a>
+
+        <div class="big_nav">
+            <ul class=" navbar_component">
+                <li class="nav_start  text-white">
+
+                    <a href="{{ route('home') }}" class="">Home</a>
                 </li>
 
 
                 {{-- REGISTER E LOGIN --}}
                 @guest
                     <li>
-                        <a  href="{{ route('register') }}">Register</a>
+                        <a href="{{ route('register') }}">
+                            Register</a>
                     </li>
 
                     <li>
-                        <a  href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('login') }}">
+                            Login</a>
                     </li>
 
-                    <li class="navbar_end">
-                        <a  href="{{ route('ad.create') }}">Inserisci annuncio</a>
+                    <li class="nav_end">
+                        <a href="{{ route('ad.create') }}">Inserisci annuncio</a>
                     </li>
                 @endguest
 
@@ -42,7 +45,8 @@
                 @auth
 
                     <li>
-                        <a class="nav-link" href="{{ route('ad.create') }}">Inserisci annuncio</a>
+                        <a class="nav-link" href="{{ route('ad.create') }}">
+                            Inserisci annuncio</a>
                     </li>
 
                     <li>
@@ -53,10 +57,10 @@
 
                 {{-- drpdown --}}
                 @auth
-                    <li class=" dropdown navbar_end">
-                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                    <li class=" dropdown nav_end">
+                        <a class="nav-link dropdown-toggle " role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">{{ Auth::user()->name }} </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu ">
 
                             <li>
                                 <a class="dropdown-item" href="">Opzione 1</a>
