@@ -1,4 +1,6 @@
 <x-main>
+    <x-header/>
+    
     <livewire:ads.create />
     
     
