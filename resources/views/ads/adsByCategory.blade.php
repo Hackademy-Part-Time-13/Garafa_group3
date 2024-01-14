@@ -2,7 +2,7 @@
 
 <div class="row g-3 px-3">
         
-    @foreach (App\Models\Ad::where('id', $category->id)->get() as $ad)
+    @foreach ($category->ads as $ad)
 
             
             <div class="card" style="width: 18rem;">
