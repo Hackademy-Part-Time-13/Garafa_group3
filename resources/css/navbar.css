@@ -55,10 +55,9 @@ ul li:hover{
     border-radius: 0px 0px 10px 0px;
 }
 
-/* .dropdown-menu{
-    position: relative !important;
-    z-index: 3 ;
-} */
+.carent_root{
+    background-color: var(--lite-red);
+}
 
 
 

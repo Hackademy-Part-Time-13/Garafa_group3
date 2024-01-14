@@ -18,6 +18,6 @@
     
    
     
-    
+    <x-footer />
 </body>
 </html>

@@ -9,7 +9,7 @@
     --full-red: #E70E02;
 
     --white: white;
-    
+
     --dark: #003049;
 }
 
@@ -20,6 +20,9 @@
     /* font-family: Arial, Helvetica, sans-serif; */
     text-transform: uppercase;
     box-sizing: border-box;
+}
+body{
+    background-color: var(--white);
 }
 
 form input{

@@ -17,7 +17,8 @@
 
         <div class="big_nav">
             <ul class=" navbar_component">
-                <li class="nav_start  text-white">
+                <li class="nav_start 
+                 text-white @if(Illuminate\Support\Facades\Route::currentRouteName() == 'home') carent_root @endif ">
 
                     <a href="{{ route('home') }}" class="">Home</a>
                 </li>
@@ -35,7 +36,9 @@
                             Login</a>
                     </li>
 
-                    <li class="nav_end">
+                    <li class="nav_end 
+                    @if(Illuminate\Support\Facades\Route::currentRouteName() == 'ad.create') carent_root @endif
+                    ">
                         <a href="{{ route('ad.create') }}">Inserisci annuncio</a>
                     </li>
                 @endguest
@@ -44,12 +47,16 @@
                 {{-- OPZIONI ANNUNCI --}}
                 @auth
 
-                    <li>
-                        <a class="nav-link" href="{{ route('ad.create') }}">
+                    <li class="
+                    @if(Illuminate\Support\Facades\Route::currentRouteName() == 'ad.create') carent_root @endif
+                    ">
+                        <a class="nav-link  " href="{{ route('ad.create') }}">
                             Inserisci annuncio</a>
                     </li>
 
-                    <li>
+                    <li class="
+                    @if(Illuminate\Support\Facades\Route::currentRouteName() == 'ads.index') carent_root @endif
+                    ">
                         <a class="nav-link" href="{{ route('ads.index') }}">Tutti gli annunci</a>
                     </li>
 
@@ -57,7 +64,9 @@
 
                 {{-- drpdown --}}
                 @auth
-                    <li class=" dropdown nav_end">
+                    <li class=" dropdown nav_end  
+                    @if(Illuminate\Support\Facades\Route::currentRouteName() == '') carent_root @endif
+                    ">
                         <a class="nav-link dropdown-toggle " role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">{{ Auth::user()->name }} </a>
                         <ul class="dropdown-menu ">
