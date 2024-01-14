@@ -26,12 +26,13 @@
 
                 {{-- REGISTER E LOGIN --}}
                 @guest
-                    <li>
+                    <li class=" @if(Illuminate\Support\Facades\Route::currentRouteName() == 'register') carent_root @endif">
                         <a href="{{ route('register') }}">
                             Register</a>
                     </li>
 
-                    <li>
+                    <li class=" @if(Illuminate\Support\Facades\Route::currentRouteName() == 'login') carent_root @endif">
+                      
                         <a href="{{ route('login') }}">
                             Login</a>
                     </li>
@@ -65,14 +66,14 @@
                 {{-- drpdown --}}
                 @auth
                     <li class=" dropdown nav_end  
-                    @if(Illuminate\Support\Facades\Route::currentRouteName() == '') carent_root @endif
+                    @if(Illuminate\Support\Facades\Route::currentRouteName() == 'user.auth.profile') carent_root @endif
                     ">
                         <a class="nav-link dropdown-toggle " role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">{{ Auth::user()->name }} </a>
                         <ul class="dropdown-menu ">
 
                             <li>
-                                <a class="dropdown-item" href="">Opzione 1</a>
+                                <a class="dropdown-item" href="{{route('user.auth.profile')}}">Il mio profilo</a>
                             </li>
 
                             <li>

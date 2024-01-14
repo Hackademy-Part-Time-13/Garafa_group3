@@ -1,4 +1,5 @@
 <x-main>
+  <x-header/>
     <form  action="/register" method="POST">
         @csrf
         <div class="mb-3">
