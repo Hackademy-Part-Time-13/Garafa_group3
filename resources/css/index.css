@@ -53,3 +53,16 @@
     
     
 }
+
+
+.index_back{
+    margin: 100px 0px;
+    padding: 40px;
+    background-color: var(--full-red);
+}
+
+.index_box{
+    margin: 0px 20px;
+
+    
+}

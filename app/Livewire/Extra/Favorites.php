@@ -12,11 +12,10 @@ class Favorites extends Component
     public $favorite;
 
     public function unlike(){
-        // dd(Like::where('user_id', auth()->user()->id)->exists());
 
         $ads = Favorite::where('ad_id', $this->ad->id)->where('user_id',auth()->user()->id)->get();
 
-        // dd($likes);
+        
         
         foreach ($ads as $ad) {
         
@@ -25,8 +24,8 @@ class Favorites extends Component
     }
 
     public function liker(){
-        // dd($post);
 
+        dd($this->ad);
         Favorite::create([
             'user_id'=>auth()->user()->id,
             'ad_id'=>$this->ad->id
