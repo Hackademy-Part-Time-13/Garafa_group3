@@ -5,6 +5,8 @@ header {
     background-image: url(https://i.postimg.cc/7PdwKVPJ/harry-cunningham-7q-Ce-Fo19r24-unsplash-rev.jpg);
     background-size: cover;
 
+    
+
     border-radius: 0px 0px 20px 20px;
 
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -35,7 +37,8 @@ header {
     margin-top: 70px;
     /* padding: 5px; */
     
-    border-style: none;
+    border-style: solid;
+    border-width: 2px;
     border-radius: 20px;
 
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -53,6 +56,8 @@ header {
     background-color: var(--lite-red);
     padding: 10px;
     margin: 5px;
+
+    color: var(--white);
 
     border-style: none;
     border-radius: 20px;

@@ -1,7 +1,7 @@
 .navbar_main{
 
     position: fixed;
-    z-index: 2;
+    z-index: 10;
     width: 100%;
 
     display: flex;
