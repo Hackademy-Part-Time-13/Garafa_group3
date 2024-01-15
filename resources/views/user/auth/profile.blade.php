@@ -1,5 +1,5 @@
 <x-main>
-    <div>
+    <div class=" min-vh-100">
        
     </div>
 </x-main>
