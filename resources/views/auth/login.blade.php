@@ -32,11 +32,12 @@
                     </div>
 
                     <div class="mb-3">
-                        <input type="password" name="password" class="" placeholder="Password">
+                        <input type="password" name="password" id="password" class="" placeholder="Password">
 
-                        <button type="submit">
-                          <i class="bi bi-eye-fill"></i>
+                        <button type="button" id="show_password">
+                          <i id="eye" class="bi bi-eye-fill"></i>
                         </button>
+                        
                         @error('password')
                             {{ $message }}
                         @enderror
