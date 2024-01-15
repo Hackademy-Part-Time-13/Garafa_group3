@@ -31,7 +31,8 @@ class Create extends Component
         $this->validate();
         Ad::create($this->all());
         $this->reset();
-        session()->flash('success', 'Annuncio creato correttamente');
+        // session()->flash('success', 'Annuncio creato correttamente');
+        return redirect()->route('ad.create')->with('success', 'Annuncio creato correttamente');
     }
 
     public function render()
