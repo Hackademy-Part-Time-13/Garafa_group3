@@ -42,7 +42,7 @@
                         @enderror
                     </div>
 
-                    <button type="submit " class="form_submit_button ">login</button>
+                    <button type="submit " class="form_submit_button mx-auto d-block">login</button>
                 </form>
             </div>
 

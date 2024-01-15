@@ -10,7 +10,7 @@
     <div class="index_back">
         <div class="index_box">
             <div class="row g-5 px-3">
-CIAO
+
                 {{-- @foreach ($ads as $ad)
                 <x-ads-card :ad="$ad" />
                 @endforeach --}}

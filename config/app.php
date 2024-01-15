@@ -159,6 +159,7 @@ return [
         /*
          * Package Service Providers...
          */
+        TeamTNT\Scout\TNTSearchScoutServiceProvider::class,
         App\Providers\FortifyServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         /*
