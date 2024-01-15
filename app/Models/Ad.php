@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Ad extends Model
 {
-    use HasFactory;
+    use HasFactory, Searchable;
 
     protected $fillable = [
         'title',
@@ -16,6 +17,18 @@ class Ad extends Model
         'category_id',
         'user_id',
     ];
+
+    public function toSearchableArray()
+    {
+        $category = $this->category;
+        $array = [
+            'id' => $this->id,
+            'title' => $this->title,
+            'category' => $this->category,
+            'description' =>$this->description
+        ];
+        return $array;
+    }
 
     public function category(){
         return $this->belongsTo(Category::class);

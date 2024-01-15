@@ -16,20 +16,26 @@ use App\Http\Controllers\UserController;
 |
 */
 
-// BUONA FORTUNA RAGA!
-
 Route::get('/', [PageController::class, 'home'])->name('home');
+
+//ADS
 Route::get('/createAd', [PageController::class, 'createAd'])->middleware(['auth'])->name('ad.create');
 Route::get('/ads', [PageController::class, 'indexAd'])->name('ads.index');
 Route::get('/ad/{ad}', [PageController::class, 'showAd'])->name('ad.show');
+Route::get('/adsByCategory/{category}', [PageController::class, 'adsByCat'])->name('adsByCat');
 
+//RICERCA ANNUNCIO
+Route::get('/searched/ads', [PageController::class, 'searchAd'])->name('ad.searched');
+
+//SOCIALITE GITHUB
 Route::get('/auth/github',[SocialiteController::class,'redirectToGithub']);
 Route::get('/auth/github/callback',[SocialiteController::class,'handleGithubCallback']);
 
+//SOCIALITE GOOGLE
 Route::get('/auth/google',[SocialiteController::class,'redirectToGoogle']);
 Route::get('/auth/google/callback',[SocialiteController::class,'handleGoogleCallback']);
 
+//PAGINA PROFILO
 Route::get('/auth/profile',[UserController::class, 'profile'])->middleware(['auth'])->name('user.auth.profile');
 
-Route::get('/prova', [PageController::class, 'prova']);
-Route::get('/adsByCategory/{category}', [PageController::class, 'adsByCat'])->name('adsByCat');
+

@@ -1,21 +1,29 @@
-{{-- RANVEER
-    - Annuncio: Titolo, categoria, prezzo, descrizione, foto segnaposto.
-    - Ordinazione: dal più recente, per categorie
-    - Extra: dal più vecchio, dal più economico, dal più caro
---}}
-
 <x-main>
 
-    <x-header/>
+    {{-- ANNUNCI CERCATI --}}
 
-    
+    @if(Illuminate\Support\Facades\Route::currentRouteName() == 'ad.searched')
+    <x-header>
+        <x-header-home-content/>
+    </x-header>
 
-    
-            <livewire:ads.index />
-                
-        
+    <div class="index_back">
+        <div class="index_box">
+            <div class="row g-5 px-3">
+CIAO
+                {{-- @foreach ($ads as $ad)
+                <x-ads-card :ad="$ad" />
+                @endforeach --}}
+            </div>
+        </div>
+    </div>
 
-    
-   
+
+    {{-- TUTTI GLI ANNUNCI --}}
+
+    @else 
+    <x-header/>   
+        <livewire:ads.index />
+    @endif
 
 </x-main>

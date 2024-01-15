@@ -3,8 +3,8 @@
         Benvenuto nel Paradiso dello Shopping:<span class="text-white"> Trova il Tuo Prodotto Preferito a Prezzi Convenienti!</span> 
     </h1>
 
-    <form class="header_form" action="">
-        <input type="text">
-        <button>search</button>
+    <form class="header_form" action="{{route('ad.searched')}}">
+        <input type="text" name="searched">
+        <button type="submit">search</button>
     </form>
 </div>

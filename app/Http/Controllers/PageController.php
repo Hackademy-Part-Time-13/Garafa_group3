@@ -26,15 +26,16 @@ public function showAd(Ad $ad){
     return view('ads.show', compact('ad') ) ;
 }
 
-public function prova(){
-    
-    return view('prova');
-}
-
 public function adsByCat(Category $category){
 
     return view('ads.adsByCategory', compact('category'));
 }
 
+public function searchAd(Request $request){
+    $ads = Ad::search($request->searched)->where('is_accepted', true);
+    return view('ads.index', compact('ads'));
+}
+
+// 
 
 }
