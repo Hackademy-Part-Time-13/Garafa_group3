@@ -3,6 +3,7 @@
 use App\Http\Controllers\SocialiteController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\RevisorController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -38,4 +39,8 @@ Route::get('/auth/google/callback',[SocialiteController::class,'handleGoogleCall
 //PAGINA PROFILO
 Route::get('/auth/profile',[UserController::class, 'profile'])->middleware(['auth'])->name('user.auth.profile');
 
+//HOME REVISORE/ACCETTA E RIFIUTA ANNUNCIO
+Route::get('/revisor/home',[RevisorController::class,'index'])->name('revisor.index');
+Route::patch('/accetta/annuncio/{ad}',[RevisorController::class,'acceptAd'])->name('revisor.accept_ad');
+Route::patch('/rifiuta/annuncio/{ad}',[RevisorController::class,'rejectAd'])->name('revisor.reject_ad');
 

@@ -22,6 +22,7 @@ class AdFactory extends Factory
             'price'=>fake()->randomFloat(2, 20, 30),
             'category_id'=>fake()->numberBetween(1,9),
             'user_id'=>fake()->numberBetween(1,9),
+            'is_accepted'=>fake()->numberBetween(0,1),
         ];
     }
 }
