@@ -77,7 +77,14 @@
                             </li>
 
                             <li>
-                                <a class="dropdown-item" href="">Opzione 2</a>
+                                <a class="dropdown-item" href="{{route('revisor.index')}}">Zona revisore</a>
+                                <span class="position-absolute top-0 start-100 translate-niddle badge rounded-pill bg-danger" >
+                                    {{App\Models\Ad::toBeRevisionedCount()}}
+                                    <span>
+                                        unread messages
+                                    </span>
+                                </span>
+
                             </li>
 
                             <li>
