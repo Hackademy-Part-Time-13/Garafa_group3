@@ -5,7 +5,7 @@
 
 
             <span class="ads_dettaglio_batton"><a href="{{route('ad.show',$ad->id)}}">vista dettaglio</a></span>
-            <p class="ads_titale">{{ $ad->title }}</p>
+            <p class="ads_titale">{{$ad->title}}</p>
 
             <div class="ads_favorites">
                 <livewire:extra.favorites :ad="$ad" />
