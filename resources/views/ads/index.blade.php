@@ -11,13 +11,13 @@
         <div class="index_box">
             <div class="row g-5 px-3">
 
-                 @if($ads->isEmpty()) {{-- NESSUN RISULTATO --}}
-
+                @if($ads->isEmpty()) {{-- NESSUN RISULTATO --}}
+                   
                     Nessun annuncio trovato. Prova ancora.
                 
                 @else
                     
-                    @foreach ($ads as $ad) {{-- RISULTATI RICERCA --}}
+                    @foreach($ads as $ad) {{-- RISULTATI RICERCA --}}
 
                         <div class="col-4 d-flex justify-content-center">
                             <div class="ads_container ">
@@ -39,6 +39,8 @@
             </div>
         </div>
     </div>
+
+
 
     {{-- ANNUNCI PER CATEGORIA --}}
     @elseif(Illuminate\Support\Facades\Route::currentRouteName() == 'adsByCat')
