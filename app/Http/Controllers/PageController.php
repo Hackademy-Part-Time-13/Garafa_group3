@@ -19,7 +19,8 @@ public function createAd(){
 }
 
 public function indexAd(){
-    return view('ads.index');
+    $ads = Ad::where('is_accepted', true)->get();
+    return view('ads.index', compact('ads'));
 }
 
 public function showAd(Ad $ad){
@@ -28,14 +29,15 @@ public function showAd(Ad $ad){
 
 public function adsByCat(Category $category){
 
-    return view('ads.adsByCategory', compact('category'));
+    return view('ads.index', compact('category'));
 }
 
 public function searchAd(Request $request){
-    $ads = Ad::search($request->searched)->where('is_accepted', true);
+
+    $ads = Ad::search($request->searched)->where('is_accepted', true)->get();
+
     return view('ads.index', compact('ads'));
 }
-
 // 
 
 }

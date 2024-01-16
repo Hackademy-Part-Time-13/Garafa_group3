@@ -40,7 +40,7 @@ Route::get('/auth/google/callback',[SocialiteController::class,'handleGoogleCall
 Route::get('/auth/profile',[UserController::class, 'profile'])->middleware(['auth'])->name('user.auth.profile');
 
 //HOME REVISORE/ACCETTA E RIFIUTA ANNUNCIO
-Route::get('/revisor/home',[RevisorController::class,'index'])->name('revisor.index');
-Route::patch('/accetta/annuncio/{ad}',[RevisorController::class,'acceptAd'])->name('revisor.accept_ad');
-Route::patch('/rifiuta/annuncio/{ad}',[RevisorController::class,'rejectAd'])->name('revisor.reject_ad');
+Route::get('/revisor/home',[RevisorController::class,'index'])->middleware('isRevisor')->name('revisor.index');
+Route::patch('/accetta/annuncio/{ad}',[RevisorController::class,'acceptAd'])->middleware('isRevisor')->name('revisor.accept_ad');
+Route::patch('/rifiuta/annuncio/{ad}',[RevisorController::class,'rejectAd'])->middleware('isRevisor')->name('revisor.reject_ad');
 
