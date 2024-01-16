@@ -52,7 +52,18 @@
                             <p class="ads_titale">{{ $ad->title }}</p>
 
                             <div class="ads_favorites">
-                                <livewire:extra.favorites :ad="$ad" />
+                                @if (App\Models\Favorite::where('ad_id', $ad->id)->where('user_id', auth()->user()->id)->exists())
+                                    <span wire:click="unlike({{$ad}})" class="d-flex"> <i
+                                            class="bi bi-heart-fill"></i>
+                                        <p>{{ $ad->favorites->count() }}</p>
+                                    </span>
+                                @else
+                                    {{-- @dd($ad) --}}
+                                    <span wire:click="liker({{$ad}})" class="d-flex"><i
+                                            class="bi bi-heart"></i>
+                                        <p>{{ $ad->favorites->count() }}</p>
+                                    </span>
+                                @endif
                             </div>
                         </div>
                         {{-- <x-ads-card :ad="$ad" /> --}}

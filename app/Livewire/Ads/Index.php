@@ -4,6 +4,7 @@ namespace App\Livewire\Ads;
 
 use App\Models\Ad;
 use App\Models\Category;
+use App\Models\Favorite;
 use Livewire\Component;
 
 
@@ -11,6 +12,10 @@ class Index extends Component
 {   
     
     public $ads;
+
+
+    public $favorite;
+
     public $bool = true;
 
     public function sortCategory(Category $category){
@@ -49,6 +54,29 @@ class Index extends Component
         
         
     }
+
+
+
+    public function unlike($ad){
+
+        $ads = Favorite::where('ad_id', $ad["id"])->where('user_id',auth()->user()->id)->get();
+
+        
+        
+        foreach ($ads as $ad) {
+        
+            $ad->delete();
+        };
+    }
+
+    public function liker($ad){
+        // dd($ad["id"]);
+        Favorite::create([
+            'user_id'=>auth()->user()->id,
+            'ad_id'=>$ad["id"]
+        ]);
+    }
+
 
     public function render()
     {   
