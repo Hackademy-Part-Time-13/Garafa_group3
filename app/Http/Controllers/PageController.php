@@ -32,7 +32,8 @@ public function adsByCat(Category $category){
 }
 
 public function searchAd(Request $request){
-    $ads = Ad::search($request->searched)->where('is_accepted', true);
+    
+    $ads = Ad::search($request->searched)->where('is_accepted', true)->get();
     return view('ads.index', compact('ads'));
 }
 
