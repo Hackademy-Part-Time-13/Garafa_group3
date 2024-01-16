@@ -28,7 +28,10 @@ body{
 form input{
     text-transform: none;
 }
-
+input:focus{
+    outline: none;
+    
+}
 
 ul{
     margin: 0px;

@@ -4,18 +4,18 @@
 
     <div class="form_container row">
         <div class="form_side col-4">
-            <p>Login</p>
+            <p>Presto.it</p>
         </div>
 
         <div class="col-8">
             <div class="form_fit">
               <h2>iscriviti a Presto.it</h2>
 
-              <div class="d-flex ">
+              <div class="d-flex form_icons">
                 {{-- logo google --}}
-                <i class="bi bi-google px-1"></i>
+                <a href="/auth/google"><i class="bi bi-google px-1"></i></a>
                 {{-- logo git hub --}}
-                <i class="bi bi-github px-1"></i>
+                <a href="/auth/github"><i class="bi bi-github px-1"></i></a>
 
               </div>
 
@@ -43,7 +43,7 @@
                         @enderror
                     </div>
 
-                    <button type="submit " class="form_submit_button mx-auto d-block">login</button>
+                    <button type="submit " class="form_submit_button mx-auto d-block">LOGIN</button>
                 </form>
             </div>
 
@@ -51,10 +51,6 @@
 
     </div>
 
-    <div>
-        <a href="/auth/github">login con github</a>
-        <a href="/auth/google">login con google</a>
-        {{-- <button >login con github</button> --}}
-    </div>
+    
 
 </x-main>
