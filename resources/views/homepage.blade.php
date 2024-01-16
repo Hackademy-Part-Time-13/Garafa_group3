@@ -2,7 +2,7 @@
     <x-header>
       <x-header-home-content/>
     </x-header>
-
+    
     {{-- scroll categorie --}}
     <div class="container ">
         <div class=" category_card_container">

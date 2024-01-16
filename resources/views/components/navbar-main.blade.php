@@ -75,7 +75,8 @@
                             <li>
                                 <a class="dropdown-item" href="{{route('user.auth.profile')}}">Il mio profilo</a>
                             </li>
-
+                            
+                            @if(auth()->user()->is_revisor)
                             <li>
                                 <a class="dropdown-item" href="{{route('revisor.index')}}">Zona revisore</a>
                                 <span class="position-absolute top-0 start-100 translate-niddle badge rounded-pill bg-danger" >
@@ -86,6 +87,7 @@
                                 </span>
 
                             </li>
+                            @endif
 
                             <li>
                                 <a class="dropdown-item" href="">Opzione 3</a>
