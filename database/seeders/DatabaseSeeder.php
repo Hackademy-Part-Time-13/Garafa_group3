@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Garafa',
             'email' => 'admin@example.it',
             'password' => Hash::make('abcd1234'),
+            'is_revisor' => true,
         ]);
 
         \App\Models\User::factory(10)->create();
@@ -57,7 +58,7 @@ class DatabaseSeeder extends Seeder
             ]);
 
             \App\Models\Category::create([
-                'name' => 'Animali',
+                'name' => 'Elettrodomestici',
             ]);
 
             \App\Models\Category::create([
