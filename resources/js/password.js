@@ -3,32 +3,42 @@ let show_password = document.getElementById('show_password');
 show_password.addEventListener('click', (e)=>{
 
     let password = document.getElementById('password');
-
-    password.setAttribute('type','text');
-
+    
     let eye = document.getElementById('eye');
 
-    eye.setAttribute('class','bi bi-eye-slash-fill');
+    if (eye.className == 'bi bi-eye-fill' ) {
 
-    show_password.setAttribute('id','hide_password');
+       password.setAttribute('type','text');
+       eye.setAttribute('class','bi bi-eye-slash-fill'); 
+       
+    }else{
 
-
-
-    
+        password.setAttribute('type','password');
+        eye.setAttribute('class','bi bi-eye-fill'); 
+        
+    }
+   
 });
 
-let hide_password = document.getElementById('hide_password');
 
+let Confirm_show_password = document.getElementById('Confirm_show_password');
 
-hide_password.addEventListener('click', (e)=>{
- console.log('bhi');
-    let password = document.getElementById('password');
+Confirm_show_password.addEventListener('click', (e)=>{
 
-    password.setAttribute('type','password');
+    let Confirm_password = document.getElementById('Confirm_password');
+    
+    let Confirm_eye = document.getElementById('Confirm_eye');
 
-    let eye = document.getElementById('eye');
+    if (Confirm_eye.className == 'bi bi-eye-fill' ) {
 
-    eye.setAttribute('class','bi bi-eye-fill');
+        Confirm_password.setAttribute('type','text');
+        Confirm_eye.setAttribute('class','bi bi-eye-slash-fill'); 
+       
+    }else{
 
-    show_password.setAttribute('id','hide_password');
+        Confirm_password.setAttribute('type','password');
+        Confirm_eye.setAttribute('class','bi bi-eye-fill'); 
+        
+    }
+   
 });

@@ -1,35 +1,73 @@
 <x-main>
-  <x-header/>
-    <form  action="/register" method="POST">
-        @csrf
-        <div class="mb-3">
-
-            
-            <label  class="form-label">Username</label>
-            <input type="text" name="name" class="form-control"value="{{old('name')}}"
-            @error('name') {{$message}} @enderror  >
-            
-          </div>
-
-        <div class="mb-3">
+    <x-header />
 
 
-          <label  class="form-label">Email </label>
-          <input type="email" name="email" class="form-control" value="{{old('email')}}" aria-describedby="emailHelp">
-          @error('email') {{$message}} @enderror
+
+
+
+    <div class="form_container row">
+        <div class="form_side col-4">
+            <p>Presto.it</p>
         </div>
-        <div class="mb-3">
-          <label  class="form-label">Password</label>
-          <input type="password" name="password" class="form-control" >
-          @error('password') {{$message}} @enderror
+
+        <div class="col-8">
+            <div class="form_fit">
+                <h2>registrati a Presto.it</h2>
+
+                <div class="d-flex form_icons">
+                    {{-- logo google --}}
+                    <a href="/auth/google"><i class="bi bi-google px-1"></i></a>
+                    {{-- logo git hub --}}
+                    <a href="/auth/github"><i class="bi bi-github px-1"></i></a>
+
+                </div>
+
+                <form class="login_form " action="/register" method="POST">
+                    @csrf
+                    <div class="mb-3">
+
+
+                        <input type="text" name="name" placeholder="Username"
+                            value="{{ old('name') }}" @error('name') {{ $message }} @enderror>
+
+                    </div>
+
+                    <div class="mb-3">
+
+
+                        <input type="email" name="email" placeholder="Email"
+                            value="{{ old('email') }}" aria-describedby="emailHelp">
+                        @error('email')
+                            {{ $message }}
+                        @enderror
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="password" id="password" name="password" placeholder="Password">
+
+                        <button type="button" id="show_password">
+                          <i id="eye" class="bi bi-eye-fill"></i>
+                        </button>
+                        @error('password')
+                            {{ $message }}
+                        @enderror
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="password" id="Confirm_password" name="password_confirmation" placeholder="Confirm Password">
+
+                        <button type="button" id="Confirm_show_password">
+                          <i id="Confirm_eye" class="bi bi-eye-fill"></i>
+                        </button>
+                    </div>
+
+                    <button type="submit " class="form_submit_button mx-auto d-block">REGISTRATI</button>
+                </form>
+            </div>
+
         </div>
-        <div class="mb-3">
-            <label  class="form-label">Confirm Password</label>
-            <input type="password" name="password_confirmation" class="form-control" >
-          </div>
-       
-        <button type="submit" class="btn btn-primary">Register</button>
-      </form>
+
+    </div>
 
 
 </x-main>
