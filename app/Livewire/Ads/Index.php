@@ -53,7 +53,7 @@ class Index extends Component
     public function render()
     {   
         if($this->bool){
-            $this->ads = Ad::all();
+            $this->ads = Ad::where('is_accepted', true)->get();
         }
         return view('livewire.ads.index');
     }
