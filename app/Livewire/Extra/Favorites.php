@@ -25,7 +25,6 @@ class Favorites extends Component
 
     public function liker(){
 
-        dd($this->ad);
         Favorite::create([
             'user_id'=>auth()->user()->id,
             'ad_id'=>$this->ad->id

@@ -5,6 +5,6 @@
 
     <form class="header_form" action="{{route('ad.searched')}}">
         <input type="text" name="searched">
-        <button type="submit">search</button>
+        <button type="submit">Cerca</button>
     </form>
 </div>
