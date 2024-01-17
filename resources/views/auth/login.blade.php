@@ -44,6 +44,7 @@
                     </div>
 
                     <button type="submit " class="form_submit_button mx-auto d-block">LOGIN</button>
+                    <button type="submit " class="form_forgot_button mx-auto d-block" style="background-color: var(--white)"><a href="/forgot-password">PASSWORD DIMENTICATA</a></button>
                 </form>
             </div>
 

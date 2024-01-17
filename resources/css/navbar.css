@@ -30,18 +30,19 @@
 .navbar_component li:hover{
     background-color: var(--lite-red);
     color: white;
-}
+    transition: background-color 0.3s ease, color 0.3s ease;}
 
 ul li:hover{
     background-color: var(--lite-red);
     color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 
 .dropdown-item:hover{
     background-color: var(--lite-red);
     color: white;
-}
+    transition: background-color 0.3s ease, color 0.3s ease;}
 
 .navbar_home_button{
     background-color: var(--lite-red) !important;

@@ -4,23 +4,23 @@
     height: 600px;
     width: 60%;
     margin: 100px auto;
-
+    overflow: hidden;
     background-color: var(--white);
 
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
 }
 
 .form_side{
     background-color: var(--full-red);
-    border-radius: 20px 0px 0px 20px;
+    /* border-radius: 20px 0px 0px 20px; */
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     
     display: flex;
     justify-content: center;
     align-items: center;
-
-
+    background: linear-gradient(90deg, rgba(216,74,5,1) 18%, rgba(236,117,5,1) 66%);
 }
 .form_side p {
     font-size: x-large;
@@ -109,4 +109,18 @@
 .form_submit_button:hover{
     background-color: var(--white);
     color: var(--full-red);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+.form_forgot_button{
+    margin: 0 50%;
+    margin-top: 35% !important;
+    padding: 10px 20px !important;
+}
+
+.form_forgot_button:hover{
+    background-color: var(--goald) !important;
+    color: var(--full-red) !important;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
