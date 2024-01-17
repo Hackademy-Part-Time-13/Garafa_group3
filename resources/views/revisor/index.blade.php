@@ -1,5 +1,32 @@
 <x-main>
     <div class="container">
+      @if (session('status'))
+      <div class="ms-auto me-auto text-center col-6 my-2 alert alert-success">
+          {{ session('status') }}
+      </div>
+
+      @elseif (session('message'))
+      <div class="ms-auto me-auto text-center col-6 my-2 alert alert-success">
+          {{ session('message') }}
+      </div>
+  
+      @elseif (session()->has('success'))
+      <div class="ms-auto me-auto text-center col-6 my-2 alert alert-success">
+          {{session('success')}}
+      </div>
+  
+      @elseif ($errors->any())
+          @foreach ($errors->all() as $error) 
+          <div class="ms-auto me-auto text-center col-6 my-2 alert alert-danger">
+              <li>{{$error}}</li>
+          </div>
+          @endforeach            
+  
+      @elseif (session('error'))
+      <div class="ms-auto me-auto text-center col-6 my-2 alert alert-danger">
+          {{ session('error') }}
+      </div>
+      @endif
         <div class="row">
             <div class="col-12">
                 <h1>
