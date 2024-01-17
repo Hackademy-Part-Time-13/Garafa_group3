@@ -1,77 +1,70 @@
 <div class="">
 
-    {{-- bottoni sort --}}
+    <div class="container">
 
-    <div class="index_sort">
-        <div class="index_sort_box">
-            <ul class="conatainer index_sort_ul">
+        <div class="index_sort">
+            <div class="index_sort_box mt-5">
+                <form class="header_form" action="{{route('ad.searched')}}">
+                    <input type="text" name="searched">
+                    <button type="submit">Cerca</button>
+                </form>
+            </div>
+        </div>
 
-                <li wire:click="sortNEW">new/old</li>
-
-                <li wire:click="sortOLD">old/new</li>
-
-                <li wire:click="expensiveToCheap">expensive/cheap</li>
-
-                <li wire:click="cheapToExpensive">cheap/expensive</li>
-
-                <li class="nav-item dropdown ">
-
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        category
-                    </a>
-                    <ul class="dropdown-menu index_sort_ul_category">
-                        @foreach (App\Models\category::all() as $category)
-                            <li><a wire:click="sortCategory({{ $category }})"
-                                    class="dropdown-item">{{ $category->name }}</a></li>
-                        @endforeach
-                    </ul>
-
-                </li>
-
-
-            </ul>
+    {{-- BOTTONI SORT --}}
+    <div class="container mt-3 mb-3">
+        <div class="d-flex justify-content-end">
+            <div class="col-auto">
+                <select wire:model.change="$sortSelect" class="form-select">
+                    <option selected value="noSorted">Nessun ordine</option>
+                    <option value="newest">Dal più recente</option>
+                    <option value="oldest">Dal meno recente</option>
+                    <option value="cheapest">Dal più economico</option>
+                    <option value="mostExpensive">Dal più caro</option>
+                </select>
+            </div>
         </div>
     </div>
-    {{-- fine bottoni sort --}}
+    
+    </div>
 
-    {{-- indec dei annunci --}}
+
+    {{-- INDEX ANNUNCI --}}
     <div class="index_back">
         <div class="index_box">
             <div class="row g-5 px-3">
 
-                @foreach ($ads as $ad)
-                    <div class="col-4 d-flex justify-content-center">
+            @foreach ($ads as $ad)
 
-                        <div class="ads_container ">
-                            <img class="ads_img_container" src="https://picsum.photos/400/400" alt="">
+            <div class="col-4 d-flex justify-content-center">
+                <div class="ads_container ">
 
+                    <img class="ads_img_container" src="https://picsum.photos/400/400" alt="">
 
-                            <span class="ads_dettaglio_batton"><a href="{{ route('ad.show', $ad->id) }}">vista
-                                    dettaglio</a></span>
-                            <p class="ads_titale">{{ $ad->title }}</p>
+                    <span class="ads_dettaglio_batton"><a href="{{ route('ad.show', $ad->id) }}">vista dettaglio</a></span>
+                    <p class="ads_titale">{{ $ad->title }}</p>
 
-                            <div class="ads_favorites">
-                                @if (App\Models\Favorite::where('ad_id', $ad->id)->where('user_id', auth()->user()->id)->exists())
-                                    <span wire:click="unlike({{$ad}})" class="d-flex"> <i
-                                            class="bi bi-heart-fill"></i>
-                                        <p>{{ $ad->favorites->count() }}</p>
-                                    </span>
-                                @else
-                                    {{-- @dd($ad) --}}
-                                    <span wire:click="liker({{$ad}})" class="d-flex"><i
-                                            class="bi bi-heart"></i>
-                                        <p>{{ $ad->favorites->count() }}</p>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                        {{-- <x-ads-card :ad="$ad" /> --}}
+                    <div class="ads_favorites">
+
+                    @if (App\Models\Favorite::where('ad_id', $ad->id)->where('user_id', auth()->user()->id)->exists())
+                        <span wire:click="unlike({{$ad}})" class="d-flex"> <i class="bi bi-heart-fill"></i>
+                            <p>{{ $ad->favorites->count() }}</p>
+                        </span>
+
+                    @else
+                        <span wire:click="liker({{$ad}})" class="d-flex"><i class="bi bi-heart"></i>
+                            <p>{{ $ad->favorites->count() }}</p>
+                        </span>
+                    @endif
+
                     </div>
-                @endforeach
+                </div>
+            </div>
+
+            @endforeach
+
             </div>
         </div>
     </div>
-    {{-- indec dei annunci --}}
 
 </div>

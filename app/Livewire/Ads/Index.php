@@ -11,66 +11,58 @@ use Livewire\Component;
 class Index extends Component
 {   
     
+    public $sortSelect;
     public $ads;
+    public $title;
+    public $searched;
+    public $category_id;
 
+    public function applySort()
+    {
+        if ($this->sortSelect === 'noSorted') {
+            $this->render();
 
-    public $favorite;
+        } elseif ($this->sortSelect === 'newest') {
+            $this->newest();
 
-    public $bool = true;
+        } elseif ($this->sortSelect === 'oldest') {
+            $this->oldest();
 
-    public function sortCategory(Category $category){
-        // dd($category->id);
-        $this->ads = Ad::where('category_id', $category->id)->get();   
-        $this->bool = false;
+        } elseif ($this->sortSelect === 'cheapest') {
+            $this->cheapest();
+
+        } elseif ($this->sortSelect === 'mostExpensive') {
+            $this->mostExpensive();
+        }
     }
 
-    
-    public function sortNEW(){
-        
-        $this->ads = Ad::orderBy('id','DESC')->get();
-        $this->bool = false;
-        
-        
+    public function newest(){   
+        $this->ads = Ad::orderBy('id','DESC')->get();     
     }
     
-    public function sortOLD(){
-        
+    public function oldest(){
         $this->ads = Ad::all();
-        $this->bool = false;
     }
     
-    public function expensiveToCheap(){
-        
-        $this->ads = Ad::orderBy('price','DESC')->get();
-        $this->bool = false;
-        
-        
+    public function cheapest(){
+        $this->ads = Ad::orderBy('price','DESC')->get(); 
     }
 
-    public function cheapToExpensive(){
-        
+    public function mostExpensive(){
         $this->ads = Ad::orderBy('price')->get();
-        $this->bool = false;
-        
-        
     }
 
 
+    // PREFERITI
 
     public function unlike($ad){
-
         $ads = Favorite::where('ad_id', $ad["id"])->where('user_id',auth()->user()->id)->get();
-
-        
-        
-        foreach ($ads as $ad) {
-        
-            $ad->delete();
-        };
+            foreach ($ads as $ad) {
+                $ad->delete();
+            };
     }
 
     public function liker($ad){
-        // dd($ad["id"]);
         Favorite::create([
             'user_id'=>auth()->user()->id,
             'ad_id'=>$ad["id"]
@@ -78,11 +70,22 @@ class Index extends Component
     }
 
 
-    public function render()
-    {   
-        if($this->bool){
+
+    public function render(){   
+    
+    if ($this->title == "Sfoglia annunci") {
             $this->ads = Ad::where('is_accepted', true)->get();
-        }
-        return view('livewire.ads.index');
+            return view('livewire.ads.index');
+
+    } elseif ($this->title == "Annunci per categoria") {
+            $this->ads = Ad::where('is_accepted', true)
+            ->where('category_id', $this->category_id)->get();
+            return view('livewire.ads.index');
+
+    } elseif ($this->title == "Risultati ricerca") {
+            $this->ads = Ad::search($this->searched)->where('is_accepted', true)->get();
+            return view('livewire.ads.index');
     }
+
+    } 
 }
