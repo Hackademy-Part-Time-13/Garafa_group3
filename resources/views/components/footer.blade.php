@@ -66,13 +66,14 @@
                 <a class="text-dark" href="/">Presto.it</a>
               </div>
               <!-- Copyright -->
+
               <div class="container">
                 <div class="row">
                   <div class="col-12 col-md-6">
-                      <p>Prsto.it</p>
+                      <p>Presto.it</p>
                       <p>Vuoi lavorare con noi?</p>
                       <p>Registrati e clicca qui</p>
-                      <a href="{{route('become.revisor')}}">Diventa revisore</a>
+                      <p><a href="{{route('become.revisor')}}">Diventa revisore</a></p>
 
                   </div>
                 </div>

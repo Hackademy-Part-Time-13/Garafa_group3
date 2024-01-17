@@ -3,14 +3,10 @@
 Sezione profilo:
     - Inserire un dropdown per il profilo utente (nome, foto, articoli pubblicati, etc)
 
-Login google:
-    - Permettere login con Google e GitHub (done!!!)
-
-Aggiunta likes:
-    - Possibilità di mettere like, selezionare preferiti, etc (done!!!)
 
 Invio mail feedback:
     - Impostare invio automatico di mail per reminder del feedback
+
 
 
 <!-- EXTRAS DEGLI EXTRAS -->
@@ -20,3 +16,16 @@ Valutazione utente:
 
 Aggiungere commenti:
     - Commenti/recensioni
+
+Aggiugere messaggistica:
+    - Direct messages (chatify)
+
+
+
+<!-- EXTRAS COMPLETATI -->
+
+Login google:
+    - Permettere login con Google e GitHub (done!!!)
+
+Aggiunta likes:
+    - Possibilità di mettere like, selezionare preferiti, etc (done!!!)
