@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -20,6 +21,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@example.it',
             'password' => Hash::make('abcd1234'),
             'is_revisor' => true,
+            'email_verified_at' => now()
         ]);
 
         \App\Models\User::factory(20)->create();
