@@ -1,15 +1,18 @@
-.container_box_profile{
-  
-   
-    justify-content: center;
-    text-align: center;
-    
+
+.container_profile{
+      margin: 0;
+    display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 75vh;
+ 
 }
 
-.profile_box_user{
-    height: 400px;
-    width: 600px;
-   
-   
+.image_profile{
+  height: 300px;
+  width: 300px;
+  overflow: hidden;
+   border-radius: 50%;
 
+   
 }
