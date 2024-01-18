@@ -28,10 +28,37 @@ class RevisorController extends Controller
    }
 
    public function becomeRevisor(){
-      $user=auth()->user();
-      Mail::to('admin@presto.it')->send(new BecomeRevisor($user));
-   
-      return redirect()->route('home')->with('message','Complimenti! Hai richiesto di diventare revisore correttamente');
+
+      $message = 'Quick application';
+
+      if (auth()->user()->is_revisor) {
+         return redirect()->back()->with('error','Attenzione! Sei già revisore!');
+      } else {
+         Mail::to('admin@presto.it')->send(new BecomeRevisor(auth()->user(), $message));
+         return redirect()->route('home')->with('message','Complimenti! Hai richiesto di diventare revisore correttamente');
+      }
+   }
+
+   public function workWithUs() {
+      return view('revisor.workwithus');
+   }
+
+   public function revisorApplication(Request $request) {
+
+      $request->validate([
+         'email' => 'required|exists:users,email',
+         'description' => 'required|min:5|max:1000'
+      ]);
+
+      $message = $request->description;
+      
+      
+      if (auth()->user()->is_revisor) {
+         return redirect()->back()->with('error','Attenzione! Sei già revisore!');
+      } else {
+         Mail::to('admin@presto.it')->send(new BecomeRevisor(auth()->user(), $request->description));
+         return redirect()->route('home')->with('message','Complimenti! Hai richiesto di diventare revisore correttamente');
+      }
 
    }
 
