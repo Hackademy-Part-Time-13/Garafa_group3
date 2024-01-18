@@ -20,7 +20,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(90deg, rgba(216,74,5,1) 18%, rgba(236,117,5,1) 66%);
+    background: var(--full-red);
 }
 .form_side p {
     font-size: x-large;
@@ -115,12 +115,18 @@
 
 .form_forgot_button{
     margin: 0 50%;
-    margin-top: 35% !important;
+    margin-top: 30% !important;
     padding: 10px 20px !important;
 }
 
-.form_forgot_button:hover{
-    background-color: var(--goald) !important;
-    color: var(--full-red) !important;
-    transition: background-color 0.5s ease, color 0.5s ease;
+.login_form .form_forgot_button:hover{
+    background-color: var(--lite-red) !important;
+    color: var(--white) !important;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
+
+.login_form .form_forgot_button{
+    color: black
+}
+
+
