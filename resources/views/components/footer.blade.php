@@ -71,7 +71,7 @@
                 <div class="row">
                   <div class="col-12 col-md-6">
                       <p>Presto.it</p>
-                      <p>Vuoi lavorare con noi?</p>
+                      <p><a href="{{route('work.with.us')}}">Lavora con noi</a></p>
                       <p>Registrati e clicca qui</p>
                       <p><a href="{{route('become.revisor')}}">Diventa revisore</a></p>
 
