@@ -3,7 +3,6 @@
     position: fixed;
     z-index: 10;
     width: 100%;
-
     display: flex;
     justify-content: space-around;
 }
@@ -30,19 +29,21 @@
 .navbar_component li:hover{
     background-color: var(--lite-red);
     color: white;
-    transition: background-color 0.3s ease, color 0.3s ease;}
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
 
 ul li:hover{
     background-color: var(--lite-red);
     color: white;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 
 .dropdown-item:hover{
     background-color: var(--lite-red);
     color: white;
-    transition: background-color 0.3s ease, color 0.3s ease;}
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
 
 .navbar_home_button{
     background-color: var(--lite-red) !important;
@@ -58,6 +59,12 @@ ul li:hover{
 
 .carent_root{
     background-color: var(--lite-red);
+}
+
+.badge_revisor {
+    position: absolute;
+    top: 3%;
+    left: 85%;
 }
 
 
