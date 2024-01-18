@@ -1,5 +1,5 @@
 <x-main>
-
+    <x-secondary-header/>
     {{-- ANNUNCI CERCATI --}}
     @if(Illuminate\Support\Facades\Route::currentRouteName() == 'ad.searched')
 

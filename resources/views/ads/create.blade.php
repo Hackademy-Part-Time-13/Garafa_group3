@@ -1,5 +1,6 @@
 <x-main>
-    <x-header/>
+    <x-secondary-header/>
+    {{-- <x-header/> --}}
     
     <livewire:ads.create />
     

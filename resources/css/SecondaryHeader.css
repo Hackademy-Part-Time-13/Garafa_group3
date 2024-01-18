@@ -1,0 +1,17 @@
+.Secondary_H{
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--secondary-white);
+}
+
+.secondary_bottom{
+    position: relative;
+    top: 170px;
+
+    border-radius: 20px 20px 0px 0px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    background-color: var(--white);
+    height: 30px;
+}
