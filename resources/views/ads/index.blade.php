@@ -3,27 +3,25 @@
     {{-- ANNUNCI CERCATI --}}
     @if(Illuminate\Support\Facades\Route::currentRouteName() == 'ad.searched')
 
-                @if($ads->isEmpty()) {{-- NESSUN RISULTATO --}}
+        @if($ads->isEmpty()) {{-- NESSUN RISULTATO --}}
                     Nessun annuncio trovato. Prova ancora.
 
-                @else {{-- RISULTATI RICERCA --}}
-                    <livewire:ads.index :searched="$request->searched"
-                    title="Risultati ricerca"/>
-
-                @endif
+        @else {{-- RISULTATI RICERCA --}}
+            <livewire:ads.indexSearch :searched="$request->searched"
+            title="Risultati ricerca"/>
+        @endif
 
 
     {{-- ANNUNCI PER CATEGORIA --}}
     @elseif(Illuminate\Support\Facades\Route::currentRouteName() == 'adsByCat')
 
-    <livewire:ads.index :category_id="$category->id"
-    title="Annunci per categoria"/>
+    <livewire:ads.indexCategory :category_id="$category->id"/>
 
     
     {{-- TUTTI GLI ANNUNCI --}}
 
     @else 
-        <livewire:ads.index title="Sfoglia annunci"/>
+    <livewire:ads.indexAll title="Sfoglia annunci"/>
     @endif
 
 </x-main>

@@ -15,7 +15,7 @@
         <div class="container mt-3 mb-3">
             <div class="d-flex justify-content-end">
                 <div class="col-auto">
-                    <select wire:model.change="$sortSelect" class="form-select">
+                    <select wire:model.change="sortSelect" class="form-select" wire:change="applySort">
                         <option selected value="noSorted">Nessun ordine</option>
                         <option value="newest">Dal più recente</option>
                         <option value="oldest">Dal meno recente</option>

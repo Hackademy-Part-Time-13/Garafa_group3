@@ -8,49 +8,62 @@ use App\Models\Favorite;
 use Livewire\Component;
 
 
-class Index extends Component
+class IndexCategory extends Component
 {   
     
     public $sortSelect;
     public $ads;
     public $title;
-    public $searched;
     public $category_id;
+    public $bool = true;
 
     public function applySort()
     {
         if ($this->sortSelect === 'noSorted') {
+            $this->bool = true;
             $this->render();
 
         } elseif ($this->sortSelect === 'newest') {
+            $this->bool = false;
             $this->newest();
 
         } elseif ($this->sortSelect === 'oldest') {
+            $this->bool = false;
             $this->oldest();
 
         } elseif ($this->sortSelect === 'cheapest') {
+            $this->bool = false;
             $this->cheapest();
 
         } elseif ($this->sortSelect === 'mostExpensive') {
+            $this->bool = false;
             $this->mostExpensive();
         }
     }
 
     public function newest(){   
-        $this->ads = Ad::orderBy('id','DESC')->get();     
+        $this->ads = Ad::where('is_accepted', true)
+        ->where('category_id', $this->category_id)
+        ->orderBy('id','DESC')->get();     
     }
     
     public function oldest(){
-        $this->ads = Ad::all();
+        $this->ads = Ad::where('is_accepted', true)
+        ->where('category_id', $this->category_id)->get();
     }
     
     public function cheapest(){
-        $this->ads = Ad::orderBy('price','DESC')->get(); 
+        $this->ads = Ad::where('is_accepted', true)
+        ->where('category_id', $this->category_id)
+        ->orderBy('price','ASC')->get(); 
     }
 
     public function mostExpensive(){
-        $this->ads = Ad::orderBy('price')->get();
+        $this->ads = Ad::where('is_accepted', true)
+        ->where('category_id', $this->category_id)
+        ->orderBy('price', 'DESC')->get();
     }
+
 
 
     // PREFERITI
@@ -72,19 +85,13 @@ class Index extends Component
 
 
     public function render(){   
-    
-    if ($this->title == "Sfoglia annunci") {
-            $this->ads = Ad::where('is_accepted', true)->get();
-            return view('livewire.ads.index');
 
-    } elseif ($this->title == "Annunci per categoria") {
-            $this->ads = Ad::where('is_accepted', true)
-            ->where('category_id', $this->category_id)->get();
-            return view('livewire.ads.index');
-
-    } elseif ($this->title == "Risultati ricerca") {
-            $this->ads = Ad::search($this->searched)->where('is_accepted', true)->get();
-            return view('livewire.ads.index');
+    if ($this->bool) {
+        $this->ads = Ad::where('is_accepted', true)
+        ->where('category_id', $this->category_id)->get();
+        return view('livewire.ads.indexCategory');
+    } else {
+        return view('livewire.ads.indexCategory');
     }
 
     } 
