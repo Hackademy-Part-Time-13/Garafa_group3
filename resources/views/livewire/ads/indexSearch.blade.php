@@ -4,15 +4,27 @@
 
         <div class="index_sort">
             <div class="index_sort_box mt-5">
-                <form class="header_form" action="{{ route('ad.searched') }}">
+                <form class=" index_sort_form" action="{{ route('ad.searched') }}">
                     <input type="text" name="searched">
                     <button type="submit">Cerca</button>
                 </form>
+
+                {{-- BOTTONI SORT --}}
+
+                <div class="index_sort_select">
+                    <select wire:model.change="sortSelect"  wire:change="applySort">
+                        <option selected value="noSorted">Nessun ordine</option>
+                        <option value="newest">Dal più recente</option>
+                        <option value="oldest">Dal meno recente</option>
+                        <option value="cheapest">Dal più economico</option>
+                        <option value="mostExpensive">Dal più caro</option>
+                    </select>
+                </div>
             </div>
         </div>
 
         {{-- BOTTONI SORT --}}
-        <div class="container mt-3 mb-3">
+        {{-- <div class="container mt-3 mb-3">
             <div class="d-flex justify-content-end">
                 <div class="col-auto">
                     <select wire:model.change="sortSelect" class="form-select" wire:change="applySort">
@@ -24,7 +36,7 @@
                     </select>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
     </div>
 

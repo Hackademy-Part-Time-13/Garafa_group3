@@ -4,15 +4,44 @@
 
         <div class="index_sort">
             <div class="index_sort_box mt-5">
-                <form class="header_form" action="{{ route('ad.searched') }}">
+
+                <form class=" index_sort_form" action="{{ route('ad.searched') }}">
                     <input type="text" name="searched">
                     <button type="submit">Cerca</button>
                 </form>
+
+                {{-- BOTTONI SORT --}}
+
+                <div class="index_sort_select">
+                    <div class="">
+                        <select wire:model.change="sortSelect" wire:change="applySort">
+                            <option selected value="noSorted">Nessun ordine</option>
+                            <option value="newest">Dal più recente</option>
+                            <option value="oldest">Dal meno recente</option>
+                            <option value="cheapest">Dal più economico</option>
+                            <option value="mostExpensive">Dal più caro</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <select wire:model.change="sortSelect" wire:change="applySort">
+                            <option selected value="noSorted">Category</option>
+                            @foreach(App\Models\Category::all() as $category)
+                            <option selected value="noSorted">{{$category->name}}</option>
+                            @endforeach
+                            
+                        </select>
+                    </div>
+
+                </div>
+
+
+
             </div>
         </div>
 
         {{-- BOTTONI SORT --}}
-        <div class="container mt-3 mb-3">
+        {{-- <div class="container mt-3 mb-3">
             <div class="d-flex justify-content-end">
                 <div class="col-auto">
                     <select wire:model.change="sortSelect" class="form-select" wire:change="applySort">
@@ -24,7 +53,7 @@
                     </select>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
     </div>
 
@@ -43,7 +72,7 @@
                             <span class="ads_dettaglio_batton"><a href="{{ route('ad.show', $ad->id) }}">vista
                                     dettaglio</a></span>
 
-                            <div class="ads_content"> 
+                            <div class="ads_content">
                                 <div class="ads_text_box">
                                     <p class="ads_titale ads_price">{{ $ad->price }} £</p>
                                     <p class="ads_titale">{{ $ad->title }}</p>
@@ -54,13 +83,13 @@
                                 <div class="ads_favorites">
 
                                     @if (App\Models\Favorite::where('ad_id', $ad->id)->where('user_id', auth()->user()->id)->exists())
-                                        <span wire:click="unlike({{ $ad }})" class="d-flex ads_favorites_flex"> <i
-                                                class="bi bi-heart-fill"></i>
+                                        <span wire:click="unlike({{ $ad }})"
+                                            class="d-flex ads_favorites_flex"> <i class="bi bi-heart-fill"></i>
                                             <p>{{ $ad->favorites->count() }}</p>
                                         </span>
                                     @else
-                                        <span wire:click="liker({{ $ad }})" class="d-flex ads_favorites_flex"><i
-                                                class="bi bi-heart"></i>
+                                        <span wire:click="liker({{ $ad }})"
+                                            class="d-flex ads_favorites_flex"><i class="bi bi-heart"></i>
                                             <p>{{ $ad->favorites->count() }}</p>
                                         </span>
                                     @endif

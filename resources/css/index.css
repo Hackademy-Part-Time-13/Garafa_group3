@@ -4,9 +4,16 @@
     justify-content: center;
 }
 
+
+
+
 .index_sort_box {
     height: 100%;
     width: 70%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     background-color: var(--white);
 
@@ -21,6 +28,79 @@
 
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
+
+.index_sort_form{
+    display: flex;
+
+    background-color: var(--white);
+    width: 90%;
+    margin: 20px;
+    
+
+    
+    border-style: solid;
+    border-color: var(--lite-red);
+    border-width: 2px;
+    border-radius: 20px;
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.index_sort_form input{
+    background-color: var(--white);
+    width: 100%;
+    padding: 5px;
+    
+    border-style: none;
+    border-color: var(--lite-red);
+    
+    border-radius: 20px;
+}
+.index_sort_form button{
+
+    background-color: var(--lite-red);
+    padding: 10px;
+    margin: 5px;
+
+    color: var(--white);
+
+    border-style: none;
+    border-radius: 20px;
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.index_sort_form button:hover{
+    background-color: var(--white);
+    color: var(--lite-red);
+}
+
+
+
+.index_sort_select{
+    width: 50%;
+
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.index_sort_select select{
+    width: 100%;
+    padding: 5px 10px;
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    border-style: solid;
+    border-color: var(--lite-red);
+    border-width: 2px;
+    border-radius: 20px;
+}
+
+
+
+
+
+
 
 .index_sort_ul{
     height: 100%;
