@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->boolean('is_revisor')->default(false)->after('email');
+            $table->boolean('is_applied')->default(false)->after('is_revisor');
         });
     }
 
@@ -22,7 +22,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('is_revisor');
+            $table->dropColumn('is_applied');
         });
     }
 };

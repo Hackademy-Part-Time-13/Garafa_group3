@@ -27,18 +27,26 @@ class RevisorController extends Controller
     return redirect()->back()->with('message', 'Complimenti, hai rifiutato l\'annuncio');
    }
 
+
+   // QUICK LINK DIVENTA REVISORE
    public function becomeRevisor(){
 
-      $message = 'Quick application';
-
+      $message = 'Sistem message: Quick application';
+      $user=auth()->user();
+      
       if (auth()->user()->is_revisor) {
          return redirect()->back()->with('error','Attenzione! Sei già revisore!');
+      } elseif (auth()->user()->is_applied) {
+         return redirect()->back()->with('error','La tua richiesta è in stato di valutazione');
       } else {
-         Mail::to('admin@presto.it')->send(new BecomeRevisor(auth()->user(), $message));
+         Mail::to('admin@presto.it')->send(new BecomeRevisor(auth()->user(), $message));      
+         $user->update(['is_applied'=>true,]);
          return redirect()->route('home')->with('message','Complimenti! Hai richiesto di diventare revisore correttamente');
       }
    }
 
+
+   // FORM PER DIVENTARE REVISORE
    public function workWithUs() {
       return view('revisor.workwithus');
    }
@@ -50,16 +58,17 @@ class RevisorController extends Controller
          'description' => 'required|min:5|max:1000'
       ]);
 
-      $message = $request->description;
-      
+      $user=auth()->user();
       
       if (auth()->user()->is_revisor) {
          return redirect()->back()->with('error','Attenzione! Sei già revisore!');
+      } elseif (auth()->user()->is_applied) {
+         return redirect()->back()->with('error','La tua richiesta è in stato di valutazione');
       } else {
          Mail::to('admin@presto.it')->send(new BecomeRevisor(auth()->user(), $request->description));
+         $user->update(['is_applied'=>true,]);
          return redirect()->route('home')->with('message','Complimenti! Hai richiesto di diventare revisore correttamente');
       }
-
    }
 
    public function makeRevisor(User $user){
