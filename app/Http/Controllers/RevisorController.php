@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Mail\BecomeRevisor;
 use App\Models\Ad;
+use Illuminate\Foundation\Auth\User as AuthUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
@@ -32,7 +33,7 @@ class RevisorController extends Controller
    public function becomeRevisor(){
 
       $message = 'Sistem message: Quick application';
-      $user=auth()->user();
+      $user= User::where('id',auth()->user()->id);
       
       if (auth()->user()->is_revisor) {
          return redirect()->back()->with('error','Attenzione! Sei già revisore!');
@@ -58,7 +59,7 @@ class RevisorController extends Controller
          'description' => 'required|min:5|max:1000'
       ]);
 
-      $user=auth()->user();
+      $user= User::where('id',auth()->user()->id);
       
       if (auth()->user()->is_revisor) {
          return redirect()->back()->with('error','Attenzione! Sei già revisore!');
