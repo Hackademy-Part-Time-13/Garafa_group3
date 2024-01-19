@@ -30,7 +30,7 @@
             <i class="bi bi-car-front "></i>    
                 @break
             @case(9)
-            <i class="bi bi-car-front "></i>    
+            <i class="bi bi-bicycle"></i>   
                 @break
             @case(10)
             <i class="bi bi-car-front "></i>    

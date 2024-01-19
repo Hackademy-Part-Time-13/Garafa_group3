@@ -14,8 +14,9 @@ use Illuminate\Support\Facades\Mail;
 class RevisorController extends Controller
 {
    public function index(){
-    $ad_to_check = Ad::where('is_accepted', null)->first();
-    return view('revisor.index', compact('ad_to_check'));
+    $ads_to_check = Ad::where('is_accepted', null)
+    ->where('user_id', '!=', auth()->user()->id)->get();
+    return view('revisor.index', compact('ads_to_check'));
    }
 
    public function acceptAd(Ad $ad){

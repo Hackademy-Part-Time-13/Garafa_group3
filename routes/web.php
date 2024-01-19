@@ -20,7 +20,7 @@ use App\Http\Controllers\UserController;
 Route::get('/', [PageController::class, 'home'])->name('home');
 
 //ADS
-Route::get('/createAd', [PageController::class, 'createAd'])->middleware(['auth'])->name('ad.create');
+Route::get('/createAd', [PageController::class, 'createAd'])->middleware(['auth', 'verified'])->name('ad.create');
 Route::get('/ads', [PageController::class, 'indexAd'])->name('ads.index');
 Route::get('/ad/{ad}', [PageController::class, 'showAd'])->name('ad.show');
 Route::get('/adsByCategory/{category}', [PageController::class, 'adsByCat'])->name('adsByCat');
@@ -37,7 +37,7 @@ Route::get('/auth/google',[SocialiteController::class,'redirectToGoogle']);
 Route::get('/auth/google/callback',[SocialiteController::class,'handleGoogleCallback']);
 
 //PAGINA PROFILO
-Route::get('/auth/profile',[UserController::class, 'profile'])->middleware(['auth'])->name('user.auth.profile');
+Route::get('/auth/profile',[UserController::class, 'profile'])->middleware(['auth', 'verified'])->name('user.auth.profile');
 
 //HOME REVISORE/ACCETTA E RIFIUTA ANNUNCIO
 Route::middleware('isRevisor')->group(function() {
@@ -47,7 +47,7 @@ Route::middleware('isRevisor')->group(function() {
 });
 
 // RICHIEDI PER DIVENTARE REVISORE
-Route::middleware('auth')->group(function() {
+Route::middleware('auth', 'verified')->group(function() {
 Route::get('/richiesta/revisore',[RevisorController::class,'becomeRevisor'])->name('become.revisor');
 Route::get('/workWithUs', [RevisorController::class,'workWithUs'])->name('work.with.us');
 Route::post('/revisorApplication', [RevisorController::class,'revisorApplication'])->name('revisor.application');
