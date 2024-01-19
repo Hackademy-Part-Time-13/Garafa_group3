@@ -10,7 +10,7 @@ use Livewire\Attributes\Validate;
 class Create extends Component
 {
 
-    #[Validate('required|min:3|max:150')] 
+    #[Validate('required|min:3|max:80')] 
     public $title;
 
     #[Validate('required|min:5|max:1000')] 
@@ -31,7 +31,6 @@ class Create extends Component
         $this->validate();
         Ad::create($this->all());
         $this->reset();
-        // session()->flash('success', 'Annuncio creato correttamente');
         return redirect()->route('ad.create')->with('success', 'Annuncio creato correttamente');
     }
 

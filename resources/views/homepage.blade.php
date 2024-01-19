@@ -45,7 +45,8 @@
         <div class=" category_card_container">
 
             @foreach (App\Models\Category::all() as $category)
-                <x-category-card :title="$category->name" :category="$category" :ads="$category->ads()->count()" />
+                <x-category-card :title="$category->name" :category="$category" 
+                :ads="App\Models\Ad::where('is_accepted', true)->where('category_id', $category->id)->get()->count()" />
             @endforeach
 
         </div>

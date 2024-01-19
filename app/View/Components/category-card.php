@@ -9,12 +9,13 @@ use Illuminate\Contracts\View\View;
 
 class categoryCard extends Component
 {
+
     /**
      * Create a new component instance.
      */
     public function __construct(public $ads, public $category)
     {
-        //
+        
     }
 
     /**
@@ -22,7 +23,6 @@ class categoryCard extends Component
      */
     public function render(): View|Closure|string
     {
-
         return view('components.category-card');
     }
 }
