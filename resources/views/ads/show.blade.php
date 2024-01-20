@@ -2,67 +2,94 @@
     - Dettaglio annuncio: CARD -> Titolo, categoria, prezzo, descrizione, foto segnaposto, venditore, data pubblicazione.
     - Carosello: (lorem picsum) N-foto segnaposto
     --}}
-    
-    
-    <x-main>
-        
-        <div class="container row" >
-            {{-- inizio carosello --}}
-            <div class="col-8">
-                <div id="carouselExampleFade" class="carousel slide carousel-fade" class="g-col-6" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="https://picsum.photos/300/200" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://picsum.photos/300/200" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://picsum.photos/300/200" class="d-block w-100" alt="...">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden"></span>
-                    </button>
+
+
+<x-main>
+    <x-secondary-header />
+
+
+    <div class="show_contaniner">
+        <div class="row">
+
+            <div class="col-6  row justify-content-evenly">
+
+                <div class="show_img_mini_container col-5">
+                    <img src="https://picsum.photos/80/80" alt="">
+                    <img src="https://picsum.photos/80/80" alt="">
+                    <img src="https://picsum.photos/80/80" alt="">
+                    <img src="https://picsum.photos/80/80" alt="">
+
+
                 </div>
-            </div>   
-            {{-- fine carosello --}}
-            
-            <div class="col-4">
-                
-                <h3>{{$ad->category->name}}</h3>
+
+                <div class="col-7 ">
+                    <img class="show_main_img"  src="https://picsum.photos/300/400" alt="">
+                </div>
+
+            </div>
+
+            <div class="col-6  show_content_container">
+
+                <h1>{{ $ad->title }}</h1>
+                <h3>{{ $ad->category->name }}</h3>
                 <hr>
-                <h4>{{$ad->created_at}}</h4>
-                <h1>{{$ad->title}}</h1>
-                {{-- <h3> luogo</h3>  extra --}}
-                <h3>{{$ad->price}}</h3>
+
+                <h4 class="ads_price ">{{ $ad->price }} £</h4>
+
                 
+
+                <div class="mt-3">
+                    <h2>Descrizione</h2>
+                    <p>{{ $ad->description }}</p>
+                </div>
+
+                <button class="buy_now_button">
+                    buy now
+                </button>
             </div>
         </div>
-        <hr>   
-        
-        {{-- <div>
-            <h2>dati di Dettaglio</h2>
-        </div> extra --}} 
-        <hr>
-        <div>
-            <h2>Descrizione</h2>
-            <p>{{$ad->description}}</p>
+    </div>
+
+
+
+    <div class="seller_continor">
+
+        <div class="user_img_name text-center">
+            <img class="image_profile" src="https://picsum.photos/400" alt="">
+            <h2>{{ $ad->user->name }}</h2>
+
+            @if ($ad->user->is_revisor)           
+            <h6>revisore</h6>   
+            @else
+            <h6>utent</h6>              
+            @endif
+
         </div>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    </x-main>
+
+        <div class="user_icons text-center">
+            <div class="">
+                <i class="bi bi-heart"></i>
+                <p>23</p>
+
+            </div>
+            <div>
+
+                <i class="bi bi-chat-square-text"></i>
+                <p>4</p>
+            </div>
+        </div>
+        <p>add frieds</p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</x-main>

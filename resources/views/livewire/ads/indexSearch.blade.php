@@ -12,13 +12,25 @@
                 {{-- BOTTONI SORT --}}
 
                 <div class="index_sort_select">
-                    <select wire:model.change="sortSelect"  wire:change="applySort">
-                        <option selected value="noSorted">Nessun ordine</option>
-                        <option value="newest">Dal più recente</option>
-                        <option value="oldest">Dal meno recente</option>
-                        <option value="cheapest">Dal più economico</option>
-                        <option value="mostExpensive">Dal più caro</option>
-                    </select>
+                    <div class="">
+                        <select wire:model.change="sortSelect" wire:change="applySort">
+                            <option selected value="noSorted">Nessun ordine</option>
+                            <option value="newest">Dal più recente</option>
+                            <option value="oldest">Dal meno recente</option>
+                            <option value="cheapest">Dal più economico</option>
+                            <option value="mostExpensive">Dal più caro</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <select wire:model.change="sortSelect" wire:change="applySort">
+                            <option selected value="noSorted">Category</option>
+                            @foreach(App\Models\Category::all() as $category)
+                            <option selected value="noSorted">{{$category->name}}</option>
+                            @endforeach
+                            
+                        </select>
+                    </div>
                 </div>
             </div>
         </div>

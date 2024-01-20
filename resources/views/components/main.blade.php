@@ -12,6 +12,7 @@
     {{-- <x-navbar/> --}}
         
    <x-navbar-main />
+   {{-- <x-navbar-prova/> --}}
     
     <div class="min-vh-100">
         {{$slot}} 

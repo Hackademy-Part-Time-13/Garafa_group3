@@ -1,0 +1,41 @@
+
+
+.navbar_toggle {
+    display: none;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+}
+
+.big_nav {
+    display: flex;
+}
+
+@media screen and (max-width: 768px) {
+    .big_nav {
+        display: none;
+    }
+
+    .navbar_toggle {
+        display: block;
+    }
+
+    .navbar_component {
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #111;
+        width: 100%;
+        display: none;
+    }
+
+    .navbar_component.active {
+        display: flex;
+    }
+
+    .navbar_component a {
+        text-align: left;
+    }
+}

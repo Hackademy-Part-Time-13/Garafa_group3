@@ -1,0 +1,16 @@
+.revisione_accrtta_rifiutabutton button{
+    padding: 10px;
+    border-radius: 10px;
+
+    background-color: var(--lite-red);
+    color: var(--white);
+
+    border-style: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+
+.revisione_accrtta_rifiutabutton button:hover{
+    background-color: var(--white);
+    color: var(--lite-red);
+}

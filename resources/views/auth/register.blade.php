@@ -1,5 +1,5 @@
 <x-main>
-    <x-header />
+    <x-secondary-header/>
 
 
 

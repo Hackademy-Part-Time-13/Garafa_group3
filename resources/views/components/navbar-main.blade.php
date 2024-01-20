@@ -1,5 +1,5 @@
 <nav class="  p-0">
-    <div class="navbar_main">
+    <div class="navbar_main" >
         
         <div class="navbar_component ">
             <ul class="">

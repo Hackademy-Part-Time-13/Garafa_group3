@@ -1,6 +1,6 @@
 <x-main title="login Presto.it">
 
-    <x-header />
+    <x-secondary-header/>
 
     <div class="form_container row">
         <div class="form_side col-4">
