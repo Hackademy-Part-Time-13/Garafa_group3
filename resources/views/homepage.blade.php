@@ -52,15 +52,7 @@
         </div>
     </div>
     {{-- scroll categorie --}}
-    {{-- <div class="container text-center home_text_one">
-        
-            <h2>Lorem ipsum
-            </h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione neque similique, quidem ipsa eaque
-                architecto eius alias repellat corrupti quisquam optio assumenda error odit quas!</p>
-        
-
-    </div> --}}
+    
 
 
 

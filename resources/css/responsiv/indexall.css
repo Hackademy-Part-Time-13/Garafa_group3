@@ -1,0 +1,25 @@
+@media (max-width: 576px) {
+
+    .ads_container{
+        height: 35em;
+        width: 30em;
+    }
+    .ads_content{
+        padding: 10px 10px;
+    }
+    .index_back{
+        margin: 0;
+        padding: 20px;
+    }
+
+    .index_sort_box{
+        width: 105%;
+    }
+    .index_sort_select {
+        width: 100%;
+    }
+    .index_sort_select div{
+        width: 40%;
+    }
+
+  }
