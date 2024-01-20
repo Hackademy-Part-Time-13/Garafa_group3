@@ -1,0 +1,10 @@
+@media (max-width: 576px) {
+
+    .head_content {
+        padding: 0px;
+    }
+    header{
+        height: 50vh;
+        background-size: cover;
+    }
+  }
