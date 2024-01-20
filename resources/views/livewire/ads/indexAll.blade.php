@@ -25,36 +25,17 @@
 
                     <div>
                         <select wire:model.change="sortSelect" wire:change="applySort">
-                            <option selected value="noSorted">Category</option>
+                            <option selected value="noSorted">Filtra per categoria</option>
                             @foreach(App\Models\Category::all() as $category)
-                            <option selected value="noSorted">{{$category->name}}</option>
+                            <option value="{{$category->id}}">{{$category->name}}</option>
                             @endforeach
                             
                         </select>
                     </div>
 
                 </div>
-
-
-
             </div>
         </div>
-
-        {{-- BOTTONI SORT --}}
-        {{-- <div class="container mt-3 mb-3">
-            <div class="d-flex justify-content-end">
-                <div class="col-auto">
-                    <select wire:model.change="sortSelect" class="form-select" wire:change="applySort">
-                        <option selected value="noSorted">Nessun ordine</option>
-                        <option value="newest">Dal più recente</option>
-                        <option value="oldest">Dal meno recente</option>
-                        <option value="cheapest">Dal più economico</option>
-                        <option value="mostExpensive">Dal più caro</option>
-                    </select>
-                </div>
-            </div>
-        </div> --}}
-
     </div>
 
 
@@ -63,6 +44,11 @@
         <div class="index_box">
             <div class="row g-5 px-3">
 
+                @if($ads->isEmpty())
+                <h4 class="text-white pt-3">Nessun annuncio presente</h4>                     
+                <h5 class="text-white">Evidentemente abbiamo venduto tutto!</h5>                    
+
+                @else
                 @foreach ($ads as $ad)
                     <div class="col-xl-3 col-md-4 col-xs-12 d-flex justify-content-center">
                         <div class="ads_container ">
@@ -101,7 +87,7 @@
                         </div>
                     </div>
                 @endforeach
-
+                @endif
             </div>
         </div>
     </div>

@@ -1,6 +1,6 @@
 
+<a class="category-card  col-4" href="{{ route('adsByCat', $category) }}">
 
-<div class="category-card  col-4" >
     
     {{-- <img src="https://picsum.photos/400" class="card-img-top" style="height: 40mm"> --}}
 
@@ -9,7 +9,7 @@
             <i class="bi bi-car-front "></i>
                 @break
             @case(2)
-            <i class="bi bi-car-front "></i>    
+            <img src="https://i.postimg.cc/cJLFTQNT/motorcycle-2.png" alt="" style="width: 40px; height: 40px;">
                 @break
             @case(3)
             <i class="bi bi-car-front "></i>    
@@ -38,8 +38,10 @@
             @default
                 
         @endswitch
-        <h5><a href="{{ route('adsByCat', $category) }}">{{ $title }}</a></h5>
-        <p >
+        <h5>{{ $title }}
+            {{-- <a href="{{ route('adsByCat', $category) }}"></a> --}}
+        </h5>
+        <p>
 
             @if ($ads == 0)
                 Nessun annuncio
@@ -53,4 +55,5 @@
         </p>
     
     
-</div>
+</a>
+

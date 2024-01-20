@@ -9,7 +9,7 @@
             @if (Auth::user()->is_revisor)           
             <h6>revisore</h6>   
             @else
-            <h6>utent</h6>              
+            <h6>utente</h6>              
             @endif
 
         </div>
@@ -31,86 +31,113 @@
 
 
 
-<h1 class="user_text text-center">liked ads</h1>
-
-
+        {{-- FAVOURITES --}}
+    <h1 class="user_text text-center">liked ads</h1>
     <div class="User_likes">
-        
-            
                 
-                @foreach (App\Models\Favorite::where('user_id',auth()->user()->id)->get() as $favorite)
-                    <div class="col-3 d-flex justify-content-center">
-                        <div class="ads_container ">
+        @foreach (App\Models\Favorite::where('user_id',auth()->user()->id)->get() as $favorite)
+        <div class="col-3 d-flex justify-content-center">
+            <div class="ads_container ">
 
-                            <img class="ads_img_container" src="https://picsum.photos/400/400" alt="">
+                <img class="ads_img_container" src="https://picsum.photos/400/400" alt="">
 
-                            <span class="ads_dettaglio_batton"><a href="{{ route('ad.show', $favorite->ad->id) }}">vista
-                                    dettaglio</a></span>
+                <span class="ads_dettaglio_batton"><a href="{{ route('ad.show', $favorite->ad->id) }}">vista dettaglio</a></span>
 
-                            <div class="ads_content">
-                                <div class="ads_text_box">
-                                    <p class="ads_titale ads_price">{{ $favorite->ad->price }} £</p>
-                                    <p class="ads_titale">{{ $favorite->ad->title }}</p>
-                                    <p class="ads_titale_description">{{ Str::limit($favorite->ad->description, 65) }}</p>
+                    <div class="ads_content">
+                        <div class="ads_text_box">
+                            <p class="ads_titale ads_price">{{ $favorite->ad->price }} £</p>
+                            <p class="ads_titale">{{ $favorite->ad->title }}</p>
+                            <p class="ads_titale_description">{{ Str::limit($favorite->ad->description, 65) }}</p>
+                        </div>
 
-                                </div>
-
-                                <div class="ads_favorites">
-
-                                    <livewire:Extra.favorites :ad="$favorite->ad"/>
-                                </div>
-                            </div>
-
-
-
+                        <div class="ads_favorites">
+                            <livewire:Extra.favorites :ad="$favorite->ad"/>
                         </div>
                     </div>
-                @endforeach
+            </div>
+        </div>
+        @endforeach
 
-            
-        
     </div>
+
     <div class="user_prova">
     </div>
 
 
-    <h1 class="user_text text-center">your ads</h1>
+    {{-- ANNUNCI PERSONALI --}}
+<h1 class="user_text text-center pb-1">I tuoi annunci</h1>
 
+        {{-- PUBBLICATI --}}
+    <h3 class="user_text text-center">Pubblicati:</h3>
     <div class="User_likes">
-            
-                
-                @foreach (App\Models\Ad::where('user_id',auth()->user()->id)->get() as $ad)
-                    <div class="col-3 d-flex justify-content-center">
-                        <div class="ads_container ">
+        
+        @if(App\Models\Ad::where('user_id',auth()->user()->id)->where('is_accepted', 1)->count() == 0)
+        <h5>Nessun annuncio presente. Pubblica ora il tuo primo annuncio!</h5>                     
 
-                            <img class="ads_img_container" src="https://picsum.photos/400/400" alt="">
+        @else   
+        @foreach (App\Models\Ad::where('user_id',auth()->user()->id)->where('is_accepted', 1)->get() as $ad)
+        <div class="col-3 d-flex justify-content-center">
+            <div class="ads_container">
 
-                            <span class="ads_dettaglio_batton"><a href="{{ route('ad.show', $ad->id) }}">vista
-                                    dettaglio</a></span>
+                <img class="ads_img_container" src="https://picsum.photos/400/400" alt="">
+                <span class="ads_dettaglio_batton">
+                    <a href="{{route('ad.show', $ad->id)}}">vista dettaglio</a></span>
 
-                            <div class="ads_content">
-                                <div class="ads_text_box">
-                                    <p class="ads_titale ads_price">{{ $ad->price }} £</p>
-                                    <p class="ads_titale">{{ $ad->title }}</p>
-                                    <p class="ads_titale_description">{{ Str::limit($ad->description, 65) }}</p>
+                <div class="ads_content">
+                    <div class="ads_text_box">
+                    <p class="ads_titale ads_price">{{ $ad->price }} £</p>
+                    <p class="ads_titale">{{ $ad->title }}</p>
+                    <p class="ads_titale_description">{{ Str::limit($ad->description, 65) }}</p>
+                    </div>            
 
-                                </div>
-
-                                <div class="ads_favorites">
-
-                                    <livewire:Extra.favorites :ad="$ad"/>
-                                </div>
-                            </div>
-
-
-
-                        </div>
+                    <div class="ads_favorites">
+                        <livewire:Extra.favorites :ad="$ad"/>
                     </div>
-                @endforeach
+                </div>
+            </div>
+        </div>
+        @endforeach
+        @endif
 
-            
+    </div>
+
+
+            {{-- DA REVISIONARE --}}
+    <h3 class="user_text text-center pt-5">In fase di revisione:</h3>
+        <div class="User_likes">
+        
+        @if(App\Models\Ad::where('user_id',auth()->user()->id)->where('is_accepted', null)->count() == 0)
+        <h5 class="text-white">Nessun annuncio presente. Pubblica ora il tuo primo annuncio!</h5>
+        @else
+        
+        @foreach (App\Models\Ad::where('user_id',auth()->user()->id)->where('is_accepted', null)->get() as $ad)
+        <div class="col-3 d-flex justify-content-center">
+            <div class="ads_container">
+
+                <img class="ads_img_container" src="https://picsum.photos/400/400" alt="">
+
+                <span class="ads_dettaglio_batton">
+                    <a href="{{ route('ad.show', $ad->id) }}">vista dettaglio</a></span>
+
+                <div class="ads_content">
+                    <div class="ads_text_box">
+                        <p class="ads_titale ads_price">{{ $ad->price }} £</p>
+                        <p class="ads_titale">{{ $ad->title }}</p>
+                        <p class="ads_titale_description">{{ Str::limit($ad->description, 65) }}</p>
+                    </div>
+
+                    <div class="ads_favorites">
+                        <livewire:Extra.favorites :ad="$ad"/>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        @endforeach 
+        @endif           
         
     </div>
+
     <div class="user_prova">
     </div>
 

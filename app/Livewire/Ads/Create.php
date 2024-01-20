@@ -10,7 +10,7 @@ use Livewire\Attributes\Validate;
 class Create extends Component
 {
 
-    #[Validate('required|min:3|max:80')] 
+    #[Validate('required|min:3|max:60')] 
     public $title;
 
     #[Validate('required|min:5|max:1000')] 
