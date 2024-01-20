@@ -25,7 +25,11 @@ public function indexAd(){
 }
 
 public function showAd(Ad $ad){
-    return view('ads.show', compact('ad') ) ;
+    if($ad->is_accepted) {
+        return view('ads.show', compact('ad'));
+    } else {
+        abort(403);
+    }
 }
 
 public function adsByCat(Category $category){

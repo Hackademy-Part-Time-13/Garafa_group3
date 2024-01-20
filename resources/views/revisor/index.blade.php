@@ -46,7 +46,7 @@
                     <div class="col-12">
                         <div class="show_contaniner">
                             <div class="row">
-                                <div class="col-12 mb-5 pb-5 d-flex justify-content-center">
+                                {{-- <div class="col-12 mb-5 pb-5 d-flex justify-content-center">
                                     <div class="col-3 d-flex justify-content-center">
                                         <div class="ads_container ">
 
@@ -80,7 +80,7 @@
 
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
 
                                 <div class="col-6  row justify-content-evenly">
 

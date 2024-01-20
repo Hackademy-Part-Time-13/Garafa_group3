@@ -1,12 +1,5 @@
-{{-- GABRI
-    - Dettaglio annuncio: CARD -> Titolo, categoria, prezzo, descrizione, foto segnaposto, venditore, data pubblicazione.
-    - Carosello: (lorem picsum) N-foto segnaposto
-    --}}
-
-
 <x-main>
     <x-secondary-header />
-
 
     <div class="show_contaniner">
         <div class="row">
@@ -80,6 +73,8 @@
         </div>
         <p>add frieds</p>
     </div>
+
+
 
 
 

@@ -44,27 +44,23 @@ class IndexSearch extends Component
     public function newest(){   
         $this->ads = Ad::search($this->searched)
         ->where('is_accepted', true)
-        ->where('category_id', $this->category_id)
         ->orderBy('id','DESC')->get();     
     }
     
     public function oldest(){
         $this->ads = Ad::search($this->searched)
-        ->where('is_accepted', true)
-        ->where('category_id', $this->category_id)->get();
+        ->where('is_accepted', true)->get();
     }
     
     public function cheapest(){
         $this->ads = Ad::search($this->searched)
         ->where('is_accepted', true)
-        ->where('category_id', $this->category_id)
         ->orderBy('price','ASC')->get(); 
     }
 
     public function mostExpensive(){
         $this->ads = Ad::search($this->searched)
         ->where('is_accepted', true)
-        ->where('category_id', $this->category_id)
         ->orderBy('price', 'DESC')->get();
     }
 
