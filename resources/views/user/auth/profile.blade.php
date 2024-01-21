@@ -31,7 +31,7 @@
 
 
 
-<<<<<<< HEAD
+
 <h1 class="user_text text-center">liked ads</h1>
 
 
@@ -42,15 +42,8 @@
                 @foreach (App\Models\Favorite::where('user_id',auth()->user()->id)->get() as $favorite)
                     <div class="col-3 responsiv_likes d-flex justify-content-center">
                         <div class="ads_container ">
-=======
+
         {{-- FAVOURITES --}}
-    <h1 class="user_text text-center">liked ads</h1>
-    <div class="User_likes">
-                
-        @foreach (App\Models\Favorite::where('user_id',auth()->user()->id)->get() as $favorite)
-        <div class="col-3 d-flex justify-content-center">
-            <div class="ads_container ">
->>>>>>> cfc125fcc7f184292b84c9aa8cfd13eb795554da
 
                 <img class="ads_img_container" src="https://picsum.photos/400/400" alt="">
 
@@ -82,17 +75,14 @@
 
         {{-- PUBBLICATI --}}
     <h3 class="user_text text-center">Pubblicati:</h3>
-    <div class="User_likes">
-<<<<<<< HEAD
-            
+    <div class="User_likes">           
                 
-                @foreach (App\Models\Ad::where('user_id',auth()->user()->id)->get() as $ad)
-                    <div class="col-3 responsiv_likes d-flex justify-content-center">
-                        <div class="ads_container ">                   
+        @if(App\Models\Ad::where('user_id',auth()->user()->id)->where('is_accepted', 1)->count() == 0)
+        <h5>Nessun annuncio presente. Pubblica ora il tuo primo annuncio!</h5>
 
-        @else   
+        @else  
         @foreach (App\Models\Ad::where('user_id',auth()->user()->id)->where('is_accepted', 1)->get() as $ad)
-        <div class="col-3 d-flex justify-content-center">
+        <div class="col-3 responsiv_likes d-flex justify-content-center">
             <div class="ads_container">
 
                 <img class="ads_img_container" src="https://picsum.photos/400/400" alt="">
@@ -127,7 +117,7 @@
         @else
         
         @foreach (App\Models\Ad::where('user_id',auth()->user()->id)->where('is_accepted', null)->get() as $ad)
-        <div class="col-3 d-flex justify-content-center">
+        <div class="col-3 responsiv_likes d-flex justify-content-center">
             <div class="ads_container">
 
                 <img class="ads_img_container" src="https://picsum.photos/400/400" alt="">
