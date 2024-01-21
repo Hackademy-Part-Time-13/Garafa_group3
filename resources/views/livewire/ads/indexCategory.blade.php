@@ -34,22 +34,6 @@
                 </div>
             </div>
         </div>
-
-        {{-- BOTTONI SORT --}}
-        {{-- <div class="container mt-3 mb-3">
-            <div class="d-flex justify-content-end">
-                <div class="col-auto">
-                    <select wire:model.change="sortSelect" class="form-select" wire:change="applySort">
-                        <option selected value="noSorted">Nessun ordine</option>
-                        <option value="newest">Dal più recente</option>
-                        <option value="oldest">Dal meno recente</option>
-                        <option value="cheapest">Dal più economico</option>
-                        <option value="mostExpensive">Dal più caro</option>
-                    </select>
-                </div>
-            </div>
-        </div> --}}
-
     </div>
 
 
@@ -58,6 +42,12 @@
         <div class="index_box">
             <div class="row g-5 px-3">
 
+                @if($ads->isEmpty())
+                <h4 class="text-white pt-3">Nessun annuncio presente in questa categoria</h4>
+                <h5 class="text-white">Prova un'altra categoria o sfoglia tutti gli annunci</h5>                    
+                     
+                
+                @else
                 @foreach ($ads as $ad)
                     <div class="col-3 d-flex justify-content-center">
                         <div class="ads_container ">
@@ -96,6 +86,7 @@
                         </div>
                     </div>
                 @endforeach
+                @endif
 
             </div>
         </div>

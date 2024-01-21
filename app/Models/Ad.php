@@ -43,7 +43,8 @@ class Ad extends Model
     }
 
     public static function toBeRevisionedCount(){
-        return Ad::where('is_accepted',null)->count();
+        return Ad::where('is_accepted',null)
+        ->where('user_id', '!=', auth()->user()->id)->get()->count();
     }
     
     public function setAccepted($value){
