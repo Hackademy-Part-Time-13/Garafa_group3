@@ -57,13 +57,13 @@
 
 
     <div class="home_back">
-        <div class="home_box">
+        <div class="home_box row">
 
-            <div>
+            <div class="col-xxl-6 col-xl-3 col-md-4 col-xs-12 p-5 d-flex justify-content-center align-items-center">
                 <img src="https://picsum.photos/400/500" alt="">
             </div>
 
-            <div>
+            <div class="col-xxl-6 col-xl-3 col-md-4 col-xs-12 p-5  d-flex justify-content-center align-items-center">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo aliquid, alias non ullam veritatis,
                     impedit
                     beatae enim ad repudiandae officiis recusandae. Laudantium adipisci similique esse magnam ducimus

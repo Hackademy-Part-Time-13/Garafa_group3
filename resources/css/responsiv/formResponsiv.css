@@ -1,0 +1,27 @@
+@media (max-width: 576px) {
+    .form_container{
+        height: auto;
+        width: 100%;
+        border-radius: 10px;
+        margin: 0px;
+        margin-bottom: 50px;
+    }
+    .form_side{
+        
+        height: 7em;
+    }
+    .login_form{
+        width: 90%;
+    }
+    .form_fit h2{
+        /* display: none; */
+        padding: 20px;
+
+        
+        width: 100%;
+        text-align: center;
+    }
+    .form_icons{
+        margin: 10px;
+    }
+}

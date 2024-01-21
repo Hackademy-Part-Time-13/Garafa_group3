@@ -108,3 +108,25 @@
     align-items: center;
     justify-content: space-around;
 }
+
+
+.ads-dettagli-d-none{
+    /* display: none; */
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    left: 15%;
+    
+    z-index: 5;
+}
+
+.close_button{
+   
+    position: absolute;
+    background-color: var(--white);
+    color: var(--lite-red);
+    border-radius: 5px;
+    padding: 1px 4px;
+    top: 55px;
+    right: 10px;
+}

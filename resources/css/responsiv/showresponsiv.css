@@ -1,0 +1,39 @@
+@media (max-width: 576px) {
+
+    .show_contaniner{
+        margin: 0px;
+        padding: 30px;
+    }
+    .responShow{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+    .show_img_mini_container{
+        width: 100%;
+        
+        margin: 2em 12px;
+        display: flex;
+        flex-direction: row;
+        
+    }
+    .show_img_mini_container img{
+        width: 4em;
+        
+        
+        padding: 5px;
+    }
+    .show_main_img{
+        /* width: 14em; */
+        margin:  0;
+    }
+    .show_content_container{
+        
+    }
+    .buy_now_button{
+        position: static;
+    }
+
+  }

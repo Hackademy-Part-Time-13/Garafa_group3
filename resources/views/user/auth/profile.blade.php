@@ -34,12 +34,12 @@
 <h1 class="user_text text-center">liked ads</h1>
 
 
-    <div class="User_likes">
+    <div class="User_likes column">
         
             
                 
                 @foreach (App\Models\Favorite::where('user_id',auth()->user()->id)->get() as $favorite)
-                    <div class="col-3 d-flex justify-content-center">
+                    <div class="col-3 responsiv_likes d-flex justify-content-center">
                         <div class="ads_container ">
 
                             <img class="ads_img_container" src="https://picsum.photos/400/400" alt="">
@@ -80,7 +80,7 @@
             
                 
                 @foreach (App\Models\Ad::where('user_id',auth()->user()->id)->get() as $ad)
-                    <div class="col-3 d-flex justify-content-center">
+                    <div class="col-3 responsiv_likes d-flex justify-content-center">
                         <div class="ads_container ">
 
                             <img class="ads_img_container" src="https://picsum.photos/400/400" alt="">

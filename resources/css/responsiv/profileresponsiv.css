@@ -1,0 +1,13 @@
+@media (max-width: 576px) {
+    .user_container_profile {
+        width: 16em;
+        height: 24em;
+        top: -50px;
+    }
+
+    .responsiv_likes {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+}

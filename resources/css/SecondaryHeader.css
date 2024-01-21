@@ -15,3 +15,10 @@
     background-color: var(--white);
     height: 30px;
 }
+
+@media (max-width: 576px) {
+
+    .Secondary_H{
+        height: 140px;
+    }
+}

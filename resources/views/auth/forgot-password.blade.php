@@ -5,8 +5,8 @@
         <div class="mb-3">
             <label class="form-label">Inserisci il tuo indirizzo email</label>
             <input type="email" class="form-control" name="email">
-            @error('email') {{$message}} @enderror
-          </div>
+        </div>
+        @error('email') {{$message}} @enderror
         <button type="submit" class="btn btn-primary">Reset Password</button>
     </form>
 

@@ -42,10 +42,10 @@
                     
                     <div class="col my-2">
                         <input wire:model.blur="title" type="text" placeholder="Titolo" class="form-control shadow-sm @error('title') is-invalid @enderror" required>
-                        @error('title')
-                        <span class="small text-danger">{{$message}}</span>
-                        @enderror
                     </div>
+                    @error('title')
+                    <span class="small text-danger">{{$message}}</span>
+                    @enderror
             
                     <div class="col my-2">
                         <select class="form-select shadow-sm" aria-placeholder="Categoria" wire:model="category_id">
@@ -58,17 +58,17 @@
             
                     <div class="col my-2">
                         <input type="number" step="0.01" placeholder="Prezzo" class="form-control shadow-sm" wire:model.blur="price">            
-                        @error('price')
-                        <span class="small text-danger">{{$message}}</span>
-                        @enderror
                     </div>
+                    @error('price')
+                    <span class="small text-danger">{{$message}}</span>
+                    @enderror
                     
                     <div class="col my-2">
                         <textarea wire:model.blur="description" placeholder="Descrizione articolo" class="form-control shadow-sm @error('description') is-invalid @enderror" rows="5" required></textarea>
-                        @error('description')
-                        <span class="small text-danger">{{$message}}</span>
-                        @enderror
                     </div>
+                    @error('description')
+                    <span class="small text-danger">{{$message}}</span>
+                    @enderror
             
             
             

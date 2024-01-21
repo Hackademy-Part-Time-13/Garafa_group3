@@ -3,11 +3,11 @@
     <x-secondary-header/>
 
     <div class="form_container row">
-        <div class="form_side col-4">
+        <div class="form_side col-xxl-4 col-xs-12">
             <p>Presto.it</p>
         </div>
 
-        <div class="col-8">
+        <div class="col-xxl-8 col-xs-12">
             <div class="form_fit">
               <h2>iscriviti a Presto.it</h2>
 
@@ -26,10 +26,10 @@
                         <input type="email" name="email" class="" placeholder="Email" value="{{ old('name') }}"
                             aria-describedby="emailHelp">
                             
+                        </div>
                         @error('email')
                             {{ $message }}
                         @enderror
-                    </div>
 
                     <div class="mb-3">
                         <input type="password" name="password" id="password" class="" placeholder="Password">
@@ -38,10 +38,10 @@
                           <i id="eye" class="bi bi-eye-fill"></i>
                         </button>
                         
-                        @error('password')
-                            {{ $message }}
-                        @enderror
                     </div>
+                    @error('password')
+                        {{ $message }}
+                    @enderror
 
                     <button type="submit " class="form_submit_button mx-auto d-block">LOGIN</button>
                     <a href="/forgot-password"><button type="submit " class="form_forgot_button mx-auto d-block" style="background-color: var(--white)">PASSWORD DIMENTICATA</button></a>

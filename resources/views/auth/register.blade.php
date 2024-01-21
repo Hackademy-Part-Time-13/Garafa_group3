@@ -1,16 +1,16 @@
 <x-main>
-    <x-secondary-header/>
+    <x-secondary-header />
 
 
 
 
 
     <div class="form_container row">
-        <div class="form_side col-4">
+        <div class="form_side col-xxl-4 col-xs-12">
             <p>Presto.it</p>
         </div>
 
-        <div class="col-8">
+        <div class="col-xxl-8 col-xs-12">
             <div class="form_fit">
                 <h2>registrati a Presto.it</h2>
 
@@ -27,37 +27,40 @@
                     <div class="mb-3">
 
 
-                        <input type="text" name="name" placeholder="Username"
-                            value="{{ old('name') }}" @error('name') {{ $message }} @enderror>
+                        <input type="text" name="name" placeholder="Username" value="{{ old('name') }}">
 
                     </div>
+                    @error('name')
+                        {{ $message }}
+                    @enderror
 
                     <div class="mb-3">
 
 
-                        <input type="email" name="email" placeholder="Email"
-                            value="{{ old('email') }}" aria-describedby="emailHelp">
-                        @error('email')
-                            {{ $message }}
-                        @enderror
+                        <input type="email" name="email" placeholder="Email" value="{{ old('email') }}"
+                            aria-describedby="emailHelp">
                     </div>
+                    @error('email')
+                        {{ $message }}
+                    @enderror
 
                     <div class="mb-3">
                         <input type="password" id="password" name="password" placeholder="Password">
 
                         <button type="button" id="show_password">
-                          <i id="eye" class="bi bi-eye-fill"></i>
+                            <i id="eye" class="bi bi-eye-fill"></i>
                         </button>
-                        @error('password')
-                            {{ $message }}
-                        @enderror
                     </div>
+                    @error('password')
+                        {{ $message }}
+                    @enderror
 
                     <div class="mb-3">
-                        <input type="password" id="Confirm_password" name="password_confirmation" placeholder="Confirm Password">
+                        <input type="password" id="Confirm_password" name="password_confirmation"
+                            placeholder="Confirm Password">
 
                         <button type="button" id="Confirm_show_password">
-                          <i id="Confirm_eye" class="bi bi-eye-fill"></i>
+                            <i id="Confirm_eye" class="bi bi-eye-fill"></i>
                         </button>
                     </div>
 

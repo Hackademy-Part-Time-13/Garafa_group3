@@ -46,79 +46,43 @@
                     <div class="col-12">
                         <div class="show_contaniner">
                             <div class="row">
-                                {{-- <div class="col-12 mb-5 pb-5 d-flex justify-content-center">
-                                    <div class="col-3 d-flex justify-content-center">
-                                        <div class="ads_container ">
-
-                                            <img class="ads_img_container" src="https://picsum.photos/400/400"
-                                                alt="">
-
-                                            <span class="ads_dettaglio_batton"><a
-                                                    href="{{ route('ad.show', $ad_to_check->id) }}">vista
-                                                    dettaglio</a></span>
-
-                                            <div class="ads_content">
-                                                <div class="ads_text_box">
-                                                    <p class="ads_titale ads_price">{{ $ad_to_check->price }} £</p>
-                                                    <p class="ads_titale">{{ $ad_to_check->title }}</p>
-                                                    <p class="ads_titale_description">
-                                                        {{ Str::limit($ad_to_check->description, 65) }}</p>
-
-                                                </div>
-
-                                                <div class="ads_favorites">
-
-
-                                                    <span class="d-flex ads_favorites_flex"><i class="bi bi-heart"></i>
-                                                        <p>0</p>
-                                                    </span>
-
-                                                </div>
-                                            </div>
-
-
-
-                                        </div>
+                    
+                                <div class="col-xxl-6 col-xl-3 col-md-4 col-xs-3 responShow row justify-content-evenly">
+                    
+                                    <div class="show_img_mini_container col-xxl-5 col-xl-3 col-md-4 col-xs-6">
+                                        <img src="https://picsum.photos/80/80" alt="">
+                                        <img src="https://picsum.photos/80/80" alt="">
+                                        <img src="https://picsum.photos/80/80" alt="">
+                                        <img src="https://picsum.photos/80/80" alt="">
+                    
+                    
                                     </div>
-                                </div> --}}
-
-                                <div class="col-6  row justify-content-evenly">
-
-                                    <div class="show_img_mini_container col-5">
-                                        <img src="https://picsum.photos/80/80" alt="">
-                                        <img src="https://picsum.photos/80/80" alt="">
-                                        <img src="https://picsum.photos/80/80" alt="">
-                                        <img src="https://picsum.photos/80/80" alt="">
-
-
+                    
+                                    <div class="col-xxl-7 col-xl-3 col-md-4 col-xs-6 ">
+                                        <img class="show_main_img"  src="https://picsum.photos/300/400" alt="">
                                     </div>
-
-                                    <div class="col-7 ">
-                                        <img class="show_main_img" src="https://picsum.photos/300/400" alt="">
-                                    </div>
-
+                    
                                 </div>
-
-                                <div class="col-6  show_content_container">
-
+                    
+                                <div class="col-xxl-6 col-xl-3 col-md-4 col-xs-12  show_content_container">
+                    
                                     <h1>{{ $ad_to_check->title }}</h1>
                                     <h3>{{ $ad_to_check->category->name }}</h3>
                                     <hr>
-
+                    
                                     <h4 class="ads_price ">{{ $ad_to_check->price }} £</h4>
-
-
-
+                    
+                                    
+                    
                                     <div class="mt-3">
                                         <h2>Descrizione</h2>
                                         <p>{{ $ad_to_check->description }}</p>
                                     </div>
-
+                    
                                     <button class="buy_now_button">
                                         buy now
                                     </button>
                                 </div>
-
                             </div>
                         </div>
 

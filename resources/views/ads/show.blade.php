@@ -4,9 +4,9 @@
     <div class="show_contaniner">
         <div class="row">
 
-            <div class="col-6  row justify-content-evenly">
+            <div class="col-xxl-6 col-xl-3 col-md-4 col-xs-3 responShow row justify-content-evenly">
 
-                <div class="show_img_mini_container col-5">
+                <div class="show_img_mini_container col-xxl-5 col-xl-3 col-md-4 col-xs-6">
                     <img src="https://picsum.photos/80/80" alt="">
                     <img src="https://picsum.photos/80/80" alt="">
                     <img src="https://picsum.photos/80/80" alt="">
@@ -15,13 +15,13 @@
 
                 </div>
 
-                <div class="col-7 ">
+                <div class="col-xxl-7 col-xl-3 col-md-4 col-xs-6 ">
                     <img class="show_main_img"  src="https://picsum.photos/300/400" alt="">
                 </div>
 
             </div>
 
-            <div class="col-6  show_content_container">
+            <div class="col-xxl-6 col-xl-3 col-md-4 col-xs-12  show_content_container">
 
                 <h1>{{ $ad->title }}</h1>
                 <h3>{{ $ad->category->name }}</h3>
@@ -45,34 +45,7 @@
 
 
 
-    <div class="seller_continor">
-
-        <div class="user_img_name text-center">
-            <img class="image_profile" src="https://picsum.photos/400" alt="">
-            <h2>{{ $ad->user->name }}</h2>
-
-            @if ($ad->user->is_revisor)           
-            <h6>revisore</h6>   
-            @else
-            <h6>utent</h6>              
-            @endif
-
-        </div>
-
-        <div class="user_icons text-center">
-            <div class="">
-                <i class="bi bi-heart"></i>
-                <p>23</p>
-
-            </div>
-            <div>
-
-                <i class="bi bi-chat-square-text"></i>
-                <p>4</p>
-            </div>
-        </div>
-        <p>add frieds</p>
-    </div>
+    
 
 
 
