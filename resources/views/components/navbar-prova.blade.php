@@ -94,12 +94,12 @@
             </ul>
         </div>
         <button type="button" class="navbar_toggle" id="navbarToggle">
-            <i class="bi bi-list"></i>
+            <i class="bi bi-list" id="haburget_colose"></i>
         </button>
         <div class="mobile_nav " id="mobile_nav">
             <ul >
                 <a href="{{ route('home') }}" class="">
-                    <li class="nav_start @if (Illuminate\Support\Facades\Route::currentRouteName() == 'home') carent_root @endif ">
+                    <li class="nav_start ">
                         Home
                     </li>
                 </a>
@@ -108,17 +108,17 @@
 
                 @guest
                     <a href="{{ route('register') }}">
-                        <li class=" @if (Illuminate\Support\Facades\Route::currentRouteName() == 'register') carent_root @endif">
+                        <li class=" ">
                             Register</li>
                     </a>
 
                     <a href="{{ route('login') }}">
-                        <li class=" @if (Illuminate\Support\Facades\Route::currentRouteName() == 'login') carent_root @endif">
+                        <li class="">
                             Login</li>
                     </a>
 
                     <a href="{{ route('ad.create') }}">
-                        <li class="nav_end @if (Illuminate\Support\Facades\Route::currentRouteName() == 'ad.create') carent_root @endif">
+                        <li class="nav_end ">
                             Inserisci annuncio</li>
                     </a>
 
@@ -129,12 +129,12 @@
 
                 @auth
                     <a class="nav-link  " href="{{ route('ad.create') }}">
-                        <li class=" @if (Illuminate\Support\Facades\Route::currentRouteName() == 'ad.create') carent_root @endif">
+                        <li class=" ">
                             Inserisci annuncio</li>
                     </a>
 
                     <a class="nav-link" href="{{ route('ads.index') }}">
-                        <li class="@if (Illuminate\Support\Facades\Route::currentRouteName() == 'ads.index') carent_root @endif">
+                        <li class="">
                             Tutti gli annunci</li>
                     </a>
 
@@ -145,7 +145,7 @@
 
                 @auth
 
-                    <li class=" dropdown nav_end  @if (Illuminate\Support\Facades\Route::currentRouteName() == 'user.auth.profile') carent_root @endif">
+                    <li class=" dropdown nav_end ">
                         <a class="nav-link dropdown-toggle " role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">{{ Auth::user()->name }} </a>
 
