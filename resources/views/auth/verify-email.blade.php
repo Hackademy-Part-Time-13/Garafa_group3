@@ -1,14 +1,25 @@
 <x-main title="Verifica Mail">
+    <x-secondary-header/>
+
+    <h3 class="text-center">Benvenuto su Presto.it</h3>
 
     @if (session('status') == 'verification-link-sent')
-        <div class="mb-4 font-medium text-sm text-green-600">
-            Ti abbiamo inviato una mail con il link di verifica!
-        </div>
-    @endif
+        <p class="text-center">Ti abbiamo inviato una mail con il link di verifica!</p>
 
-    <form method="POST" action="/email/verification-notification">
+    @else
+        <p class="text-center">Verifica la tua mail per continuare!</p>
+        
+        <form method="POST" action="/email/verification-notification">
         @csrf
-        <button class="btn btn-primary" type="submit">Invia mail di conferma</button>
-    </form>
+        <button type="submit " class="button_verify_email mx-auto d-block">Invia mail di conferma</button>
+        </form>
+    
+        @endif
+
+    
+    
+
+
+
 
 </x-main>

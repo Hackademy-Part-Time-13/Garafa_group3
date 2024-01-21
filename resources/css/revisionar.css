@@ -14,3 +14,21 @@
     background-color: var(--white);
     color: var(--lite-red);
 }
+
+.button_verify_email {
+    padding: 10px;
+    border-radius: 10px;
+
+    background-color: var(--lite-red);
+    color: var(--white);
+
+    border-style: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.button_verify_email:hover {
+    background-color: var(--white);
+    color: black;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+

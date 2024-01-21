@@ -7,6 +7,9 @@ Sezione profilo:
 Invio mail feedback:
     - Impostare invio automatico di mail per reminder del feedback
 
+Two factor auth:
+    - Implementare two factors authentication
+
 
 
 <!-- EXTRAS DEGLI EXTRAS -->
@@ -19,6 +22,11 @@ Aggiungere commenti:
 
 Aggiugere messaggistica:
     - Direct messages (chatify)
+
+CRUD annunci:
+    - Possibilità per il revisore di evidenziare motivo rifiuto annuncio
+    - Possibilità per l'utente di vedere annuncio rifiutato e perchè
+    - Possibilità per l'utente di modificare annuncio e ri-postare
 
 
 
