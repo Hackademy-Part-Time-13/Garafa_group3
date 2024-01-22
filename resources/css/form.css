@@ -46,9 +46,6 @@
     padding: 20px;
     width: 60%;
 
-    
-
-
 }
 .login_form div {
     display: flex;
@@ -127,6 +124,11 @@
 
 .login_form .form_forgot_button{
     color: black
+}
+
+.img-preview {
+    width: 50%;
+    height: auto;
 }
 
 
