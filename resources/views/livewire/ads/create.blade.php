@@ -96,9 +96,9 @@
                             </div>
                         </div>
                     </div>
-                    
+                @endif
                     <button type="submit " class="form_submit_button mx-auto d-block">Crea annuncio</button>
-                    @endif
+                    
         </form>
 
         </div>

@@ -1,5 +1,6 @@
 <x-main>
     <x-secondary-header />
+
     <div class="container">
         @if (session('status'))
             <div class="ms-auto me-auto text-center col-6 my-2 alert alert-success">
@@ -47,22 +48,21 @@
                         <div class="show_contaniner">
                             <div class="row">
                     
+                                @if($ad_to_check->images)
                                 <div class="col-xxl-6 col-xl-3 col-md-4 col-xs-3 responShow row justify-content-evenly">
                     
                                     <div class="show_img_mini_container col-xxl-5 col-xl-3 col-md-4 col-xs-6">
-                                        <img src="https://picsum.photos/80/80" alt="">
-                                        <img src="https://picsum.photos/80/80" alt="">
-                                        <img src="https://picsum.photos/80/80" alt="">
-                                        <img src="https://picsum.photos/80/80" alt="">
-                    
-                    
+                                        @foreach($ad_to_check->images as $image)
+                                        <img src="{{Storage::url($image->path)}}" class=""> 
+                                        @endforeach                  
                                     </div>
                     
                                     <div class="col-xxl-7 col-xl-3 col-md-4 col-xs-6 ">
-                                        <img class="show_main_img"  src="https://picsum.photos/300/400" alt="">
+                                        <img class="show_main_img"  src="{{Storage::url('images/' . $ad_to_check->id . '/1.jpg')}}">
                                     </div>
                     
                                 </div>
+                                @endif
                     
                                 <div class="col-xxl-6 col-xl-3 col-md-4 col-xs-12  show_content_container">
                     

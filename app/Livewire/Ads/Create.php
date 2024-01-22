@@ -35,6 +35,7 @@ class Create extends Component
     public $temporary_images;
 
     public $ad;
+    public $index = 0;
 
     public function updatedTemporaryImages() {
         if($this->validate([
@@ -58,8 +59,10 @@ class Create extends Component
         $this->validate();
         $this->ad = Ad::create($this->all());
         if(count($this->images)) {
-            foreach($this->images as $image) {
-                $this->ad->images()->create(['path' => $image->store('images/' . $this->ad->id , 'public')]);
+            foreach($this->images as $this->index => $image) {
+                $name = $this->index + 1 . '.jpg';
+                $path = $image->storeAs('images/' . $this->ad->id , $name, 'public');
+                $this->ad->images()->create(['path' => $path]);
             }
         }
         $this->reset();
