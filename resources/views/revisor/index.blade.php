@@ -47,18 +47,18 @@
                     <div class="col-12">
                         <div class="show_contaniner">
                             <div class="row">
-                    
+                                
                                 @if($ad_to_check->images)
                                 <div class="col-xxl-6 col-xl-3 col-md-4 col-xs-3 responShow row justify-content-evenly">
                     
                                     <div class="show_img_mini_container col-xxl-5 col-xl-3 col-md-4 col-xs-6">
                                         @foreach($ad_to_check->images as $image)
                                         <img src="{{Storage::url($image->path)}}" class=""> 
-                                        @endforeach                  
+                                        @endforeach 
                                     </div>
                     
                                     <div class="col-xxl-7 col-xl-3 col-md-4 col-xs-6 ">
-                                        <img class="show_main_img"  src="{{Storage::url('images/' . $ad_to_check->id . '/1.jpg')}}">
+                                        <img class="show_main_img" src="{{Storage::url('images/' . $ad_to_check->id . '/1.jpg')}}" alt="">
                                     </div>
                     
                                 </div>
@@ -66,25 +66,36 @@
                     
                                 <div class="col-xxl-6 col-xl-3 col-md-4 col-xs-12  show_content_container">
                     
-                                    <h1>{{ $ad_to_check->title }}</h1>
+                                    <h1>{{ $ad_to_check->title  }}</h1>
                                     <h3>{{ $ad_to_check->category->name }}</h3>
                                     <hr>
                     
                                     <h4 class="ads_price ">{{ $ad_to_check->price }} £</h4>
                     
-                                    
+                    
                     
                                     <div class="mt-3">
                                         <h2>Descrizione</h2>
                                         <p>{{ $ad_to_check->description }}</p>
                                     </div>
                     
-                                    <button class="buy_now_button">
-                                        buy now
-                                    </button>
+                                    <div class="show_botom">
+                                        <button class="buy_now_button">
+                                            buy now
+                                        </button>
+                    
+                                        <div >
+                                            <a class="seller_box " href="{{route('user.seller.profile',$ad_to_check->user)}}">
+                                                <img class="ads_image_profile me-3" src="https://picsum.photos/400" alt=""> <p> {{ $ad_to_check->user->name }}</p>
+                                            </a>                       
+                                        </div>
+                                    </div>
+                    
                                 </div>
                             </div>
                         </div>
+
+
 
                     </div>
                     <div class="row revisione_accrtta_rifiutabutton">

@@ -53,7 +53,7 @@
                     <div class="col-xl-3 col-md-4 col-xs-12 d-flex justify-content-center">
                         <div class="ads_container ">
 
-                            <img class="ads_img_container" src="https://picsum.photos/400/400" alt="">
+                            <img class="ads_img_container" @if($ad->images->isEmpty()) src="https://picsum.photos/400/400" @else src="{{Storage::url('images/' . $ad->id . '/1.jpg')}}" alt="" @endif alt="">
 
                             <span class="ads_dettaglio_batton"><a href="{{ route('ad.show', $ad->id) }}">vista
                                     dettaglio</a></span>
