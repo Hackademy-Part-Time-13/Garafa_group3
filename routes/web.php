@@ -55,3 +55,6 @@ Route::post('/revisorApplication', [RevisorController::class,'revisorApplication
 
 // RENDI UTENTE REVISORE
 Route::get('/rendi/revisore/{user}',[RevisorController::class,'makeRevisor'])->name('make.revisor');
+
+// SELLER PROFILE
+Route::get('/seller/profile/{user}',[UserController::class, 'seller'])->middleware(['auth', 'verified'])->name('user.seller.profile');
