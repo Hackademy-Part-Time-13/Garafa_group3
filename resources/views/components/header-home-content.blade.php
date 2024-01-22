@@ -1,6 +1,6 @@
 <div class="head_content">
     <p class="h1 " >
-        Benvenuto nel Paradiso dello Shopping:<span class="text-white"> Trova il Tuo Prodotto Preferito a Prezzi Convenienti!</span> 
+        {{__('ui.homept1')}}<span class="text-white"> {{__('ui.homept2')}}</span> 
     </p>
 
     <form class="header_form" action="{{route('ad.searched')}}">

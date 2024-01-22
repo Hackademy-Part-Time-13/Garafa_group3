@@ -86,6 +86,53 @@
             </li>
 
             @endauth
+
+            {{-- LANGUAGE DROPDOWN--}}
+
+            <li class=" dropdown nav_end  @if(Illuminate\Support\Facades\Route::currentRouteName() == 'user.auth.profile') carent_root @endif">
+                <a class="nav-link dropdown-toggle " role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ Auth::user()->name }} </a>
+                    
+                <ul class="dropdown-menu ">
+                        <li>
+                            <x-_locale lang="it" nation="it">
+                        </li>
+                                
+                @if(auth()->user()->is_revisor)
+                    <li class="position-relative">
+                        <a class="dropdown-item" href="{{route('revisor.index')}}">Zona revisore</a>
+                        <span class="badge_revisor translate-niddle badge rounded-pill bg-danger" >
+                            {{App\Models\Ad::toBeRevisionedCount()}}<span> da revisionare</span>
+                    </li>
+                                
+                    @endif
+                    <li>
+                        <a class="dropdown-item" href="">Opzione 3</a>
+                    </li>
+    
+    
+                    {{-- LOGOUT --}}
+    
+                    <li>
+                        <a class="dropdown-item " href="{{ route('logout') }}" onclick="event.preventDefault(); getElementById('form-logout').submit();">Logout</a>
+                    </li>
+                    <form id="form-logout" action="/logout" method="POST" class="d-none">
+                    @csrf
+                    </form>
+    
+                </ul>
+                </li>
+    
+            <ul>
+                <li>
+                    <x-_locale lang="it" nation="it">
+                </li>
+                <li>
+                    <x-_locale lang="en" nation="gb">
+                </li>
+                <li>
+                    <x-_locale lang="jp" nation="jp">
+                </li>
+            </ul>
         </ul>
     </div>
 

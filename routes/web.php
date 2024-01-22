@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\SocialiteController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
@@ -55,3 +56,6 @@ Route::post('/revisorApplication', [RevisorController::class,'revisorApplication
 
 // RENDI UTENTE REVISORE
 Route::get('/rendi/revisore/{user}',[RevisorController::class,'makeRevisor'])->name('make.revisor');
+
+// LANGUAGE
+Route::post('lingua,{lang}',[LanguageController::class, 'setLanguage'])->name('set_language_locale');

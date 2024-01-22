@@ -91,6 +91,7 @@
                     </li>
 
                 @endauth
+                
             </ul>
         </div>
         <button type="button" class="navbar_toggle" id="navbarToggle">
@@ -180,6 +181,8 @@
                     </li>
 
                 @endauth
+          
+          
             </ul>
         </div>
     </div>
