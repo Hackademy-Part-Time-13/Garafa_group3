@@ -1,20 +1,22 @@
-.show_contaniner{
+.show_contaniner {
     margin: 50px 0px;
     padding: 40px;
     background-color: var(--full-red);
 }
 
-.show_contaniner img{
+.show_contaniner img {
     border-radius: 20px;
-    
+
 }
-.show_contaniner h3{
+
+.show_contaniner h3 {
     font-size: 1rem;
 }
-.show_img_mini_container{
+
+.show_img_mini_container {
     width: 7em;
     background-color: var(--white);
-    
+
     /* padding: 5px; */
 
     display: flex;
@@ -27,18 +29,18 @@
 
 }
 
-.show_img_mini_container img{
+.show_img_mini_container img {
     /* padding: 5px; */
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
-    
-    
+
+
 }
 
-.show_main_img{
+.show_main_img {
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
 
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
@@ -51,7 +53,7 @@
     background-color: var(--full-red); */
 }
 
-.show_content_container{
+.show_content_container {
     padding: 40px;
 
     position: relative;
@@ -64,69 +66,65 @@
 
 }
 
-.buy_now_button{
+.buy_now_button {
 
     padding: 10px 20px;
+    height: 50px;
 
 
     background-color: var(--lite-red);
     color: var(--white);
 
-    position: absolute;
-    bottom: 40px;
+    
 
     border-radius: 20px;
     border-style: none;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
 }
-.buy_now_button:hover{
+
+.buy_now_button:hover {
     background-color: var(--white);
     color: var(--lite-red);
 }
 
 
 
-.seller_continor {
-    width: 20em;
-    height: 28em;
-  
-    margin: 0px auto;
-    padding: 20px;
-  
-    background-color: var(--white);
-  
+
+.show_botom{
     
-  
-  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.seller_box{
+    
+    background-color: var(--lite-red);
+    color: var(--white);
+
+    padding: 10px 20px;
+
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  
-  
+
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
 }
-
-
-.ads-dettagli-d-none{
-    /* display: none; */
-    display: none;
-    position: fixed;
-    bottom: 30px;
-    left: 15%;
-    
-    z-index: 5;
-}
-
-.close_button{
-   
-    position: absolute;
+.seller_box:hover{
     background-color: var(--white);
     color: var(--lite-red);
-    border-radius: 5px;
-    padding: 1px 4px;
-    top: 55px;
-    right: 10px;
+}
+
+.seller_box p{
+    margin: 0;
+    /* color: var(--white); */
+}
+
+.ads_image_profile {
+    height: 40px;
+    width: 40px;
+    overflow: hidden;
+    border-radius: 50% !important;
 }
