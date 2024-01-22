@@ -66,8 +66,9 @@
 
                                 </div>
 
+                                @auth
                                 <div class="ads_favorites">
-
+                                    
                                     @if (App\Models\Favorite::where('ad_id', $ad->id)->where('user_id', auth()->user()->id)->exists())
                                         <span wire:click="unlike({{ $ad }})"
                                             class="d-flex ads_favorites_flex"> <i class="bi bi-heart-fill"></i>
@@ -79,7 +80,9 @@
                                             <p>{{ $ad->favorites->count() }}</p>
                                         </span>
                                     @endif
+                                    
                                 </div>
+                                @endauth
                             </div>
 
 

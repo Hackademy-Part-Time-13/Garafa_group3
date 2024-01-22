@@ -65,6 +65,7 @@
 
                                 </div>
 
+                                @auth
                                 <div class="ads_favorites">
 
                                     @if (App\Models\Favorite::where('ad_id', $ad->id)->where('user_id', auth()->user()->id)->exists())
@@ -79,6 +80,7 @@
                                         </span>
                                     @endif
                                 </div>
+                                @endauth
                             </div>
 
 

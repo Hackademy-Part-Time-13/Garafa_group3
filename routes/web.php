@@ -28,16 +28,16 @@ Route::get('/adsByCategory/{category}', [PageController::class, 'adsByCat'])->na
 //RICERCA ANNUNCIO
 Route::get('/searched/ads', [PageController::class, 'searchAd'])->name('ad.searched');
 
-//SOCIALITE GITHUB
-Route::get('/auth/github',[SocialiteController::class,'redirectToGithub']);
-Route::get('/auth/github/callback',[SocialiteController::class,'handleGithubCallback']);
-
-//SOCIALITE GOOGLE
-Route::get('/auth/google',[SocialiteController::class,'redirectToGoogle']);
-Route::get('/auth/google/callback',[SocialiteController::class,'handleGoogleCallback']);
-
-//PAGINA PROFILO
-Route::get('/auth/profile',[UserController::class, 'profile'])->middleware(['auth', 'verified'])->name('user.auth.profile');
+Route::prefix('auth')->group(function () {
+        //SOCIALITE GITHUB  
+    Route::get('/github',[SocialiteController::class,'redirectToGithub']);
+    Route::get('/github/callback',[SocialiteController::class,'handleGithubCallback']);
+        //SOCIALITE GOOGLE
+    Route::get('/google',[SocialiteController::class,'redirectToGoogle']);
+    Route::get('/google/callback',[SocialiteController::class,'handleGoogleCallback']);
+        //PAGINA PROFILO
+    Route::get('/profile',[UserController::class, 'profile'])->middleware(['auth', 'verified'])->name('user.auth.profile');
+});
 
 //HOME REVISORE/ACCETTA E RIFIUTA ANNUNCIO
 Route::middleware('isRevisor')->group(function() {

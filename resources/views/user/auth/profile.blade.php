@@ -78,8 +78,7 @@
     <div class="User_likes">           
                 
         @if(App\Models\Ad::where('user_id',auth()->user()->id)->where('is_accepted', 1)->count() == 0)
-        <h5>Nessun annuncio presente. Pubblica ora il tuo primo annuncio!</h5>
-
+        <a href="{{route('ad.create')}}"><h5 class="text-white">Nessun annuncio presente. Pubblica ora il tuo primo annuncio!</h5></a>
         @else  
         @foreach (App\Models\Ad::where('user_id',auth()->user()->id)->where('is_accepted', 1)->get() as $ad)
         <div class="col-3 responsiv_likes d-flex justify-content-center">
@@ -113,7 +112,7 @@
         <div class="User_likes">
         
         @if(App\Models\Ad::where('user_id',auth()->user()->id)->where('is_accepted', null)->count() == 0)
-        <h5 class="text-white">Nessun annuncio presente. Pubblica ora il tuo primo annuncio!</h5>
+        <a href="{{route('ad.create')}}"><h5 class="text-white">Nessun annuncio presente. Pubblica ora il tuo primo annuncio!</h5></a>
         @else
         
         @foreach (App\Models\Ad::where('user_id',auth()->user()->id)->where('is_accepted', null)->get() as $ad)
