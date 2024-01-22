@@ -6,9 +6,12 @@ use Illuminate\Http\Request;
 
 class LanguageController extends Controller
 {
-    public function setLanguage($lang){
+    public function setLanguage(Request $request, $lang){
+        
+        // dd($request);
 
         session()->put('locale', $lang);
+
         return redirect()->back();
 }
 }

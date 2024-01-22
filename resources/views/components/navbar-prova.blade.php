@@ -7,7 +7,7 @@
                 </li>
             </ul>
         </div>
-        <div class="big_nav" >
+        <div class="big_nav">
             <ul class="navbar_component">
                 <a href="{{ route('home') }}" class="">
                     <li class="nav_start @if (Illuminate\Support\Facades\Route::currentRouteName() == 'home') carent_root @endif ">
@@ -56,7 +56,7 @@
 
                 @auth
 
-                    <li class=" dropdown nav_end  @if (Illuminate\Support\Facades\Route::currentRouteName() == 'user.auth.profile') carent_root @endif">
+                    <li class=" dropdown   @if (Illuminate\Support\Facades\Route::currentRouteName() == 'user.auth.profile') carent_root @endif">
                         <a class="nav-link dropdown-toggle " role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">{{ Auth::user()->name }} </a>
 
@@ -91,14 +91,35 @@
                     </li>
 
                 @endauth
+
                 
+                <li class="dropdown nav_end">
+                    <a class="  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        lang
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#"><x-locale lang="it" nation="it" /></a></li>
+                      <li><a class="dropdown-item" href="#"><x-locale lang="en" nation="gb" /></a></li>
+                      <li><a class="dropdown-item" href="#"><x-locale lang="jp" nation="jp" /></a></li>
+                    </ul>
+                  </li>
+
             </ul>
         </div>
+
+
+
+
+        {{-- qua comuncia l'hamburgerrr --}}
+
+        {{-- bootone hamburger --}}
         <button type="button" class="navbar_toggle" id="navbarToggle">
             <i class="bi bi-list" id="haburget_colose"></i>
         </button>
+        {{-- nav mobile --}}
+
         <div class="mobile_nav " id="mobile_nav">
-            <ul >
+            <ul>
                 <a href="{{ route('home') }}" class="">
                     <li class="nav_start ">
                         Home
@@ -181,8 +202,8 @@
                     </li>
 
                 @endauth
-          
-          
+
+
             </ul>
         </div>
     </div>
