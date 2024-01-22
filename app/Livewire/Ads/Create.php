@@ -27,15 +27,19 @@ class Create extends Component
     #[Validate('required|exists:users,id')] 
     public $user_id;
 
+    #[Validate(['images.*' => 'image|max:2048'])]
     public $images = [];
+
+    #[Validate(['temporary_images.*' => 'image|max:2048'])]
 
     public $temporary_images;
 
     public $ad;
+    public $index = 0;
 
     public function updatedTemporaryImages() {
         if($this->validate([
-            'temporary_images' => 'required',
+            'temporary_images.*' => 'image|max:2048'
         ])) {
             foreach($this->temporary_images as $tempImage) {
                 $this->images[] = $tempImage;
@@ -55,8 +59,10 @@ class Create extends Component
         $this->validate();
         $this->ad = Ad::create($this->all());
         if(count($this->images)) {
-            foreach($this->images as $image) {
-                $this->ad->images()->create(['path' => $image->store('images', 'public')]);
+            foreach($this->images as $this->index => $image) {
+                $name = $this->index + 1 . '.jpg';
+                $path = $image->storeAs('images/' . $this->ad->id , $name, 'public');
+                $this->ad->images()->create(['path' => $path]);
             }
         }
         $this->reset();

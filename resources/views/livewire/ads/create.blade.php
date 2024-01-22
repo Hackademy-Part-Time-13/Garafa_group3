@@ -81,14 +81,15 @@
 
                 @if(!empty($images))
                     <div class="row">
+                        <p class="text-center">Anteprima immagini</p>
                         <div class="col-12">
-                            <p>Anteprima immagini</p>
-                            <div class="row border border-4 rounded shadow-sm py-1">
+                            
+                            <div class="row border border-4 shadow-sm py-2 my-2">
                                 
                                 @foreach($images as $key => $image)
                                 <div class="col-3">
                                     <div class="img-preview shadow-sm rounded" style="background-image: url({{$image->temporaryUrl()}})"></div>
-                                    <button type="button" class="btn btn-danger shadow-sm d-block text-center mt-2 mx-auto" wire:click="removeImage({{$key}})">cancella</button>
+                                    <button type="button" class="btn btn-danger shadow-sm d-block text-center mt-2 mx-auto" wire:click="removeImage({{$key}})">Rimuovi</button>
                                 </div>                               
                                 @endforeach
                             
@@ -96,8 +97,8 @@
                         </div>
                     </div>
                 @endif
-            
-            <button type="submit " class="form_submit_button mx-auto d-block">Crea annuncio</button>
+                    <button type="submit " class="form_submit_button mx-auto d-block">Crea annuncio</button>
+                    
         </form>
 
         </div>

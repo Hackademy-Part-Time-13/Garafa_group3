@@ -16,7 +16,7 @@
                 </div>
 
                 <div class="col-xxl-7 col-xl-3 col-md-4 col-xs-6 ">
-                    <img class="show_main_img"  src="https://picsum.photos/300/400" alt="">
+                    <img class="show_main_img" src="https://picsum.photos/300/400" alt="">
                 </div>
 
             </div>
@@ -29,23 +29,32 @@
 
                 <h4 class="ads_price ">{{ $ad->price }} £</h4>
 
-                
+
 
                 <div class="mt-3">
                     <h2>Descrizione</h2>
                     <p>{{ $ad->description }}</p>
                 </div>
 
-                <button class="buy_now_button">
-                    buy now
-                </button>
+                <div class="show_botom">
+                    <button class="buy_now_button">
+                        buy now
+                    </button>
+
+                    <div >
+                        <a class="seller_box " href="{{route('user.seller.profile',$ad->user)}}">
+                            <img class="ads_image_profile me-3" src="https://picsum.photos/400" alt=""> <p> {{ $ad->user->name }}</p>
+                        </a>                       
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
 
 
 
-    
+
 
 
 
