@@ -26,7 +26,7 @@
                 <p>4</p>
             </div>
         </div>
-        <p>get in contact</p>
+        <a href="{{route('user', $user)}}"><p>get in contact</p></a>
     </div>
 
 

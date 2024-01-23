@@ -8,7 +8,7 @@ use App\Models\Favorite;
 use Livewire\Component;
 
 
-class Index extends Component
+class IndexOg extends Component
 {   
     
     public $ads;

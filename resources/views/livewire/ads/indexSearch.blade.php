@@ -46,6 +46,8 @@
                 <h5 class="text-white">Prova una nuova ricerca o <a href="{{ route('ads.index')}}">sfoglia tutti gli annunci</a></h5>                  
                 
                 @else
+                <h4 class="text-white pt-3">{{$ads->count()}} annunci trovati con la parola "{{$searched}}"</h4>
+
                 @foreach ($ads as $ad)
                     <div class="col-3 d-flex justify-content-center">
                         <div class="ads_container ">

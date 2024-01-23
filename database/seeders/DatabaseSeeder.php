@@ -28,11 +28,11 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => now()
         ]);
 
-        \App\Models\User::factory(20)->create();
+        \App\Models\User::factory(20)->create();        
         
         $this->categories();
         $this->call(AdsSeeder::class);
-        
+        \App\Models\Ad::factory(30)->create();
     }
     
 

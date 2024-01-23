@@ -48,6 +48,7 @@
                      
                 
                 @else
+                <h4 class="text-white pt-3">{{$ads->count()}} annunci trovati per la categoria {{$category->name}}</h4>
                 @foreach ($ads as $ad)
                     <div class="col-3 d-flex justify-content-center">
                         <div class="ads_container ">
