@@ -4,9 +4,11 @@ namespace App\Livewire\Ads;
 
 use App\Models\Ad;
 use Livewire\Component;
-use Illuminate\Support\Facades\Auth;
-use Livewire\Attributes\Validate;
+use App\Jobs\ResizeImage;
 use Livewire\WithFileUploads;
+use Livewire\Attributes\Validate;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
 class Create extends Component
 {
@@ -60,10 +62,17 @@ class Create extends Component
         $this->ad = Ad::create($this->all());
         if(count($this->images)) {
             foreach($this->images as $this->index => $image) {
+
                 $name = $this->index + 1 . '.jpg';
                 $path = $image->storeAs('images/' . $this->ad->id , $name, 'public');
-                $this->ad->images()->create(['path' => $path]);
+                $newImage = $this->ad->images()->create(['path' => $path]);
+                // $newFileName = "/ads/{$this->ad->id}";
+                // $newImage = $this->ad->images()->create(['path' => $image->storeAs("$newFileName" . $this->ad->id , $name, 'public')]);
+
+                dispatch(new ResizeImage($newImage->path, 400, 300));
             }
+
+            File::deleteDirectory(storage_path('/app/livewire-tmp'));
         }
         $this->reset();
         return redirect()->route('ad.create')->with('success', 'Annuncio creato correttamente e in stato di revisione');
