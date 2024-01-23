@@ -7,7 +7,7 @@ use App\Models\Ad;
 use Illuminate\View\Component;
 use Illuminate\Contracts\View\View;
 
-class categoryCard extends Component
+class CategoryCard extends Component
 {
 
     /**
