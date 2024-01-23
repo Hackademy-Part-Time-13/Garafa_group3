@@ -29,7 +29,7 @@
                     </a>
 
                     <a href="{{ route('ad.create') }}">
-                        <li class="nav_end @if (Illuminate\Support\Facades\Route::currentRouteName() == 'ad.create') carent_root @endif">
+                        <li class=" @if (Illuminate\Support\Facades\Route::currentRouteName() == 'ad.create') carent_root @endif">
                             Inserisci annuncio</li>
                     </a>
 
