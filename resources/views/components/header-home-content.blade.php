@@ -5,6 +5,6 @@
 
     <form class="header_form" action="{{route('ad.searched')}}">
         <input type="text" required name="searched">
-        <button type="submit">Cerca</button>
+        <button type="submit">{{__('ui.search')}}</button>
     </form>
 </div>
