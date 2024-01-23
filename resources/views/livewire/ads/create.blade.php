@@ -33,7 +33,7 @@
 
     <div class="col-12">
         <div class="form_fit">
-            <h2>Inserisci annuncio</h2>
+            <h2>{{__('ui.createad')}}</h2>
                 
             {{-- FORM --}}
         <form class="login_form " wire:submit.prevent="store" >
