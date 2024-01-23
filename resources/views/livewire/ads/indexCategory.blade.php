@@ -44,7 +44,7 @@
 
                 @if($ads->isEmpty())
                 <h4 class="text-white pt-3">Nessun annuncio presente in questa categoria</h4>
-                <h5 class="text-white">Prova un'altra categoria o sfoglia tutti gli annunci</h5>                    
+                <h5 class="text-white">Prova un'altra categoria o <a href="{{ route('ads.index')}}">sfoglia tutti gli annunci</a></h5>                    
                      
                 
                 @else

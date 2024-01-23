@@ -60,7 +60,7 @@
                                     <div class="col-xxl-7 col-xl-3 col-md-4 col-xs-6 ">
                                         <img class="show_main_img" src="{{Storage::url('images/' . $ad_to_check->id . '/1.jpg')}}" alt="">
                                     </div>
-                    
+                     
                                 </div>
                                 @endif
                     
