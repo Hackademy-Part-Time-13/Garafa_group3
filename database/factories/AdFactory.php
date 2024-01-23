@@ -17,12 +17,12 @@ class AdFactory extends Factory
     public function definition(): array
     {
         return [
-            'title'=>fake()->title(),
-            'description'=> fake()->paragraph(),
-            'price'=>fake()->randomFloat(2, 20, 30),
+            'title'=>fake()->words(4, true),
+            'description'=> fake()->paragraph(3),
+            'price'=>fake()->numberBetween(1,9999),
             'category_id'=>fake()->numberBetween(1,9),
-            'user_id'=>fake()->numberBetween(1,9),
-            'is_accepted'=>fake()->numberBetween(0,1),
+            'user_id'=>fake()->numberBetween(1,20),
+            'is_accepted'=> 1,
         ];
     }
 }

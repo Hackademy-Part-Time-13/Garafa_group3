@@ -49,6 +49,7 @@
                 <h5 class="text-white">Evidentemente abbiamo venduto tutto!</h5>                    
 
                 @else
+                <h4 class="text-white pt-3">{{$ads->count()}} annunci trovati</h4>
                 @foreach ($ads as $ad)
                     <div class="col-xl-3 col-md-4 col-xs-12 d-flex justify-content-center">
                         <div class="ads_container">
