@@ -11,7 +11,7 @@
             <ul class="navbar_component">
                 <a href="{{ route('home') }}" class="">
                     <li class="nav_start @if (Illuminate\Support\Facades\Route::currentRouteName() == 'home') carent_root @endif ">
-                        Home
+                        {{__('ui.home')}}
                     </li>
                 </a>
 
@@ -20,17 +20,17 @@
                 @guest
                     <a href="{{ route('register') }}">
                         <li class=" @if (Illuminate\Support\Facades\Route::currentRouteName() == 'register') carent_root @endif">
-                            Register</li>
+                            {{__('ui.register')}} </li>
                     </a>
 
                     <a href="{{ route('login') }}">
                         <li class=" @if (Illuminate\Support\Facades\Route::currentRouteName() == 'login') carent_root @endif">
-                            Login</li>
+                            {{__('ui.login')}}</li>
                     </a>
 
                     <a href="{{ route('ad.create') }}">
                         <li class=" @if (Illuminate\Support\Facades\Route::currentRouteName() == 'ad.create') carent_root @endif">
-                            Inserisci annuncio</li>
+                            {{__('ui.insertAd')}}</li>
                     </a>
 
                 @endguest
@@ -41,12 +41,12 @@
                 @auth
                     <a class="nav-link  " href="{{ route('ad.create') }}">
                         <li class=" @if (Illuminate\Support\Facades\Route::currentRouteName() == 'ad.create') carent_root @endif">
-                            Inserisci annuncio</li>
+                            {{__('ui.insertAd')}}</li>
                     </a>
 
                     <a class="nav-link" href="{{ route('ads.index') }}">
                         <li class="@if (Illuminate\Support\Facades\Route::currentRouteName() == 'ads.index') carent_root @endif">
-                            Tutti gli annunci</li>
+                            {{__('ui.allAds')}}</li>
                     </a>
 
                 @endauth
@@ -62,14 +62,14 @@
 
                         <ul class="dropdown-menu ">
                             <li>
-                                <a class="dropdown-item" href="{{ route('user.auth.profile') }}">Il mio profilo</a>
+                                <a class="dropdown-item" href="{{ route('user.auth.profile') }}">{{__('ui.profile')}}</a>
                             </li>
 
                             @if (auth()->user()->is_revisor)
                                 <li class="position-relative">
-                                    <a class="dropdown-item" href="{{ route('revisor.index') }}">Zona revisore</a>
+                                    <a class="dropdown-item" href="{{ route('revisor.index') }}">{{__('ui.revisor')}}</a>
                                     <span class="badge_revisor translate-niddle badge rounded-pill bg-danger">
-                                        {{ App\Models\Ad::toBeRevisionedCount() }}<span> da revisionare</span>
+                                        {{ App\Models\Ad::toBeRevisionedCount() }}<span> {{__('ui.messageRevisor')}}</span>
                                 </li>
                             @endif
                             <li>
@@ -81,7 +81,7 @@
 
                             <li>
                                 <a class="dropdown-item " href="{{ route('logout') }}"
-                                    onclick="event.preventDefault(); getElementById('form-logout').submit();">Logout</a>
+                                    onclick="event.preventDefault(); getElementById('form-logout').submit();">{{__('ui.logout')}}</a>
                             </li>
                             <form id="form-logout" action="/logout" method="POST" class="d-none">
                                 @csrf
@@ -95,7 +95,7 @@
                 
                 <li class="dropdown nav_end">
                     <a class="  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        lang
+                        {{__('ui.lang')}}
                     </a>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="#"><x-locale lang="it" nation="it" /></a></li>
