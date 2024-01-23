@@ -46,8 +46,10 @@ Aggiunta likes:
 
 
 
-Class App\Livewire\Ads\Index located in C:/Users/Fabrizio/Desktop/git-aulab-hpt13/Garafa_group3/app\Livewire\Ads\IndexOG.php does not comply with psr-4 autoloading standard. Skipping.
-Class App\View\Components\categoryCard located in C:/Users/Fabrizio/Desktop/git-aulab-hpt13/Garafa_group3/app\View\Components\category-card.php does not comply with psr-4 autoloading standard. Skipping.
+    ],
+    "content-hash": "64ad1314efc7a5a0630c606a757ab8a8",
+    "packages": [
+        {
 
 
 Users/Groups lists side
