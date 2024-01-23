@@ -43,7 +43,7 @@
 
                 @if($ads->isEmpty())
                 <h4 class="text-white pt-3">La ricerca non ha prodotto risultati</h4>
-                <h5 class="text-white">Prova una nuova ricerca o sfoglia tutti gli annunci</h5>                    
+                <h5 class="text-white">Prova una nuova ricerca o <a href="{{ route('ads.index')}}">sfoglia tutti gli annunci</a></h5>                  
                 
                 @else
                 @foreach ($ads as $ad)
