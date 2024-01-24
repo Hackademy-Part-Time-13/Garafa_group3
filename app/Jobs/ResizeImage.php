@@ -10,6 +10,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
+use Spatie\Image\Manipulations;
 
 class ResizeImage implements ShouldQueue
 {
@@ -37,8 +38,8 @@ class ResizeImage implements ShouldQueue
         $h = $this->h;
 
         $srcPath = storage_path() . '/app/public/' . $this->path . '/' . $this->fileName;
-        $destPath = storage_path() . '/app/public/' . $this->path . "/crop_{$w}x{$h}" . $this->fileName;
-
-        $croppedimage = Image::load($srcPath)->crop(Manipulations::CROP_CENTER, $w, $h)->save($destPath);
+        $destPath = storage_path() . '/app/public/' . $this->path . "/crop_{$w}x{$h}_" . $this->fileName;
+        
+        $croppedimage = Image::load($srcPath)->crop(Manipulations::CROP_CENTER, $w,$h)->save($destPath);
     }
 }
