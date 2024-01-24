@@ -50,21 +50,21 @@ class IndexAll extends Component
 
     public function newest(){   
         $this->ads = Ad::where('is_accepted', true)
-        ->orderBy('id','DESC')->get();     
+        ->orderBy('id','DESC')->paginate(12);     
     }
     
     public function oldest(){
-        $this->ads = Ad::where('is_accepted', true)->get();
+        $this->ads = Ad::where('is_accepted', true)->paginate(12);
     }
     
     public function cheapest(){
         $this->ads = Ad::where('is_accepted', true)
-        ->orderBy('price','ASC')->get(); 
+        ->orderBy('price','ASC')->paginate(12); 
     }
 
     public function mostExpensive(){
         $this->ads = Ad::where('is_accepted', true)
-        ->orderBy('price', 'DESC')->get();
+        ->orderBy('price', 'DESC')->paginate(12);
     }
 
 
@@ -90,14 +90,15 @@ class IndexAll extends Component
     if ($this->bool) {
         // $this->ads = Ad::where('is_accepted', true)->get();
         // return view('livewire.ads.indexAll');
-
-        
         return view('livewire.ads.indexAll', [
-            'adss' => Ad::paginate(10),
+            'adss' => Ad::where('is_accepted', true)->paginate(12),
         ]);
 
     } else {
-        return view('livewire.ads.indexAll');
+        dd($this->ads);
+        return view('livewire.ads.indexAll', [
+            'adss' => $this->ads,
+        ]);
     }
 
     } 
