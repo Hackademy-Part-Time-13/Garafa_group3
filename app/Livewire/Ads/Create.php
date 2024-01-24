@@ -61,12 +61,11 @@ class Create extends Component
         $this->validate();
         $this->ad = Ad::create($this->all());
         if(count($this->images)) {
-            foreach($this->images as  $image) {
+            foreach($this->images as $this->index => $image) {
 
-                // $name = $this->index + 1 . '.jpg';
-                // $path = $image->storeAs('images/' . $this->ad->id , $name, 'public');
-                $filename = "ads/{$this->ad->id}";
-                $newImage = $this->ad->images()->create(['path' => $image->store($filename, 'public')]);
+                $name = $this->index + 1 . '.jpg';
+                $path = $image->storeAs('images/' . $this->ad->id , $name, 'public');
+                $newImage = $this->ad->images()->create(['path' => $path]);
                 // $newFileName = "/ads/{$this->ad->id}";
                 // $newImage = $this->ad->images()->create(['path' => $image->storeAs("$newFileName" . $this->ad->id , $name, 'public')]);
 

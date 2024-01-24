@@ -2,6 +2,7 @@
     <x-header>
       <x-header-home-content/>
     </x-header>
+    
    
         @if (session('status'))
          <div class="container my-5">

@@ -8,7 +8,7 @@ class LanguageController extends Controller
 {
     public function setLanguage(Request $request, $lang){
         
-        // dd($request);
+      
 
         session()->put('locale', $lang);
 

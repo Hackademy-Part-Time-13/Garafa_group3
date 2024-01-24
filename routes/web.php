@@ -61,6 +61,7 @@ Route::get('/rendi/revisore/{user}',[RevisorController::class,'makeRevisor'])->n
 // LANGUAGE
 Route::post('lingua/{lang}',[LanguageController::class, 'setLanguage'])->name('set.language.locale');
 
+
 // SELLER PROFILE
 Route::get('/seller/profile/{user}',[UserController::class, 'seller'])->middleware(['auth', 'verified'])->name('user.seller.profile');
 
