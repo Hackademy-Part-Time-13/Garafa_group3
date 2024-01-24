@@ -87,13 +87,15 @@ class IndexAll extends Component
 
 
     public function render(){   
-
     if ($this->bool) {
-        $this->ads = Ad::where('is_accepted', true)->get();
-        return view('livewire.ads.indexAll');
-        // return view('livewire.ads.indexAll', [
-        //     'ads' => Ad::paginate(10),
-        // ]);
+        // $this->ads = Ad::where('is_accepted', true)->get();
+        // return view('livewire.ads.indexAll');
+
+        
+        return view('livewire.ads.indexAll', [
+            'adss' => Ad::paginate(10),
+        ]);
+
     } else {
         return view('livewire.ads.indexAll');
     }
