@@ -20,4 +20,5 @@
     <livewire:ads.indexAll title="Sfoglia annunci"/>
     @endif
 
+
 </x-main>
