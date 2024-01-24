@@ -1,7 +1,12 @@
+<x-main>
+    <x-secondary-header/>
+
+    <div class="container">
 @include('Chatify::layouts.headLinks')
 <div class="messenger">
     {{-- ----------------------Users/Groups lists side---------------------- --}}
     <div class="messenger-listView {{ !!$id ? 'conversation-active' : '' }}">
+        
         {{-- Header and search bar --}}
         <div class="m-header">
             <nav>
@@ -95,6 +100,8 @@
 
         </div>
         {{-- Send Message Form --}}
+        {{-- @dd(!!$ad) --}}
+        {{-- @include('Chatify::layouts.sendForm', ['ad' => $ad]) --}}
         @include('Chatify::layouts.sendForm')
     </div>
     {{-- ---------------------- Info side ---------------------- --}}
@@ -110,3 +117,7 @@
 
 @include('Chatify::layouts.modals')
 @include('Chatify::layouts.footerLinks')
+
+
+</div>
+</x-main>

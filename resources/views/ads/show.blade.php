@@ -42,7 +42,7 @@
                     </button>
 
                     <div >
-                        <a class="seller_box " href="{{route('user.seller.profile',$ad->user)}}">
+                        <a class="seller_box " href="{{route('user', $ad->user)}}">
                             <img class="ads_image_profile me-3" src="https://picsum.photos/400" alt=""> <p> {{ $ad->user->name }}</p>
                         </a>                       
                     </div>
