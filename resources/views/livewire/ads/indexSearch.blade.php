@@ -22,10 +22,10 @@
                     </div>
 
                     <div>
-                        <select wire:model.change="sortSelect" wire:change="applySort">
-                            <option selected value="noSorted">Category</option>
+                        <select wire:model.change="categorySelect" wire:change="applyCat">
+                            <option disable selected>Filtra per categoria</option>
                             @foreach(App\Models\Category::all() as $category)
-                            <option selected value="noSorted">{{$category->name}}</option>
+                            <option value="{{$category->id}}">{{$category->name}}</option>
                             @endforeach
                             
                         </select>

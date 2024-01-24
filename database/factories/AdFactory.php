@@ -20,7 +20,7 @@ class AdFactory extends Factory
             'title'=>fake()->words(4, true),
             'description'=> fake()->paragraph(3),
             'price'=>fake()->numberBetween(1,9999),
-            'category_id'=>fake()->numberBetween(1,9),
+            'category_id'=>fake()->numberBetween(1,10),
             'user_id'=>fake()->numberBetween(1,20),
             'is_accepted'=> 1,
         ];

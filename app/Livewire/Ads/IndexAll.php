@@ -3,9 +3,10 @@
 namespace App\Livewire\Ads;
 
 use App\Models\Ad;
+use Livewire\Component;
 use App\Models\Category;
 use App\Models\Favorite;
-use Livewire\Component;
+use Illuminate\Support\Facades\Redirect;
 
 
 class IndexAll extends Component
@@ -15,6 +16,7 @@ class IndexAll extends Component
     public $ads;
     public $title;
     public $bool = true;
+    public $categorySelect;
 
     public function applySort()
     {
@@ -38,6 +40,10 @@ class IndexAll extends Component
             $this->bool = false;
             $this->mostExpensive();
         }
+    }
+
+    public function applyCat(){
+        return redirect()->route('adsByCat', $this->categorySelect);
     }
 
     public function newest(){   

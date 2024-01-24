@@ -15,7 +15,9 @@ class IndexCategory extends Component
     public $ads;
     public $title;
     public $category_id;
+    public $category_name;
     public $bool = true;
+    public $categorySelect;
 
     public function applySort()
     {
@@ -39,6 +41,10 @@ class IndexCategory extends Component
             $this->bool = false;
             $this->mostExpensive();
         }
+    }
+
+    public function applyCat(){
+        return redirect()->route('adsByCat', $this->categorySelect);
     }
 
     public function newest(){   

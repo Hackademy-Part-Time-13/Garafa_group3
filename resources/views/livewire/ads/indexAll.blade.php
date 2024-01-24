@@ -24,8 +24,8 @@
                     </div>
 
                     <div>
-                        <select wire:model.change="sortSelect" wire:change="applySort">
-                            <option selected value="noSorted">Filtra per categoria</option>
+                        <select wire:model.change="categorySelect" wire:change="applyCat">
+                            <option disable selected>Filtra per categoria</option>
                             @foreach(App\Models\Category::all() as $category)
                             <option value="{{$category->id}}">{{$category->name}}</option>
                             @endforeach

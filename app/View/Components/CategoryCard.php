@@ -13,7 +13,7 @@ class CategoryCard extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public $title ,public $ads, public $category)
+    public function __construct(public $title, public $ads, public $category)
     {
         
     }
@@ -23,6 +23,6 @@ class CategoryCard extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.category-card');
+        return view('components.CategoryCard');
     }
 }

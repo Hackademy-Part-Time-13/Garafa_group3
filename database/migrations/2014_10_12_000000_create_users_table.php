@@ -19,6 +19,13 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+
+            $table->boolean('is_revisor')->default(false);
+            $table->boolean('is_applied')->default(false);
+
+            $table->string('github_id')->nullable()->unique();
+            $table->string('google_id')->nullable()->unique();
+
             
             $table->timestamps();
         });

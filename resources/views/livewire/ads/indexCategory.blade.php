@@ -23,10 +23,10 @@
                     </div>
 
                     <div>
-                        <select wire:model.change="sortSelect" wire:change="applySort">
-                            <option selected value="noSorted">Category</option>
+                        <select wire:model.change="categorySelect" wire:change="applyCat">
+                            <option selected value="noCategory">Filtra per categoria</option>
                             @foreach(App\Models\Category::all() as $category)
-                            <option selected value="noSorted">{{$category->name}}</option>
+                            <option value="{{$category->id}}">{{$category->name}}</option>
                             @endforeach
                             
                         </select>
@@ -48,7 +48,8 @@
                      
                 
                 @else
-                <h4 class="text-white pt-3">{{$ads->count()}} annunci trovati per la categoria {{$category->name}}</h4>
+                {{-- @dd($category) --}}
+                <h4 class="text-white pt-3">{{$ads->count()}} annunci trovati per la categoria {{$category_name}}</h4>
                 @foreach ($ads as $ad)
                     <div class="col-3 d-flex justify-content-center">
                         <div class="ads_container ">

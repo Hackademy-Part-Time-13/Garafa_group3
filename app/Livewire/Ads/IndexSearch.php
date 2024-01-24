@@ -16,6 +16,7 @@ class IndexSearch extends Component
     public $title;
     public $searched;
     public $bool = true;
+    public $categorySelect;
 
     public function applySort()
     {
@@ -39,6 +40,10 @@ class IndexSearch extends Component
             $this->bool = false;
             $this->mostExpensive();
         }
+    }
+
+    public function applyCat(){
+        return redirect()->route('adsByCat', $this->categorySelect);
     }
 
     public function newest(){   
