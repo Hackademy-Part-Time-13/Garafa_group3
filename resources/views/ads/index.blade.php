@@ -10,7 +10,7 @@
 
     {{-- ANNUNCI PER CATEGORIA --}}
     @elseif(Illuminate\Support\Facades\Route::currentRouteName() == 'adsByCat')
-        {{-- @dd($category->name) --}}
+        {{-- @dd($category->id) --}}
     <livewire:ads.indexCategory :category_id="$category->id" :category_name="$category->name"/>
 
    

@@ -21,12 +21,13 @@
                             <option value="mostExpensive">Dal più caro</option>
                         </select>
                     </div>
-
+                        
                     <div>
                         <select wire:model.change="categorySelect" wire:change="applyCat">
                             <option selected value="noCategory">Filtra per categoria</option>
                             @foreach(App\Models\Category::all() as $category)
-                            <option value="{{$category->id}}">{{$category->name}}</option>
+                            <option value="{{$category->id}}"
+                                @if($category_id==$category->id) selected @endif> {{$category->name}} </option>
                             @endforeach
                             
                         </select>

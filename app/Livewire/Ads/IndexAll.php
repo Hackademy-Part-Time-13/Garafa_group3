@@ -4,19 +4,21 @@ namespace App\Livewire\Ads;
 
 use App\Models\Ad;
 use Livewire\Component;
-use App\Models\Category;
 use App\Models\Favorite;
-use Illuminate\Support\Facades\Redirect;
+use Livewire\WithPagination;
+
 
 
 class IndexAll extends Component
 {   
-    
+    use WithPagination;
+
     public $sortSelect;
     public $ads;
     public $title;
     public $bool = true;
     public $categorySelect;
+    public $category_id;
 
     public function applySort()
     {
@@ -89,6 +91,9 @@ class IndexAll extends Component
     if ($this->bool) {
         $this->ads = Ad::where('is_accepted', true)->get();
         return view('livewire.ads.indexAll');
+        // return view('livewire.ads.indexAll', [
+        //     'ads' => Ad::paginate(10),
+        // ]);
     } else {
         return view('livewire.ads.indexAll');
     }

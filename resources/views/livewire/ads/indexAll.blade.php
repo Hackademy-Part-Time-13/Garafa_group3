@@ -44,6 +44,7 @@
         <div class="index_box">
             <div class="row g-5 px-3">
 
+                
                 @if($ads->isEmpty())
                 <h4 class="text-white pt-3">Nessun annuncio presente</h4>                     
                 <h5 class="text-white">Evidentemente abbiamo venduto tutto!</h5>                    
@@ -91,10 +92,11 @@
                         </div>
                     </div>
                 @endforeach
+                {{-- {{ $ads->links() }} --}}
                 @endif
             </div>
         </div>
     </div>
-
+    
 
 </div>
