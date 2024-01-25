@@ -3,5 +3,5 @@
     max-width: 600px; /* Imposta la larghezza massima a 1200 pixel */
     margin: 0 auto; /* Centra il contenuto all'interno del genitore */
     height:60%; /* Imposta l'altezza al 60% dell'altezza del viewport */
-    max-height: 800px; /* Imposta l'altezza al 60% dell'altezza del viewport */
+    max-height: auto; /* Imposta l'altezza al 60% dell'altezza del viewport */
 }
