@@ -29,10 +29,10 @@ class Create extends Component
     #[Validate('required|exists:users,id')] 
     public $user_id;
 
-    #[Validate(['images.*' => 'image|max:2048'])]
+    #[Validate(['images.*' => 'image|max:4096'])]
     public $images = [];
 
-    #[Validate(['temporary_images.*' => 'image|max:2048'])]
+    #[Validate(['temporary_images.*' => 'image|max:4096'])]
 
     public $temporary_images;
 
@@ -41,7 +41,7 @@ class Create extends Component
 
     public function updatedTemporaryImages() {
         if($this->validate([
-            'temporary_images.*' => 'image|max:2048'
+            'temporary_images.*' => 'image|max:4096'
         ])) {
             foreach($this->temporary_images as $tempImage) {
                 $this->images[] = $tempImage;
