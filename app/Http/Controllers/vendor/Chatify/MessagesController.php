@@ -43,7 +43,7 @@ class MessagesController extends Controller
      * @param int $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|View
      */
-    public function index( $id = null, $ad_id = null)
+    public function index( $id = null)
     {
         $messenger_color = Auth::user()->messenger_color;
         return view('Chatify::pages.app', [
@@ -386,6 +386,7 @@ class MessagesController extends Controller
      */
     public function deleteConversation(Request $request)
     {
+        
         // delete
         $delete = Chatify::deleteConversation($request['id']);
 

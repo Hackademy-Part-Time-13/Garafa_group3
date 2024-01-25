@@ -79,31 +79,35 @@
                     @enderror
                 @endif
 
-                @if(!empty($images))
-                    <div class="row">
-                        <p class="text-center">Anteprima immagini</p>
-                        <div class="col-12">
-                            
-                            <div class="row border border-4 shadow-sm py-2 my-2">
-                                
-                                @foreach($images as $key => $image)
-                                <div class="col-3">
-                                    <div class="img-preview shadow-sm rounded" style="background-image: url({{$image->temporaryUrl()}})"></div>
-                                    <button type="button" class="btn btn-danger shadow-sm d-block text-center mt-2 mx-auto" wire:click="removeImage({{$key}})">Rimuovi</button>
-                                </div>                               
-                                @endforeach
-                            
-                            </div>
-                        </div>
-                    </div>
-                @endif
-                    <button type="submit " class="form_submit_button mx-auto d-block">Crea annuncio</button>
-                    
-        </form>
+                <button type="submit " class="form_submit_button mx-auto d-block">Crea annuncio</button>
 
+                </form>
         </div>
-
     </div>
 
+            {{-- ANTEPRIMA IMMAGINI --}}
+        @if(!empty($images))
+            <div class="container">
+                <div class="row mx-auto mx-3 border border-4 rounded py-2 my-2 shadow-sm">
+                    <h5 class="text-center">Anteprima immagini</h5>
+
+            @foreach($images as $key => $image)
+                <div class="col-4 mb-3">
+                    <div class="img-container position-relative">
+                        <div class="img-preview shadow-sm rounded" style="background-image: url({{$image->temporaryUrl()}})">
+                        </div>
+                        <button type="button" class="btn btn-danger btn-sm shadow-sm position-absolute top-0 end-0" wire:click="removeImage({{$key}})">
+                            <i class="bi bi-x"></i>
+                        </button>
+                    </div>
+                </div>
+            @endforeach
+                
+                </div>
+            </div>
+        @endif
 </div>
+
+
+
 </div>

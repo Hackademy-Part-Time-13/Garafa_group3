@@ -19,6 +19,7 @@ class IndexCategory extends Component
     public $bool = true;
     public $categorySelect;
 
+
     public function applySort()
     {
         if ($this->sortSelect === 'noSorted') {
@@ -91,6 +92,8 @@ class IndexCategory extends Component
 
 
     public function render(){   
+
+    $this->categorySelect = $this->category_id;
 
     if ($this->bool) {
         $this->ads = Ad::where('is_accepted', true)

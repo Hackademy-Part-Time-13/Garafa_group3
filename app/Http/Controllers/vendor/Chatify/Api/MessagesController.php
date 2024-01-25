@@ -274,6 +274,7 @@ class MessagesController extends Controller
      */
     public function search(Request $request)
     {
+       
         $input = trim(filter_var($request['input']));
         $records = User::where('id','!=',Auth::user()->id)
                     ->where('name', 'LIKE', "%{$input}%")
@@ -317,6 +318,7 @@ class MessagesController extends Controller
      */
     public function deleteConversation(Request $request)
     {
+        
         // delete
         $delete = Chatify::deleteConversation($request['id']);
 
