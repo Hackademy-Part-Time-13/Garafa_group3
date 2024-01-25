@@ -39,7 +39,7 @@ Route::prefix('auth')->group(function () {
     Route::get('/google/callback',[SocialiteController::class,'handleGoogleCallback']);
         //PAGINA PROFILO
     Route::get('/profile',[UserController::class, 'profile'])->middleware(['auth', 'verified'])->name('user.auth.profile');
-    Route::get('/profile/showAd/{ad}',[AdsController::class, 'show'])->middleware(['auth', 'verified'])->name('user.auth.profile');
+    Route::get('/profile/showAd/{ad}',[AdsController::class, 'show'])->middleware(['auth', 'verified'])->name('set');
 });
 
 //HOME REVISORE/ACCETTA E RIFIUTA ANNUNCIO
