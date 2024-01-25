@@ -46,7 +46,7 @@
         {{-- Messaging area --}}
         <div class="m-body messages-container app-scroll">
             <div class="messages">
-                <p class="message-hint center-el"><span>hgchg</span></p>
+                <p class="message-hint center-el"><span></span></p>
             </div>
             {{-- Typing indicator --}}
             <div class="typing-indicator">
