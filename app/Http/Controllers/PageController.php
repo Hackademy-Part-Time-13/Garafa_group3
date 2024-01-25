@@ -28,7 +28,7 @@ public function showAd(Ad $ad){
     if($ad->is_accepted) {
         return view('ads.show', compact('ad'));
     } else {
-        abort(403);
+        return redirect()->back();
     }
 }
 
