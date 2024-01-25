@@ -52,3 +52,6 @@ Indicizzare annunci del seeder (lanciare entrambi i comandi):
     - php artisan scout:flush "App\Models\Ad"
     - php artisan scout:import "App\Models\Ad"
 
+Jobs:
+    php artisan queue:work
+

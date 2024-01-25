@@ -44,11 +44,11 @@
         <p>
 
             @if ($ads == 0)
-                Nessun annuncio
+                {{__('ui.noads')}}
             @elseif($ads == 1)
-                {{ $ads }} annuncio
+                {{ $ads }}  {{__('ui.onead')}}
             @elseif($ads > 1)
-                {{ $ads }} annunci
+                {{ $ads }}  {{__('ui.manyads')}}
             @endif
 
 

@@ -70,6 +70,8 @@ class Create extends Component
                 // $newImage = $this->ad->images()->create(['path' => $image->storeAs("$newFileName" . $this->ad->id , $name, 'public')]);
 
                 dispatch(new ResizeImage($newImage->path, 400, 400));
+                
+                dispatch(new ResizeImage($newImage->path, 400, 400));
             }
 
             File::deleteDirectory(storage_path('/app/livewire-tmp'));
