@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ad;
 use Illuminate\Http\Request;
 
 
@@ -23,7 +24,7 @@ class AdsController extends Controller
      */
     public function create()
     {
-        return redirect()->route('home');
+        return redirect()->route('ad.create');
     }
 
     /**
@@ -31,15 +32,15 @@ class AdsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return redirect()->route('home');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Ad $ad)
     {
-        //
+        return view('ads.show', compact('ad'));
     }
 
     /**

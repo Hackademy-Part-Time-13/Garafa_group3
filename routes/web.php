@@ -1,11 +1,12 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdsController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\RevisorController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\SocialiteController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PageController;
-use App\Http\Controllers\RevisorController;
-use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,7 @@ Route::prefix('auth')->group(function () {
     Route::get('/google/callback',[SocialiteController::class,'handleGoogleCallback']);
         //PAGINA PROFILO
     Route::get('/profile',[UserController::class, 'profile'])->middleware(['auth', 'verified'])->name('user.auth.profile');
+    Route::get('/profile/showAd/{ad}',[AdsController::class, 'show'])->middleware(['auth', 'verified'])->name('user.auth.profile');
 });
 
 //HOME REVISORE/ACCETTA E RIFIUTA ANNUNCIO
