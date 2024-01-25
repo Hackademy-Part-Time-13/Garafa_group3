@@ -45,7 +45,11 @@ class IndexCategory extends Component
     }
 
     public function applyCat(){
-        return redirect()->route('adsByCat', $this->categorySelect);
+
+        if($this->categorySelect != 'noSelected') {
+            return redirect()->route('adsByCat', $this->categorySelect);
+        }
+        
     }
 
     public function newest(){   
@@ -91,8 +95,8 @@ class IndexCategory extends Component
 
 
 
-    public function render(){   
-
+    public function render(){ 
+        
     $this->categorySelect = $this->category_id;
 
     if ($this->bool) {
