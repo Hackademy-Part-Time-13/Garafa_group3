@@ -7,6 +7,7 @@
             <div class="col-xxl-6 col-xl-3 col-md-4 col-xs-3 responShow row justify-content-evenly">
 
                 <div class="show_img_mini_container col-xxl-5 col-xl-3 col-md-4 col-xs-6">
+
                     <img src="https://picsum.photos/80/80" alt="">
                     <img src="https://picsum.photos/80/80" alt="">
                     <img src="https://picsum.photos/80/80" alt="">
@@ -35,6 +36,7 @@
                     <h2>Descrizione</h2>
                     <p>{{ $ad->description }}</p>
                 </div>
+                <div><a class="chidei_info" href="{{route('user', $ad->user)}}">Chiedi informazioni sul annuncio</a></div>
 
                 <div class="show_botom">
                     <button class="buy_now_button">
@@ -42,7 +44,7 @@
                     </button>
 
                     <div >
-                        <a class="seller_box " href="{{route('user', $ad->user)}}">
+                        <a class="seller_box " href="{{route('user.seller.profile', $ad->user)}}">
                             <img class="ads_image_profile me-3" src="https://picsum.photos/400" alt=""> <p> {{ $ad->user->name }}</p>
                         </a>                       
                     </div>

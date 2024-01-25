@@ -128,3 +128,15 @@
     overflow: hidden;
     border-radius: 50% !important;
 }
+
+.chidei_info{
+    color: var(--lite-red);
+    text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+.chidei_info:hover{
+    color: var(--white);
+    text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+
+}
