@@ -26,6 +26,11 @@ return[
     'work'=>'lavora con noi',
     'click'=>'registrati e clicca qui',
     'revisorF'=>'diventare un revisore',
+
+       // annuncio
+       'noads'=>'nessun annuncio',
+       'onead'=>'annuncio',
+       'manyads'=>'annunci',
     
    
     

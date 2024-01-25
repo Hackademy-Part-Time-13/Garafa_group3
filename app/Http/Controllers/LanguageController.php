@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Lang;
 
 class LanguageController extends Controller
 {
@@ -10,8 +11,8 @@ class LanguageController extends Controller
         
       
 
+        
         session()->put('locale', $lang);
-
         return redirect()->back();
 }
 }

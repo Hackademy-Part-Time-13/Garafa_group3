@@ -45,17 +45,37 @@
     <div class="container ">
         <div class=" category_card_container">
 
+            @if ( Illuminate\Support\Facades\Lang::locale()== 'it')
             @foreach (App\Models\Category::all() as $category)
-                <x-CategoryCard :title="$category->name" :category="$category" 
-                :ads="App\Models\Ad::where('is_accepted', true)->where('category_id', $category->id)->get()->count()" />
-            @endforeach
+            <x-CategoryCard :title="$category->name_it" :category="$category" 
+            :ads="App\Models\Ad::where('is_accepted', true)->where('category_id', $category->id)->get()->count()" />
+        @endforeach
+           
+
+            @elseif( Illuminate\Support\Facades\Lang::locale() == 'en')
+
+            @foreach (App\Models\Category::all() as $category)
+            <x-CategoryCard :title="$category->name_en" :category="$category" 
+            :ads="App\Models\Ad::where('is_accepted', true)->where('category_id', $category->id)->get()->count()" />
+        @endforeach
+
+            @elseif( Illuminate\Support\Facades\Lang::locale() == 'jp')
+
+            @foreach (App\Models\Category::all() as $category)
+            <x-CategoryCard :title="$category->name_jp" :category="$category" 
+            :ads="App\Models\Ad::where('is_accepted', true)->where('category_id', $category->id)->get()->count()" />
+
+        @endforeach
+            
+            @endif
+          
 
         </div>
     </div>
     {{-- scroll categorie --}}
     
 
-
+  
 
     <div class="home_back">
         <div class="home_box row">
@@ -94,3 +114,5 @@
     </div>
 
 </x-main>
+
+

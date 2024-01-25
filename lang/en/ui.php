@@ -29,4 +29,9 @@ return[
     'click'=>'register and click here',
     'revisorF'=>'become a reviewer',
     
+
+    // annuncio
+    'noads'=>'noads',
+    'onead'=>'ad',
+    'manyads'=>'ads',
 ];
