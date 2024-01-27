@@ -41,7 +41,7 @@
                 {{-- <div></div> --}}
                 <form class="form_iframe" id="form_iframe" >
                     <input id="user_id_for_chat" type="text" name="user_id_chat" value="{{$ad->user->id}}">
-                    <button type="submit" class="chidei_info">Chiedi informazioni sul annuncio</button>
+                    <button class="chidei_info">Chiedi informazioni sul annuncio</button>
                 </form>
 
                 <div class="show_botom">
