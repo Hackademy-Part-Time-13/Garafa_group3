@@ -30,7 +30,7 @@
 
 .form_fit{
     height: 100%;
-
+    padding: 30px;
     display: flex;
     flex-direction: column;
 

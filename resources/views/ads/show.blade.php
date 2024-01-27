@@ -17,7 +17,7 @@
                 </div>
 
                 <div class="col-xxl-7 col-xl-3 col-md-4 col-xs-6 ">
-                    <img class="show_main_img" src="https://picsum.photos/300/400" alt="">
+                    <img class="show_main_img" src="https://picsum.photos/300/450" alt="">
                 </div>
 
             </div>
@@ -34,6 +34,7 @@
 
                 <div class="mt-3">
                     <h2>Descrizione</h2>
+                    <p>{{$ad->category->name_it}}</p>
                     <p>{{ $ad->description }}</p>
                 </div>
                 <div><a class="chidei_info" href="{{route('user', $ad->user)}}">Chiedi informazioni sul annuncio</a></div>

@@ -1,7 +1,7 @@
 <div class="">
 
     <div class="container">
-        
+
         <div class="index_sort">
             <div class="index_sort_box mt-5">
 
@@ -26,10 +26,20 @@
                     <div>
                         <select wire:model.change="categorySelect" wire:change="applyCat">
                             <option disable selected>Filtra per categoria</option>
-                            @foreach(App\Models\Category::all() as $category)
-                            <option value="{{$category->id}}">{{$category->name}}</option>
-                            @endforeach
-                            
+                            @if (Illuminate\Support\Facades\Lang::locale() == 'it')
+                                @foreach (App\Models\Category::all() as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name_it }}</option>
+                                @endforeach
+                            @elseif(Illuminate\Support\Facades\Lang::locale() == 'en')
+                                @foreach (App\Models\Category::all() as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name_en }}</option>
+                                @endforeach
+                            @elseif(Illuminate\Support\Facades\Lang::locale() == 'jp')
+                                @foreach (App\Models\Category::all() as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name_jp }}</option>
+                                @endforeach
+                            @endif
+
                         </select>
                     </div>
 
@@ -44,58 +54,59 @@
         <div class="index_box">
             <div class="row g-5 px-3">
 
-                
-                @if($adss->isEmpty())
-                <h4 class="text-white pt-3">Nessun annuncio presente</h4>                     
-                <h5 class="text-white">Evidentemente abbiamo venduto tutto!</h5>                    
 
+                @if ($adss->isEmpty())
+                    <h4 class="text-white pt-3">Nessun annuncio presente</h4>
+                    <h5 class="text-white">Evidentemente abbiamo venduto tutto!</h5>
                 @else
-                <h4 class="text-white pt-3">{{$adss->count()}} annunci trovati</h4>
-                @foreach ($adss as $ad)
-                    <div class="col-xl-3 col-md-4 col-xs-12 d-flex justify-content-center">
-                        <div class="ads_container">
-                            <img class="ads_img_container" @if($ad->images->isEmpty()) src="https://picsum.photos/400/400" @else src="{{$ad->images()->first()->getUrl(400,400)}}" alt="" @endif alt="">
+                    <h4 class="text-white pt-3">{{ $adss->count() }} annunci trovati</h4>
+                    @foreach ($adss as $ad)
+                        <div class="col-xl-3 col-md-4 col-xs-12 d-flex justify-content-center">
+                            <div class="ads_container">
+                                <img class="ads_img_container"
+                                    @if ($ad->images->isEmpty()) src="https://picsum.photos/400/400" @else src="{{ $ad->images()->first()->getUrl(400, 400) }}" alt="" @endif
+                                    alt="">
 
-                            <span class="ads_dettaglio_batton"><a href="{{ route('ad.show', $ad->id) }}">vista
-                                    dettaglio</a></span>
+                                <span class="ads_dettaglio_batton"><a href="{{ route('ad.show', $ad->id) }}">vista
+                                        dettaglio</a></span>
 
-                            <div class="ads_content">
-                                <div class="ads_text_box">
-                                    <p class="ads_titale ads_price">{{ $ad->price }} £</p>
-                                    <p class="ads_titale">{{ $ad->title }}</p>
-                                    <p class="ads_titale_description">{{ Str::limit($ad->description, 65) }}</p>
+                                <div class="ads_content">
+                                    <div class="ads_text_box">
+                                        <p class="ads_titale ads_price">{{ $ad->price }} £</p>
+                                        <p class="ads_titale">{{ $ad->title }}</p>
+                                        <p class="ads_titale_description">{{ Str::limit($ad->description, 65) }}</p>
 
+                                    </div>
+
+                                    @auth
+                                        <div class="ads_favorites">
+
+                                            @if (App\Models\Favorite::where('ad_id', $ad->id)->where('user_id', auth()->user()->id)->exists())
+                                                <span wire:click="unlike({{ $ad }})"
+                                                    class="d-flex ads_favorites_flex"> <i class="bi bi-heart-fill"></i>
+                                                    <p>{{ $ad->favorites->count() }}</p>
+                                                </span>
+                                            @else
+                                                <span wire:click="liker({{ $ad }})"
+                                                    class="d-flex ads_favorites_flex"><i class="bi bi-heart"></i>
+                                                    <p>{{ $ad->favorites->count() }}</p>
+                                                </span>
+                                            @endif
+
+                                        </div>
+                                    @endauth
                                 </div>
 
-                                @auth
-                                <div class="ads_favorites">
-                                    
-                                    @if (App\Models\Favorite::where('ad_id', $ad->id)->where('user_id', auth()->user()->id)->exists())
-                                        <span wire:click="unlike({{ $ad }})"
-                                            class="d-flex ads_favorites_flex"> <i class="bi bi-heart-fill"></i>
-                                            <p>{{ $ad->favorites->count() }}</p>
-                                        </span>
-                                    @else
-                                        <span wire:click="liker({{ $ad }})"
-                                            class="d-flex ads_favorites_flex"><i class="bi bi-heart"></i>
-                                            <p>{{ $ad->favorites->count() }}</p>
-                                        </span>
-                                    @endif
-                                    
-                                </div>
-                                @endauth
+
+
                             </div>
-
-
-
                         </div>
-                    </div>
-                @endforeach
-                {{ $adss->links() }}
+                    @endforeach
+                 <div class="d-flex justify-content-center show_pagination">{{ $adss->links() }}</div>   
                 @endif
             </div>
         </div>
     </div>
-    
+
 
 </div>

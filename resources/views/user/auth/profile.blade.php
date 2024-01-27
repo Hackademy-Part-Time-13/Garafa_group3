@@ -17,7 +17,8 @@
         <div class="user_icons text-center">
             <div class="">
                 <i class="bi bi-heart"></i>
-                <p>23</p>
+                
+                <p>{{$allFavorites}}</p>
 
             </div>
             <div>
@@ -26,7 +27,7 @@
                 <p>4</p>
             </div>
         </div>
-        <p>get in contact</p>
+        <a type="button">get in contact</a>
     </div>
 
 
@@ -105,7 +106,8 @@
         @endif
 
     </div>
-
+    <div class="user_prova">
+    </div>
 
             {{-- DA REVISIONARE --}}
     <h3 class="user_text text-center pt-5">In fase di revisione:</h3>

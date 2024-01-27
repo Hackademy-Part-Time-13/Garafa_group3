@@ -25,9 +25,19 @@
                     <div>
                         <select wire:model.change="categorySelect" wire:change="applyCat">
                             <option disable selected value="noSelected">Filtra per categoria</option>
-                            @foreach(App\Models\Category::all() as $category)
-                            <option value="{{$category->id}}">{{$category->name}}</option>
-                            @endforeach
+                            @if (Illuminate\Support\Facades\Lang::locale() == 'it')
+                                @foreach (App\Models\Category::all() as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name_it }}</option>
+                                @endforeach
+                            @elseif(Illuminate\Support\Facades\Lang::locale() == 'en')
+                                @foreach (App\Models\Category::all() as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name_en }}</option>
+                                @endforeach
+                            @elseif(Illuminate\Support\Facades\Lang::locale() == 'jp')
+                                @foreach (App\Models\Category::all() as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name_jp }}</option>
+                                @endforeach
+                            @endif
                             
                         </select>
                     </div>
@@ -51,7 +61,7 @@
                 {{-- @dd($category) --}}
                 <h4 class="text-white pt-3">{{$ads->count()}} annunci trovati per la categoria {{$category_name}}</h4>
                 @foreach ($ads as $ad)
-                    <div class="col-3 d-flex justify-content-center">
+                    <div class="col-xl-3 col-md-4 col-xs-12 d-flex justify-content-center">
                         <div class="ads_container ">
 
                             <img class="ads_img_container" @if($ad->images->isEmpty()) src="https://picsum.photos/400/400" @else src="{{Storage::url('images/' . $ad->id . '/1.jpg')}}" alt="" @endif>

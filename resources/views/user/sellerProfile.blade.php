@@ -2,7 +2,7 @@
     <x-secondary-header/>
     <div class="user_container_profile">
 
-        <div class="user_img_name">
+        <div class="user_img_name text-center">
             <img class="image_profile" src="https://picsum.photos/400" alt="">
             <h2>{{ $user->name }}</h2>
 
@@ -17,7 +17,7 @@
         <div class="user_icons text-center">
             <div class="">
                 <i class="bi bi-heart"></i>
-                <p>23</p>
+                <p>{{$allFavorites}}</p>
 
             </div>
             <div>
@@ -104,6 +104,9 @@
         @endforeach
         @endif
 
+    </div>
+
+    <div class="user_prova">
     </div>
 
 

@@ -130,13 +130,55 @@
 }
 
 .chidei_info{
+    
     color: var(--lite-red);
+    background-color: var(--white);
+    border-radius: 10px;
     text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
 }
 .chidei_info:hover{
-    color: var(--white);
+    background-color: var(--white);
+    padding: 3px 5px;
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+
+    transition: background-color 0.4s ease, color 0.4s ease;
+
     text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
 
+}
+
+.show_pagination nav{
+    color: var(--lite-red);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: var(--bs-pagination-border-radius);
+
+
+}
+.show_pagination nav{
+    border-radius: var(--bs-pagination-border-radius);
+}
+.page-item:last-child .page-link{
+    overflow: hidden;
+}
+
+.page-link{
+    color: var(--dark);
+    background-color: var(--white);
+    border: var(dark) solid;
+}
+
+.page-link.active, .active > .page-link {
+    z-index: 3;
+    color: var(--white); 
+    background-color: var(--full-red); 
+    border-color: var(--white);
+}
+
+.page-link:hover{
+    background-color: var(--full-red);
+    color: var(--white);
 }
