@@ -1,6 +1,8 @@
 .category_card_container{
   padding: 40px;
+
   display: flex;
+
   overflow: auto;
   
 
@@ -8,6 +10,7 @@
   z-index: 1;
   top: -90px;
 }
+
 .category_card_container::-webkit-scrollbar{
   background-color: var(--white);
   border-radius: 20px;

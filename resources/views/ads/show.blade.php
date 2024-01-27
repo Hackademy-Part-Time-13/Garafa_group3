@@ -1,6 +1,6 @@
 <x-main>
     <x-secondary-header />
-
+    <x-iframe_chat/>
     <div class="show_contaniner">
         <div class="row">
 
@@ -37,7 +37,12 @@
                     <p>{{$ad->category->name_it}}</p>
                     <p>{{ $ad->description }}</p>
                 </div>
-                <div><a class="chidei_info" href="{{route('user', $ad->user)}}">Chiedi informazioni sul annuncio</a></div>
+                {{-- {{route('user', $ad->user)}} --}}
+                {{-- <div></div> --}}
+                <form class="form_iframe" id="form_iframe" >
+                    <input id="user_id_for_chat" type="text" name="user_id_chat" value="{{$ad->user->id}}">
+                    <button type="submit" class="chidei_info">Chiedi informazioni sul annuncio</button>
+                </form>
 
                 <div class="show_botom">
                     <button class="buy_now_button">
