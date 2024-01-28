@@ -21,7 +21,6 @@ const them_red = document.getElementById('them_red');
 const them_green = document.getElementById('them_green');
 const them_blu = document.getElementById('them_blu');
 
-console.log(localStorage.getItem('red_theme'));
 
 
 
