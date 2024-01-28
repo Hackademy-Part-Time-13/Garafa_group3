@@ -3,7 +3,6 @@ const input_for_chat = document.getElementById('user_id_for_chat')
 const iframe_chat = document.getElementById('iframe_chat')
 const iframe_chat_componet = document.getElementById('iframe_chat_componet')
 const fa_arrow = document.getElementById('fa_arrow')
-console.log(fa_arrow);
 
 
 form_iframe.addEventListener('submit', function(event){

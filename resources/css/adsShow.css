@@ -39,6 +39,7 @@
 }
 
 .show_main_img {
+    display: none;
     width: 100%;
     /* height: 100%; */
 
@@ -133,23 +134,13 @@
     
     color: var(--lite-red);
     background-color: var(--white);
+    display: block;
     border-radius: 10px;
+    border: none;
     text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
 }
-.chidei_info:hover{
-    background-color: var(--white);
-    padding: 3px 5px;
 
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
-
-    transition: background-color 0.4s ease, color 0.4s ease;
-
-    text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
-
-}
 
 .show_pagination nav{
     color: var(--lite-red);
@@ -181,4 +172,13 @@
 .page-link:hover{
     background-color: var(--full-red);
     color: var(--white);
+}
+
+
+.adShow{
+    display: block;
+}
+
+.adHidden{
+    display: none;
 }
