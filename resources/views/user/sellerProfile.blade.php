@@ -1,5 +1,7 @@
 <x-main>
     <x-secondary-header/>
+    <x-iframe_chat/>
+
     <div class="user_container_profile">
 
         <div class="user_img_name text-center">
@@ -26,7 +28,11 @@
                 <p>4</p>
             </div>
         </div>
-        <a href="{{route('user', $user)}}"><p>get in contact</p></a>
+        <form class="form_iframe" id="form_iframe" >
+            <input id="user_id_for_chat" type="text" name="user_id_chat" value="{{$user->id}}">
+            <button type="submit" class="user_chat"><p>get in contact</p></button>
+        </form>
+        <a href="{{route('user', $user)}}"><p></p></a>
     </div>
 
 

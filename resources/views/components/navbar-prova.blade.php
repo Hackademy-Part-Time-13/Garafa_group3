@@ -11,7 +11,7 @@
             <ul class="navbar_component">
                 <a href="{{ route('home') }}" class="">
                     <li class="nav_start @if (Illuminate\Support\Facades\Route::currentRouteName() == 'home') carent_root @endif ">
-                        {{__('ui.home')}}
+                        {{ __('ui.home') }}
                     </li>
                 </a>
 
@@ -20,17 +20,17 @@
                 @guest
                     <a href="{{ route('register') }}">
                         <li class=" @if (Illuminate\Support\Facades\Route::currentRouteName() == 'register') carent_root @endif">
-                            {{__('ui.register')}} </li>
+                            {{ __('ui.register') }} </li>
                     </a>
 
                     <a href="{{ route('login') }}">
                         <li class=" @if (Illuminate\Support\Facades\Route::currentRouteName() == 'login') carent_root @endif">
-                            {{__('ui.login')}}</li>
+                            {{ __('ui.login') }}</li>
                     </a>
 
                     <a href="{{ route('ad.create') }}">
                         <li class=" @if (Illuminate\Support\Facades\Route::currentRouteName() == 'ad.create') carent_root @endif">
-                            {{__('ui.insertAd')}}</li>
+                            {{ __('ui.insertAd') }}</li>
                     </a>
 
                 @endguest
@@ -41,12 +41,12 @@
                 @auth
                     <a class="nav-link  " href="{{ route('ad.create') }}">
                         <li class=" @if (Illuminate\Support\Facades\Route::currentRouteName() == 'ad.create') carent_root @endif">
-                            {{__('ui.insertAd')}}</li>
+                            {{ __('ui.insertAd') }}</li>
                     </a>
 
                     <a class="nav-link" href="{{ route('ads.index') }}">
                         <li class="@if (Illuminate\Support\Facades\Route::currentRouteName() == 'ads.index') carent_root @endif">
-                            {{__('ui.allAds')}}</li>
+                            {{ __('ui.allAds') }}</li>
                     </a>
 
                 @endauth
@@ -62,14 +62,17 @@
 
                         <ul class="dropdown-menu ">
                             <li>
-                                <a class="dropdown-item" href="{{ route('user.auth.profile') }}">{{__('ui.profile')}}</a>
+                                <a class="dropdown-item"
+                                    href="{{ route('user.auth.profile') }}">{{ __('ui.profile') }}</a>
                             </li>
 
                             @if (auth()->user()->is_revisor)
                                 <li class="position-relative">
-                                    <a class="dropdown-item" href="{{ route('revisor.index') }}">{{__('ui.revisor')}}</a>
+                                    <a class="dropdown-item"
+                                        href="{{ route('revisor.index') }}">{{ __('ui.revisor') }}</a>
                                     <span class="badge_revisor translate-niddle badge rounded-pill bg-danger">
-                                        {{ App\Models\Ad::toBeRevisionedCount() }}<span> {{__('ui.messageRevisor')}}</span>
+                                        {{ App\Models\Ad::toBeRevisionedCount() }}<span>
+                                            {{ __('ui.messageRevisor') }}</span>
                                 </li>
                             @endif
                             <li>
@@ -81,7 +84,7 @@
 
                             <li>
                                 <a class="dropdown-item " href="{{ route('logout') }}"
-                                    onclick="event.preventDefault(); getElementById('form-logout').submit();">{{__('ui.logout')}}</a>
+                                    onclick="event.preventDefault(); getElementById('form-logout').submit();">{{ __('ui.logout') }}</a>
                             </li>
                             <form id="form-logout" action="/logout" method="POST" class="d-none">
                                 @csrf
@@ -91,18 +94,28 @@
                     </li>
 
                 @endauth
-
-                
-                <li class="dropdown nav_end">
+                <li class="dropdown ">
                     <a class="  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        {{__('ui.lang')}}
+                        them
                     </a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#"><x-locale lang="it" nation="it" /></a></li>
-                      <li><a class="dropdown-item" href="#"><x-locale lang="en" nation="gb" /></a></li>
-                      <li><a class="dropdown-item" href="#"><x-locale lang="jp" nation="jp" /></a></li>
+                        <li><a class="dropdown-item" href="#" id="them_red">red</a></li>
+                        <li><a class="dropdown-item" href="#" id="them_green">green</a></li>
+                        <li><a class="dropdown-item" href="#" id="them_blu">blu</a></li>
                     </ul>
-                  </li>
+                </li>
+
+
+                <li class="dropdown nav_end">
+                    <a class="  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ __('ui.lang') }}
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#"><x-locale lang="it" nation="it" /></a></li>
+                        <li><a class="dropdown-item" href="#"><x-locale lang="en" nation="gb" /></a></li>
+                        <li><a class="dropdown-item" href="#"><x-locale lang="jp" nation="jp" /></a></li>
+                    </ul>
+                </li>
 
             </ul>
         </div>

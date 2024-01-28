@@ -33,6 +33,13 @@
   padding-top: 10px;
   font-weight: 300;
 }
+.user_chat{
+  background-color: var(--white);
+  border: none;
+  margin: 0px;
+  width: 100%;
+  text-align: center;
+}
 
 
 .image_profile {
@@ -80,7 +87,7 @@
 }
 .user_prova{
   height: 20px;
-  margin-bottom: 200px;
+  margin-bottom: 100px;
   background-color: var(--full-red) 
 
 }
