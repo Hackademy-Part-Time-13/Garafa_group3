@@ -1,4 +1,4 @@
-if (location.href.includes('http://127.0.0.1:8000/ad/3')) {
+if (location.href.includes('http://127.0.0.1:8000/ad')) {
 
     console.log(location.href);
     const min_jsSelect = document.querySelectorAll('.min_jsSelect');
@@ -7,6 +7,7 @@ if (location.href.includes('http://127.0.0.1:8000/ad/3')) {
 
 
     min_jsSelect.forEach((min_img, index) => {
+
         min_img.setAttribute('id', index + "_min_img");
 
         min_img.addEventListener('click', (e) => {

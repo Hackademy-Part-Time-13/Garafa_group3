@@ -1,4 +1,4 @@
-if (location.href.includes('http://127.0.0.1:8000/ad/3')) {
+if (location.href.includes('http://127.0.0.1:8000/ad')) {
     const form_iframe = document.getElementById('form_iframe');
     const input_for_chat = document.getElementById('user_id_for_chat')
     const iframe_chat = document.getElementById('iframe_chat')

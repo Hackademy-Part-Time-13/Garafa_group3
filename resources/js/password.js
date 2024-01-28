@@ -1,3 +1,4 @@
+if (location.href.includes('http://127.0.0.1:8000/register')) {
 
 let show_password = document.getElementById('show_password');
 
@@ -20,7 +21,7 @@ show_password.addEventListener('click', (e) => {
     }
 
 });
-if (location.href.includes('http://127.0.0.1:8000/register')) {
+
     let Confirm_show_password = document.getElementById('Confirm_show_password');
 
     Confirm_show_password.addEventListener('click', (e) => {
@@ -45,3 +46,27 @@ if (location.href.includes('http://127.0.0.1:8000/register')) {
 }
 
 
+if (location.href.includes('http://127.0.0.1:8000/login')) {
+
+let show_password = document.getElementById('show_password');
+
+show_password.addEventListener('click', (e) => {
+
+    let password = document.getElementById('password');
+
+    let eye = document.getElementById('eye');
+
+    if (eye.className == 'bi bi-eye-fill') {
+
+        password.setAttribute('type', 'text');
+        eye.setAttribute('class', 'bi bi-eye-slash-fill');
+
+    } else {
+
+        password.setAttribute('type', 'password');
+        eye.setAttribute('class', 'bi bi-eye-fill');
+
+    }
+
+});
+}
