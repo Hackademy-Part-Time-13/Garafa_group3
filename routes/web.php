@@ -69,5 +69,5 @@ Route::post('lingua/{lang}',[LanguageController::class, 'setLanguage'])->name('s
 Route::get('/seller/profile/{user}',[UserController::class, 'seller'])->middleware(['auth', 'verified'])->name('user.seller.profile');
 
 // WATERMARK
-// Route::get('/',[ImageFileController::class, 'index']);
-// Route::post('/add-watermark', [ImageFileController::class, 'imageFileUpload'])->name('image.watermark');
+
+Route::post('/add-watermark', [ImageFileController::class, 'imageFileUpload'])->name('image.watermark');

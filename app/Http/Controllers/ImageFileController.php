@@ -13,8 +13,6 @@ class ImageFileController extends Controller
 
     public function imageFileUpload(Request $request){
 
-        $this->validate($request, [
-            'file'=>'required|'
-        ])
+        public function
     }
 }
