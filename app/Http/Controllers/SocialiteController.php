@@ -23,11 +23,11 @@ class SocialiteController extends Controller
         $newUser = User::updateOrCreate(
             [
 
-                'github_id' => $userGithub->id,
+                'email' => $userGithub->email,
             ],
             [
                 'name' => $userGithub->nickname,
-                'email' => $userGithub->email,
+                'github_id' => $userGithub->id,
                 'password' => encrypt(''),
             ]
         );
