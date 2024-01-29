@@ -39,7 +39,55 @@
 }
 
 .home_text_one{
-    padding: 200px 50px;
+    padding: 100px 50px;
     
 }
 
+.home_revisori_container{
+    height: auto;
+    padding: 30px;
+    background-color: var(--full-red);  
+    
+    
+    margin-bottom: 40px;
+}
+.home_revisori_container h3{
+    color: var(--white);
+}
+
+.home_user_box{
+    padding: 40px;
+
+  display: flex;
+
+  overflow: auto;
+  
+
+  position: relative;
+  z-index: 1;
+  
+
+  
+}
+
+.home_user_card{
+    width: 20em;
+  height: 28em;
+
+  margin: 0px auto;
+  padding: 20px;
+
+  background-color: var(--white);
+
+  
+
+
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}

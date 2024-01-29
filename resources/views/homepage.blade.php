@@ -113,6 +113,27 @@
       <p>{{__('ui.about')}}</p>
     </div>
 
+    <div class="home_revisori_container">
+        <div class="container">
+            <h3 class="text-center p-3">Posizioni aperte</h3>
+            <div class="col-12  d-flex justify-content-center">
+                <a class="footer_lavora_con_noi" href="{{ route('work.with.us') }}">
+                    <p>{{ __('ui.work') }}</p>
+                </a>
+    
+            </div>
+            
+        <div class="home_user_box">
+            @foreach (App\Models\User::where('is_revisor',true)->get() as $user)
+                <x-user-card-h-ome :user="$user"/>
+            @endforeach
+        </div>
+        
+
+        </div>
+
+    </div>
+
 </x-main>
 
 
