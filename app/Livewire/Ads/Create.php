@@ -9,6 +9,7 @@ use Livewire\WithFileUploads;
 use Livewire\Attributes\Validate;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
+use Intervention\Image\Facades\Image;
 
 class Create extends Component
 {
@@ -66,8 +67,16 @@ class Create extends Component
                 $name = $this->index + 1 . '.jpg';
                 $path = $image->storeAs('images/' . $this->ad->id , $name, 'public');
                 $newImage = $this->ad->images()->create(['path' => $path]);
-                // $newFileName = "/ads/{$this->ad->id}";
-                // $newImage = $this->ad->images()->create(['path' => $image->storeAs("$newFileName" . $this->ad->id , $name, 'public')]);
+
+              
+                // $watermark = Image::make(public_path('images/watermark.png'))
+                // ->opacity(50)
+                // ->resize($path->width() / 2, $path->height() / 2);
+        
+                //  $path->insert($watermark, 'left');
+
+                //  $path->save(public_path('images/' . $this->ad->id ,'watermarked'.$name, 'public'));
+
 
                 dispatch(new ResizeImage($newImage->path, 400, 400));
                 dispatch(new ResizeImage($newImage->path, 80, 80));               

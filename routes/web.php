@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdsController;
-use App\Http\Controllers\ImageFileController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RevisorController;
@@ -68,6 +68,5 @@ Route::post('lingua/{lang}',[LanguageController::class, 'setLanguage'])->name('s
 // SELLER PROFILE
 Route::get('/seller/profile/{user}',[UserController::class, 'seller'])->middleware(['auth', 'verified'])->name('user.seller.profile');
 
-// WATERMARK
 
-Route::post('/add-watermark', [ImageFileController::class, 'imageFileUpload'])->name('image.watermark');
+
