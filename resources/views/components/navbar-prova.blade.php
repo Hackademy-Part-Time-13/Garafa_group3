@@ -114,6 +114,7 @@
                         <li><a class="dropdown-item" href="#"><x-locale lang="it" nation="it" /></a></li>
                         <li><a class="dropdown-item" href="#"><x-locale lang="en" nation="gb" /></a></li>
                         <li><a class="dropdown-item" href="#"><x-locale lang="jp" nation="jp" /></a></li>
+                        
                     </ul>
                 </li>
 
