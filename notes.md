@@ -55,3 +55,9 @@ Indicizzare annunci del seeder (lanciare entrambi i comandi):
 Jobs:
     php artisan queue:work
 
+
+
+    "https://i.postimg.cc/bwnyCx75/japan.png"
+    "https://i.postimg.cc/3xfX1TH1/united-kingdom.png"
+    "https://i.postimg.cc/1trZxMBW/italy.png"
+

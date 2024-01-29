@@ -50,7 +50,7 @@
             <x-CategoryCard :title="$category->name_it" :category="$category" 
             :ads="App\Models\Ad::where('is_accepted', true)->where('category_id', $category->id)->get()->count()" />
         @endforeach
-           
+       
 
             @elseif( Illuminate\Support\Facades\Lang::locale() == 'en')
 
@@ -74,7 +74,7 @@
     </div>
     {{-- scroll categorie --}}
     
-
+    
   
 
     <div class="home_back">

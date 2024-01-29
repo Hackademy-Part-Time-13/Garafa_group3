@@ -2,7 +2,8 @@
     @csrf
     
     <button type="submit" class="text-center">
-        <span class="flag-icon flag-icon-{{$nation}}"></span>
+        <span class="flag-icon flag-icon-{{$nation}} " ></span>
+       
     </button>
 
 </form>
