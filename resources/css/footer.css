@@ -1,15 +1,76 @@
 footer {
-    height: 350px;
+    height: auto;
     width: 100%;
     background-color: var(--full-red);
-    border-radius: 20px 20px 0px 0px;
+    color: var(--white);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
-    position: relative;
-    bottom: 0;
+    
+    
 
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    
+}
+footer p {
+    text-transform: none;
+}
+footer h5{
+    margin-bottom: 25px;
+}
+.footer_logo_container{
+    display: flex;
+    justify-content: center;
+
 }
 
-.footer_top{
+.footer_logo{
+    background-color: var(--white);
+    color: black;
+    padding: 20px;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+
+}
+
+
+
+.footer_top {
     display: flex;
+}
+.footer_social_logo i{
+    color: var(--white);
+}
+
+.footer_lavora_con_noi{
+    padding: 10px;
+    margin: 10px 0px;
+
+    background-color: var(--full-red);
+
+    color: var(--white);
+    width: 50%;
+
+    text-align: center;
+
+    
+    
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    border-radius: 10px;
+}
+.footer_lavora_con_noi p{
+    margin: 0;
+    padding: 0;
+}
+.footer_lavora_con_noi:hover{
+    background-color: var(--white);
+    color: black;
+}
+.footer_lavora_con_noi a{
+    
+    color: var(--white);
+}
+
+.copiryt_footer{
+    padding: 50px;
 }

@@ -210,11 +210,35 @@
                             <form id="form-logout" action="/logout" method="POST" class="d-none">
                                 @csrf
                             </form>
+                            
 
                         </ul>
                     </li>
 
                 @endauth
+
+                <li class="dropdown ">
+                    <a class="  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        them
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#" id="them_red_responsiv">red</a></li>
+                        <li><a class="dropdown-item" href="#" id="them_green_responsiv">green</a></li>
+                        <li><a class="dropdown-item" href="#" id="them_blu_responsiv">blu</a></li>
+                    </ul>
+                </li>
+
+
+                <li class="dropdown nav_end">
+                    <a class="  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ __('ui.lang') }}
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#"><x-locale lang="it" nation="it" /></a></li>
+                        <li><a class="dropdown-item" href="#"><x-locale lang="en" nation="gb" /></a></li>
+                        <li><a class="dropdown-item" href="#"><x-locale lang="jp" nation="jp" /></a></li>
+                    </ul>
+                </li>
 
 
             </ul>
