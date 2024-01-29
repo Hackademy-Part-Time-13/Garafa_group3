@@ -94,10 +94,12 @@
 
 .show_botom{
     
+    position: absolute;
+    bottom: 30px;
+    width: 90%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 100px;
 }
 
 .seller_box{

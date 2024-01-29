@@ -1,10 +1,13 @@
-if (location.href == 'http://127.0.0.1:8000/ad' || location.href.includes('http://127.0.0.1:8000/seller/profile')) {
+if (location.href.includes('http://127.0.0.1:8000/ad/') || location.href.includes('http://127.0.0.1:8000/seller/profile') ) {
 
     const form_iframe = document.getElementById('form_iframe');
     const input_for_chat = document.getElementById('user_id_for_chat')
+
     const iframe_chat = document.getElementById('iframe_chat')
     const iframe_chat_componet = document.getElementById('iframe_chat_componet')
+
     const fa_arrow = document.getElementById('fa_arrow')
+    const responsiv_arrow = document.getElementById('responsiv_arrow')
 
 
     form_iframe.addEventListener('submit', function (event) {
@@ -12,7 +15,6 @@ if (location.href == 'http://127.0.0.1:8000/ad' || location.href.includes('http:
         // console.log(input_for_chat.value);
 
         let srcFrame = 'http://127.0.0.1:8000/contact_seller/' + input_for_chat.value;
-        console.log(srcFrame);
 
         iframe_chat.setAttribute('src', srcFrame);
 
@@ -26,5 +28,13 @@ if (location.href == 'http://127.0.0.1:8000/ad' || location.href.includes('http:
 
         iframe_chat_componet.style.display = 'none';
     })
+
+    responsiv_arrow.addEventListener('click', (e) => {
+
+        iframe_chat.setAttribute('src', '');
+
+        iframe_chat_componet.style.display = 'none';
+    })
+
 }
 

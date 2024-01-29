@@ -10,20 +10,20 @@
 
     --white: white;
     --secondary-white: rgb(235, 235, 235);
-
+    
     --dark: #003049;
 }
 .red-theme{
-    --lite-red: #f42b03;
-    --full-red: #e70e02;
+    --lite-red: #f25c54;
+    --full-red: #F94144;
 }
 .blu-theme{
-    --lite-red: #4472ca;
-    --full-red: #0A369D;
+    --lite-red: #33a1fd;
+    --full-red: #2176ff;
 }
 .green-theme{
-    --lite-red: #32CD32;
-    --full-red: #03C03C;
+    --lite-red: #43aa8b;
+    --full-red: #43aa8b;
 }
 
 * {
