@@ -16,38 +16,44 @@
         <hr>
     </div>
 
-    <div class="container d-flex justify-content-around p-5">
-        <div>
-            <h5>{{ __('ui.contact-us') }}</h5>
-            <p>{{ env('MAIL_FROM_ADDRESS') }}</p>
-            <p>tel. 7842548512</p>
-            <p>via garafa</p>
-            <p>00159 Torino&#40 TO &#41</p>
-        </div>
-        <div>
-            <h5>{{ __('ui.explore') }}</h5>
-            <p>{{ __('ui.ads') }}</p>
-            <p>{{ __('ui.careers') }}</p>
-            <p>{{ __('ui.who') }}</p>
-            <p>{{ __('ui.privacy') }}</p>
-            <p>{{ __('ui.cookie') }}</p>
+    <div class="container ">
+        <div class="row">
+            <div class="col-xs-12 col-xl-4  cccccc">
+
+                <h5>{{ __('ui.contact-us') }}</h5>
+                <p>{{ env('MAIL_FROM_ADDRESS') }}</p>
+                <p>tel. 7842548512</p>
+                <p>via garafa</p>
+                <p>00159 Torino&#40 TO &#41</p>
+
+
+            </div>
+            <div class="col-xs-6 col-xl-4   cccccc">
+                <h5>{{ __('ui.explore') }}</h5>
+                <p>{{ __('ui.ads') }}</p>
+                <p>{{ __('ui.careers') }}</p>
+                <p>{{ __('ui.who') }}</p>
+                <p>{{ __('ui.privacy') }}</p>
+                <p>{{ __('ui.cookie') }}</p>
+            </div>
+
+            <div class="col-xs-6 col-xl-4 mt-4 cccccc">
+                <h5>{{ __('ui.partener') }}</h5>
+                <!-- Grid container -->
+                <div class="">
+                    <!-- Section: Social media -->
+                    <section class="footer_social_logo">
+                        <!-- Google -->
+                        <a class="me-2" href="#!"><i class="bi bi-google"></i></a>
+                        <!-- Github -->
+                        <a class="me-2" href="#!"><i class="bi bi-github"></i></a>
+                    </section>
+                    <!-- Section: Social media -->
+                </div>
+                <!-- Grid container -->
+            </div>
         </div>
 
-        <div>
-            <h5>{{ __('ui.partener') }}</h5>
-            <!-- Grid container -->
-            <div class="">
-                <!-- Section: Social media -->
-                <section class="footer_social_logo">
-                    <!-- Google -->
-                    <a class="me-2" href="#!"><i class="bi bi-google"></i></a>
-                    <!-- Github -->
-                    <a class="me-2" href="#!"><i class="bi bi-github"></i></a>
-                </section>
-                <!-- Section: Social media -->
-            </div>
-            <!-- Grid container -->
-        </div>
 
 
     </div>
