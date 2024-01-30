@@ -14,31 +14,46 @@
                 <div class="index_sort_select">
                     <div class="">
                         <select wire:model.change="sortSelect" wire:change="applySort">
-                            <option disable selected value="noSorted">Ordina annunci</option>
-                            <option value="newest">Dal più recente</option>
-                            <option value="oldest">Dal meno recente</option>
-                            <option value="cheapest">Dal più economico</option>
-                            <option value="mostExpensive">Dal più caro</option>
+                            @if (Illuminate\Support\Facades\Lang::locale() == 'it')
+                                <option selected value="noSorted">Nessun ordine</option>
+                                <option value="newest">Dal più recente</option>
+                                <option value="oldest">Dal meno recente</option>
+                                <option value="cheapest">Dal più economico</option>
+                                <option value="mostExpensive">Dal più caro</option>
+                            @elseif(Illuminate\Support\Facades\Lang::locale() == 'en')
+                                <option selected value="noSorted">Unsorted</option>
+                                <option value="newest">Newest</option>
+                                <option value="oldest">Oldest</option>
+                                <option value="cheapest">Most affordable</option>
+                                <option value="mostExpensive">Least affordable</option>
+                            @elseif(Illuminate\Support\Facades\Lang::locale() == 'jp')
+                                <option selected value="noSorted">並べ替えなし</option>
+                                <option value="newest">最新</option>
+                                <option value="oldest">最も古い</option>
+                                <option value="cheapest">最も手頃な</option>
+                                <option value="mostExpensive">最も高価な</option>
+                            @endif
                         </select>
                     </div>
                         
                     <div>
                         <select wire:model.change="categorySelect" wire:change="applyCat">
-                            <option disable selected value="noSelected">Filtra per categoria</option>
                             @if (Illuminate\Support\Facades\Lang::locale() == 'it')
+                                <option disable selected value="noSelected">Filtra per categoria</option>
                                 @foreach (App\Models\Category::all() as $category)
                                     <option value="{{ $category->id }}">{{ $category->name_it }}</option>
                                 @endforeach
                             @elseif(Illuminate\Support\Facades\Lang::locale() == 'en')
+                                <option disabled selected>Filter by category</option>
                                 @foreach (App\Models\Category::all() as $category)
                                     <option value="{{ $category->id }}">{{ $category->name_en }}</option>
                                 @endforeach
                             @elseif(Illuminate\Support\Facades\Lang::locale() == 'jp')
+                                <option disabled selected>カテゴリでフィルタ</option>
                                 @foreach (App\Models\Category::all() as $category)
                                     <option value="{{ $category->id }}">{{ $category->name_jp }}</option>
                                 @endforeach
-                            @endif
-                            
+                            @endif                           
                         </select>
                     </div>
                 </div>

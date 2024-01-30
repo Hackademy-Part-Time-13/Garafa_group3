@@ -3,22 +3,22 @@
 namespace App\Livewire\Ads;
 
 use App\Models\Ad;
-use App\Models\Category;
 use App\Models\Favorite;
 use Livewire\Component;
-
+use Livewire\WithPagination;
 
 class IndexCategory extends Component
 {   
     
     public $sortSelect;
     public $ads;
+
     public $title;
-    public $category_id;
     public $category_name;
+
     public $bool = true;
     public $categorySelect;
-
+    public $category_id;
 
     public function applySort()
     {
@@ -44,13 +44,7 @@ class IndexCategory extends Component
         }
     }
 
-    public function applyCat(){
 
-        if($this->categorySelect != 'noSelected') {
-            return redirect()->route('adsByCat', $this->categorySelect);
-        }
-        
-    }
 
     public function newest(){   
         $this->ads = Ad::where('is_accepted', true)
@@ -75,10 +69,15 @@ class IndexCategory extends Component
         ->orderBy('price', 'DESC')->get();
     }
 
+    // SORT CATEGORIE
+    public function applyCat(){
+        if($this->categorySelect != 'noSelected') {
+            return redirect()->route('adsByCat', $this->categorySelect);
+        } 
+    }
 
 
     // PREFERITI
-
     public function unlike($ad){
         $ads = Favorite::where('ad_id', $ad["id"])->where('user_id',auth()->user()->id)->get();
             foreach ($ads as $ad) {

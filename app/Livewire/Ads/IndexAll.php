@@ -14,7 +14,6 @@ class IndexAll extends Component
     use WithPagination;
 
     public $sortSelect;
-    public $ads;
 
     public $querycolum;
     public $queryaction;
@@ -23,6 +22,7 @@ class IndexAll extends Component
     public $bool = true;
     public $categorySelect;
     public $category_id;
+
 
     public function applySort()
     {
@@ -48,44 +48,35 @@ class IndexAll extends Component
         }
     }
 
-    public function applyCat(){
-        return redirect()->route('adsByCat', $this->categorySelect);
-    }
 
     public function newest(){ 
         $this->querycolum = 'id';
-        $this->queryaction = 'DESC';
-
-        // $this->ads = Ad::where('is_accepted', true)
-        // ->orderBy('id','DESC')->paginate(12);     
+        $this->queryaction = 'DESC';   
     }
     
     public function oldest(){
         $this->querycolum = 'id';
         $this->queryaction = 'ASC';
-
-        // $this->ads = Ad::where('is_accepted', true)->paginate(12);
     }
     
     public function cheapest(){
         $this->querycolum = 'price';
         $this->queryaction = 'ASC';
-
-        // $this->ads = Ad::where('is_accepted', true)
-        // ->orderBy('price','ASC')->get(); 
     }
 
     public function mostExpensive(){
         $this->querycolum = 'price';
         $this->queryaction = 'DESC';
+    }
 
-        // $this->ads = Ad::where('is_accepted', true)
-        // ->orderBy('price', 'DESC')->paginate(12);
+
+    // SORT CATEGORIE
+    public function applyCat(){
+        return redirect()->route('adsByCat', $this->categorySelect);
     }
 
 
     // PREFERITI
-
     public function unlike($ad){
         $ads = Favorite::where('ad_id', $ad["id"])->where('user_id',auth()->user()->id)->get();
             foreach ($ads as $ad) {
@@ -101,23 +92,15 @@ class IndexAll extends Component
     }
 
 
-
     public function render(){   
-    if ($this->bool) {
-        // $this->ads = Ad::where('is_accepted', true)->get();
-        // return view('livewire.ads.indexAll');
-        $adss = Ad::where('is_accepted', true)->paginate(12);
-        // dd($adss);
+        if ($this->bool) {
+            $adss = Ad::where('is_accepted', true)->paginate(12);
+            return view('livewire.ads.indexAll',compact('adss'));
 
-        return view('livewire.ads.indexAll',compact('adss'));
-
-    } else {
-
-        $adss = Ad::where('is_accepted', true)
-        ->orderBy($this->querycolum,$this->queryaction)->paginate(12);
-        
-        return view('livewire.ads.indexAll',compact('adss'));
-    }
-
+        } else {
+            $adss = Ad::where('is_accepted', true)
+            ->orderBy($this->querycolum,$this->queryaction)->paginate(12);
+            return view('livewire.ads.indexAll',compact('adss'));
+        }
     } 
 }
