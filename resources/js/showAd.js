@@ -1,4 +1,4 @@
-if (location.href.includes('http://localhost:8000/ad/') ||location.href.includes('http://127.0.0.1:8000/ad')) {
+if (location.href.includes('/ad/') ||location.href.includes('/ad') || location.href.includes('/revisor/home')) {
 
     console.log(location.href);
     const min_jsSelect = document.querySelectorAll('.min_jsSelect');

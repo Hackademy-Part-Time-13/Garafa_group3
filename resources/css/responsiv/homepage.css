@@ -1,46 +1,50 @@
-
-
-  @media (max-width: 1451px) {
-    .head_content{
+@media (max-width: 1451px) {
+    .head_content {
         padding: 120px;
 
     }
-  }
-  @media (max-width: 1300px) {
-    .head_content{
+}
+
+@media (max-width: 1300px) {
+    .head_content {
         width: 70%;
 
         padding: 100px;
 
     }
-  }
-  @media (max-width: 1100px) {
-    .head_content{
+}
+
+@media (max-width: 1100px) {
+    .head_content {
         width: 70%;
         padding: 90px;
 
     }
-    .head_content p{
+
+    .head_content p {
         font-size: 2rem;
     }
-  }
-  @media (max-width: 850px) {
-    .head_content{
+}
+
+@media (max-width: 850px) {
+    .head_content {
         width: 70%;
         padding: 90px;
 
     }
-    .head_content p{
+
+    .head_content p {
         font-size: 1.5rem;
     }
-    .head_content button{
+
+    .head_content button {
         font-size: 0.5rem;
     }
-  }
+}
 
 
 
-  @media (max-width: 576px) {
+@media (max-width: 576px) {
 
 
 
@@ -48,36 +52,39 @@
         width: 90%;
         padding: 100px 30px;
     }
-    .head_content p{
+
+    .head_content p {
         font-size: 1.3rem;
     }
-    header{
+
+    header {
         height: 60vh;
         background-size: cover;
     }
 
 
-    .category-card{
+    .category-card {
         width: 12em;
         height: 14em;
     }
-    .category-card h5{
+
+    .category-card h5 {
         font-size: 1rem;
         text-align: center;
     }
 
 
-    .home_back{
+    .home_back {
         padding: 10px;
     }
 
 
-    .home_box div img{
+    .home_box div img {
         width: 15em;
         height: 17em;
 
         margin: 2em;
-        
+
     }
 
     .home_box p {
@@ -85,4 +92,9 @@
         margin: 2em;
         text-align: center;
     }
-  }
+
+    .home_user_card {
+        height: 24em;
+        width: 600px;
+    }
+}

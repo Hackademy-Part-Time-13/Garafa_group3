@@ -1,0 +1,25 @@
+.ita_flag{
+    height: 30px;
+    width: 30px;
+    background-image: url(https://i.postimg.cc/1trZxMBW/italy.png);
+    background-size: contain;
+    border-radius: 2px;
+    border-style: none;
+}
+.gb_flag{
+    height: 30px;
+    width: 30px;
+    background-image: url(https://i.postimg.cc/3xfX1TH1/united-kingdom.png);
+    background-size: contain;
+    border-radius: 2px;
+    border-style: none;
+}
+
+.jp_flag{
+    height: 30px;
+    width: 30px;
+    background-image: url(https://i.postimg.cc/bwnyCx75/japan.png);
+    background-size: contain;
+    border-radius: 2px;
+    border-style: none;
+}
