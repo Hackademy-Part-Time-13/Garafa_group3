@@ -67,6 +67,15 @@ ul li:hover{
     left: 85%;
 }
 
+.logo{
+    height: 23px;
+    width: auto;
+    background-size: contain;
+    border-radius: 2px;
+    border-style: none;
+    object-fit: cover;
+}
+
 
 
 
