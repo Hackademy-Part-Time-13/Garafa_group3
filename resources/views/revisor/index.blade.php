@@ -45,75 +45,110 @@
             <div class="row">
                 @foreach ($ads_to_check as $ad_to_check)
                     <div class="col-12">
-                        <div class="show_contaniner">
-                            <div class="row">
-                                
-                                @if($ad_to_check->images)
-                                <div class="col-xxl-6 col-xl-3 col-md-4 col-xs-3 responShow row justify-content-evenly">
+
+    <div class="show_contaniner">
+        <div class="row">
+
+            <div class="col-xxl-6 col-xl-3 col-md-4 col-xs-3 responShow row justify-content-evenly">
+                
+                <div class="show_img_mini_container col-xxl-5 col-xl-3 col-md-4 col-xs-6">
+                    @if ($ad_to_check->images->isEmpty()) 
+                    <img class="min_jsSelect" src="https://picsum.photos/80/80" alt="">
+                    <img class="min_jsSelect" src="https://picsum.photos/80/80"  alt="">
+                    <img class="min_jsSelect" src="https://picsum.photos/80/80"  alt="">
+                    <img class="min_jsSelect" src="https://picsum.photos/80/80"  alt="">
+                    @else 
                     
-                                    <div class="show_img_mini_container col-xxl-5 col-xl-3 col-md-4 col-xs-6">
-                                        @foreach($ad_to_check->images as $image)
-                                        <img src="{{Storage::url($image->path)}}" class=""> 
-                                        @endforeach 
-                                    </div>
+                    @foreach ($ad_to_check->images()->get() as $img)
+                        {{-- @dd($img->getUrl(80,80)) --}}
+                    <img class="min_jsSelect" src="{{$img->getUrl(80,80)}}" alt="">
+
+                    @endforeach 
+                    @endif
+
+                </div>
+
+                <div class="col-xxl-7 col-xl-3 col-md-4 col-xs-6 ">
+                    @if ($ad_to_check->images->isEmpty()) 
+                    <img class="show_main_img adShow"  src="https://picsum.photos/300/451" alt="">
+                    <img class="show_main_img "  src="https://picsum.photos/300/452" alt="">
+                    <img class="show_main_img "  src="https://picsum.photos/300/453" alt="">
+                    <img class="show_main_img "  src="https://picsum.photos/300/454" alt="">
+                    @else 
+                    @foreach ($ad_to_check->images()->get() as $img)
+                    <img class="show_main_img "  src="{{$img->getUrl(300,450)}}" alt="">
+
+
+                    @endforeach 
+                    @endif
                     
-                                    <div class="col-xxl-7 col-xl-3 col-md-4 col-xs-6 ">
-                                        <img class="show_main_img" src="{{Storage::url('images/' . $ad_to_check->id . '/1.jpg')}}" alt="">
-                                    </div>
-                     
-                                </div>
-                                @endif
-                    
-                                <div class="col-xxl-6 col-xl-3 col-md-4 col-xs-12  show_content_container">
-                    
-                                    <h1>{{ $ad_to_check->title  }}</h1>
-                                    <h3>{{ $ad_to_check->category->name }}</h3>
-                                    <hr>
-                    
-                                    <h4 class="ads_price ">{{ $ad_to_check->price }} £</h4>
-                    
-                    
-                    
-                                    <div class="mt-3">
-                                        <h2>Descrizione</h2>
-                                        <p>{{ $ad_to_check->description }}</p>
-                                    </div>
-                    
-                                    <div class="show_botom">
-                                        <button class="buy_now_button">
-                                            buy now
-                                        </button>
-                    
-                                        <div >
-                                            <a class="seller_box " href="{{route('user.seller.profile',$ad_to_check->user)}}">
-                                                <img class="ads_image_profile me-3" src="https://picsum.photos/400" alt=""> <p> {{ $ad_to_check->user->name }}</p>
-                                            </a>                       
-                                        </div>
-                                    </div>
-                    
-                                </div>
-                            </div>
-                        </div>
+                </div>
+
+            </div>
+
+            <div class="col-xxl-6 col-xl-3 col-md-4 col-xs-12  show_content_container">
+
+                <h1>{{ $ad_to_check->title }}</h1>
+                <p>{{$ad_to_check->category->name_it}}</p>
+                <hr>
+
+                <h4 class="ads_price ">{{ $ad_to_check->price }} £</h4>
+
+
+
+                <div class="mt-3">
+                    <h2>Descrizione</h2>
+                    <p>{{ $ad_to_check->description }}</p>
+                </div>
+                {{-- {{route('user', $ad->user)}} --}}
+                {{-- <div></div> --}}
+                <form class="form_iframe" id="form_iframe" >
+                    <input id="user_id_for_chat" type="text" name="user_id_chat" value="{{$ad_to_check->user->id}}">
+                    <button type="submit" class="chidei_info">Dettaglio annuncio</button>
+                </form>
+
+                <div class="show_botom">
+
+                    <div >
+                        <a class="seller_box position-absolute bottom-0 end-0" href="{{route('user.seller.profile', $ad_to_check->user)}}">
+                            <img class="ads_image_profile me-3" src="https://picsum.photos/400" alt=""> <p> {{ $ad_to_check->user->name }}</p>
+                        </a>                       
+                    </div>
+                </div>
+
+            
+
+
+            </div>
+        </div>
+
+        {{-- <div class="container">
+            <div class="row revisione_accrtta_rifiutabutton">
+                <div class="col-12 col-md-6">
+                    <form action="{{ route('revisor.accept_ad', ['ad' => $ad_to_check]) }}" method="POST">
+                        @csrf
+                        @method('PATCH')
+                        <button>Accetta</button>
+                    </form>
+                </div>
+                <div class="col-12 col-md-6 text-end">
+                    <form action="{{ route('revisor.reject_ad', ['ad' => $ad_to_check]) }}" method="POST">
+                        @csrf
+                        @method('PATCH')
+                        <button>Rifiuta</button>
+                    </form>
+                </div>
+            </div>
+        </div> --}}
+
+    </div>
 
 
 
                     </div>
-                    <div class="row revisione_accrtta_rifiutabutton">
-                        <div class="col-12 col-md-6">
-                            <form action="{{ route('revisor.accept_ad', ['ad' => $ad_to_check]) }}" method="POST">
-                                @csrf
-                                @method('PATCH')
-                                <button>Accetta</button>
-                            </form>
-                        </div>
-                        <div class="col-12 col-md-6 text-end">
-                            <form action="{{ route('revisor.reject_ad', ['ad' => $ad_to_check]) }}" method="POST">
-                                @csrf
-                                @method('PATCH')
-                                <button>Rifiuta</button>
-                            </form>
-                        </div>
-                    </div>
+
+
+
                 @endforeach
             </div>
         </div>

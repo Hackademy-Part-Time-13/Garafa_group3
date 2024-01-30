@@ -49,7 +49,7 @@
                 <select class="form-select shadow-sm" aria-placeholder="Categoria" wire:model="category_id">
                 <option selected value="none">Seleziona categoria</option>
                     @foreach(\App\Models\Category::all() as $category)
-                        <option value="{{$category->id}}">{{$category->name}}</option>
+                        <option value="{{$category->id}}">{{$category->name_it}}</option>
                     @endforeach
                 </select>
             </div>

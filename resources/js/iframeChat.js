@@ -14,7 +14,7 @@ if (location.href.includes('http://127.0.0.1:8000/ad/') || location.href.include
         event.preventDefault()
         // console.log(input_for_chat.value);
 
-        let srcFrame = 'http://127.0.0.1:8000/contact_seller/' + input_for_chat.value;
+        let srcFrame = 'http://localhost:8000/contact_seller/' + input_for_chat.value;
 
         iframe_chat.setAttribute('src', srcFrame);
 
