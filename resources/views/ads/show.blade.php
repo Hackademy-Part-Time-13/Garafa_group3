@@ -2,7 +2,7 @@
     <x-secondary-header />
     <x-iframe_chat/>
     <div class="show_contaniner">
-        <div class="row">
+        <div class="row item_show">
 
             <div class="col-xxl-6 col-xl-3 col-md-4 col-xs-3 responShow row justify-content-evenly">
                 

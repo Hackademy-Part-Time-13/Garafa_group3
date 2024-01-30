@@ -3,6 +3,9 @@
     padding: 40px;
     background-color: var(--full-red);
 }
+.item_show{
+    max-height: 750px;
+}
 
 .show_contaniner img {
     border-radius: 20px;
