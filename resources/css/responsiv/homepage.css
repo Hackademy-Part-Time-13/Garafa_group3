@@ -94,7 +94,18 @@
     }
 
     .home_user_card {
-        height: 24em;
-        width: 600px;
+        /* height: 24em;
+        width: 19em; */
+    }
+    .home_user_box {
+        padding: 20px 0px;
+    
+        
+    
+    
+        
+    
+    
+    
     }
 }

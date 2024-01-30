@@ -14,7 +14,7 @@ import 'swiper/css/bundle';
 
 // init Swiper:
 const swiper = new Swiper('.my_swiper',{
-    slidesPerView: 3,
+    slidesPerView: 1,
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
