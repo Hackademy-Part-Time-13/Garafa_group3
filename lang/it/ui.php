@@ -28,6 +28,7 @@ return[
     'revisor'=>'zona revisore',
     'logout'=>'logout',
     'messageRevisor'=>'da revisionare',
+    'tema'=>'tema',
 
 
     // FOOTER

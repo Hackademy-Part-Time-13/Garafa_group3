@@ -27,6 +27,7 @@ return[
     'revisor'=>'監査エリア',
     'logout'=>'ログアウト',
     'messageRevisor'=>'見直される',
+    'tema'=>'テーマ',
 
     // FOOTER
     'work'=>' 俺たちと一緒に仕事しようよ',
