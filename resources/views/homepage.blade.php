@@ -115,7 +115,7 @@
 
     <div class="home_revisori_container">
         <div class="container">
-            <h3 class="text-center p-3">Posizioni aperte</h3>
+            <h3 class="text-center p-3">{{__('ui.position')}}</h3>
             <div class="col-12  d-flex justify-content-center">
                 <a class="footer_lavora_con_noi" href="{{ route('work.with.us') }}">
                     <p>{{ __('ui.work') }}</p>
