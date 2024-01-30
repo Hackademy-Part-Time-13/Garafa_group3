@@ -1,5 +1,4 @@
 
-
 if(localStorage.getItem('red_theme')){
 
     document.body.classList.toggle('red-theme')
@@ -72,7 +71,7 @@ const them_green_responsiv = document.getElementById('them_green_responsiv');
 const them_blu_responsiv = document.getElementById('them_blu_responsiv');
 
 
-
+if (them_red_responsiv && them_green_responsiv && them_blu_responsiv) {
 them_red_responsiv.addEventListener('click', (e) => {
     
     localStorage.clear();
@@ -110,4 +109,5 @@ them_blu_responsiv.addEventListener('click', (e) => {
 
 })
 
+}
 
