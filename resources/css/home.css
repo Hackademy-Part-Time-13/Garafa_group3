@@ -59,8 +59,7 @@
     padding: 40px;
 
   display: flex;
-
-  overflow: auto;
+  gap: 40px;
   
 
   position: relative;

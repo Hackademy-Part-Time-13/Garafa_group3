@@ -69,21 +69,11 @@ class Create extends Component
                 $path = $image->storeAs('images/' . $this->ad->id , $name, 'public');
                 $newImage = $this->ad->images()->create(['path' => $path]);
 
-              
-                // $watermark = Image::make(public_path('images/watermark.png'))
-                // ->opacity(50)
-                // ->resize($path->width() / 2, $path->height() / 2);
-        
-                //  $path->insert($watermark, 'left');
-
-                //  $path->save(public_path('images/' . $this->ad->id ,'watermarked'.$name, 'public'));
-
-
                 dispatch(new ResizeImage($newImage->path, 400, 400));
                 dispatch(new ResizeImage($newImage->path, 80, 80));               
                 dispatch(new ResizeImage($newImage->path, 300, 450));
 
-                dispatch(new GoogleVisionSafeSearch($newImage->id));
+                // dispatch(new GoogleVisionSafeSearch($newImage->id));
             }
 
             File::deleteDirectory(storage_path('/app/livewire-tmp'));

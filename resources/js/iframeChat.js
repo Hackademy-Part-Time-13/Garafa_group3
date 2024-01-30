@@ -1,4 +1,4 @@
-if (location.href.includes('http://127.0.0.1:8000/ad/') || location.href.includes('http://127.0.0.1:8000/seller/profile')|| location.href.includes('http://localhost:8000/ad/') || location.href.includes('http://localhost:8000/seller/profile')) {
+if (location.href.includes('/ad/') || location.href.includes('/seller/profile')) {
 
     const form_iframe = document.getElementById('form_iframe');
     const input_for_chat = document.getElementById('user_id_for_chat')
@@ -14,7 +14,7 @@ if (location.href.includes('http://127.0.0.1:8000/ad/') || location.href.include
         event.preventDefault()
         // console.log(input_for_chat.value);
 
-        let srcFrame = 'http://127.0.0.1:8000/contact_seller/' + input_for_chat.value;
+        let srcFrame = 'http://localhost:8000/contact_seller/' + input_for_chat.value;
 
         iframe_chat.setAttribute('src', srcFrame);
 

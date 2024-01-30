@@ -1,4 +1,4 @@
-if (location.href.includes('http://127.0.0.1:8000/register')) {
+if (location.href.includes('/register')) {
 
 let show_password = document.getElementById('show_password');
 
@@ -46,7 +46,7 @@ show_password.addEventListener('click', (e) => {
 }
 
 
-if (location.href.includes('http://127.0.0.1:8000/login')) {
+if (location.href.includes('/login')) {
 
 let show_password = document.getElementById('show_password');
 
