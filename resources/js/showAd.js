@@ -1,4 +1,4 @@
-if (location.href.includes('/ad/') ||location.href.includes('/ad') || location.href.includes('/revisor/home')) {
+if (location.href.includes('/ad/') ||location.href.includes('/ad') || location.href.includes('/revisor/home') || location.href.includes('/revisor/showAd')) {
 
     console.log(location.href);
     const min_jsSelect = document.querySelectorAll('.min_jsSelect');

@@ -46,8 +46,10 @@ Route::prefix('auth')->group(function () {
 //HOME REVISORE/ACCETTA E RIFIUTA ANNUNCIO
 Route::middleware('isRevisor')->group(function() {
     Route::get('/revisor/home',[RevisorController::class,'index'])->name('revisor.index');
+    Route::get('/revisor/showAd/{ad_to_check}',[RevisorController::class,'show'])->name('showAdToCheck');
     Route::patch('/accetta/annuncio/{ad}',[RevisorController::class,'acceptAd'])->name('revisor.accept_ad');
     Route::patch('/rifiuta/annuncio/{ad}',[RevisorController::class,'rejectAd'])->name('revisor.reject_ad');
+    
 });
 
 // RICHIEDI PER DIVENTARE REVISORE

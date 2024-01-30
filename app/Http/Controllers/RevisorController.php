@@ -14,21 +14,30 @@ use Illuminate\Support\Facades\Mail;
 class RevisorController extends Controller
 {
    public function index(){
-    $ads_to_check = Ad::where('is_accepted', null)
-    ->where('user_id', '!=', auth()->user()->id)->get();
-    return view('revisor.index', compact('ads_to_check'));
+      $ads_to_check = Ad::where('is_accepted', null)
+      ->where('user_id', '!=', auth()->user()->id)->get();
+      return view('revisor.index', compact('ads_to_check'));
+   }
+
+   public function show(Ad $ad_to_check)
+   {
+       return view('revisor.showAdToCheck', compact('ad_to_check'));
    }
 
    public function acceptAd(Ad $ad){
-    $ad->setAccepted(true);
-    return redirect()->back()->with('message', 'Complimenti, hai accettato l\'annuncio');
+      $ad->setAccepted(true);
+      return redirect()->back()->with('message', 'Complimenti, hai accettato l\'annuncio');
    }
 
    public function rejectAd(Ad $ad){
-    $ad->setAccepted(false);
-    return redirect()->back()->with('message', 'Complimenti, hai rifiutato l\'annuncio');
+      $ad->setAccepted(false);
+      return redirect()->back()->with('message', 'Complimenti, hai rifiutato l\'annuncio');
    }
 
+
+
+
+            // ZONA DIVENTA REVISORE
 
    // QUICK LINK DIVENTA REVISORE
    public function becomeRevisor(){
@@ -78,4 +87,6 @@ class RevisorController extends Controller
       Artisan::call('presto:makeUserRevisor', ["email"=>$user->email]);
       return redirect('/')->with('message','Complimenti! L\'utente è diventato revisore');
    }
+
+
 }

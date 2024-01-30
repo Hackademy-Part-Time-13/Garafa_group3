@@ -18,23 +18,23 @@
 
     <div class="container d-flex justify-content-around p-5">
         <div>
-            <h5>contaci</h5>
+            <h5>{{ __('ui.contact-us') }}</h5>
             <p>{{ env('MAIL_FROM_ADDRESS') }}</p>
             <p>tel. 7842548512</p>
             <p>via garafa</p>
             <p>00159 Torino&#40 TO &#41</p>
         </div>
         <div>
-            <h5>esplora</h5>
-            <p>annunci</p>
-            <p>Carriere</p>
-            <p>Chi siamo</p>
-            <p>Informativa sulla privacy</p>
-            <p>Informativa sui cookie</p>
+            <h5>{{ __('ui.explore') }}</h5>
+            <p>{{ __('ui.ads') }}</p>
+            <p>{{ __('ui.careers') }}</p>
+            <p>{{ __('ui.who') }}</p>
+            <p>{{ __('ui.privacy') }}</p>
+            <p>{{ __('ui.cookie') }}</p>
         </div>
 
         <div>
-            <h5>partner</h5>
+            <h5>{{ __('ui.partener') }}</h5>
             <!-- Grid container -->
             <div class="">
                 <!-- Section: Social media -->
@@ -57,7 +57,7 @@
 
     <div class="container copiryt_footer">
         <div class="row text-center">
-            <h5 class="col-12">lavora con noi</h5>
+            <h5 class="col-12">{{ __('ui.work') }}</h5>
             <div class="col-12  d-flex justify-content-center">
                 <a class="footer_lavora_con_noi" href="{{ route('work.with.us') }}">
                     <p>{{ __('ui.work') }}</p>
