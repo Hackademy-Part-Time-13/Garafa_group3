@@ -26,6 +26,7 @@ return[
     'revisor'=>'revisor area',
     'logout'=>'logout',
     'messageRevisor'=>'to be reviewed',
+    'tema'=>'them',
 
 
 

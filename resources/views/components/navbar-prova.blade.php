@@ -96,7 +96,7 @@
                 @endauth
                 <li class="dropdown ">
                     <a class="  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        them
+                        {{__('ui.tema')}}
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#" id="them_red">red</a></li>
@@ -221,7 +221,7 @@
                 @endauth
                 <li class="dropdown ">
                     <a class="  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        them
+                        {{__('ui.tema')}}
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#" id="them_red">red</a></li>
