@@ -71,10 +71,10 @@
 
 
                 @if ($adss->isEmpty())
-                    <h4 class="text-white pt-3">Nessun annuncio presente</h4>
-                    <h5 class="text-white">Evidentemente abbiamo venduto tutto!</h5>
+                    <h4 class="text-white pt-3">{{__('ui.noads')}}</h4>
+                    <h5 class="text-white">{{__('ui.sellall')}}</h5>
                 @else
-                    <h4 class="text-white pt-3">{{ App\Models\Ad::where('is_accepted', true)->count() }} annunci trovati</h4>
+                    <h4 class="text-white pt-3">{{ App\Models\Ad::where('is_accepted', true)->count() }} {{__('ui.found')}}</h4>
                     @foreach ($adss as $ad)
                         <div class="col-xl-3 col-md-4 col-xs-12 d-flex justify-content-center">
                             <div class="ads_container">
