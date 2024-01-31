@@ -1,0 +1,31 @@
+.session_container{
+    display: none;
+
+
+    width: 50%;
+    height: 50vh;
+    background-color: var(--white);
+
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+
+    position: fixed;
+    top: 25%;
+    left: 25%;
+    z-index: 100;
+}
+
+.session_close{
+     cursor: pointer;
+    margin-left: 95%;
+}
+.session_icon{
+   
+}
+.session_show{
+    display: block;
+}
+.hide_show{
+    display: none;
+}
