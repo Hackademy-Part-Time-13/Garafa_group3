@@ -19,7 +19,7 @@
 
                     @endforeach 
                     @endif
-
+                    
                 </div>
 
                 <div class="col-xxl-7 col-xl-3 col-md-4 col-xs-6 ">
@@ -28,12 +28,38 @@
                     <img class="show_main_img "  src="https://picsum.photos/300/452" alt="">
                     <img class="show_main_img "  src="https://picsum.photos/300/453" alt="">
                     <img class="show_main_img "  src="https://picsum.photos/300/454" alt="">
-                    @else 
+                    @else
+
                     @foreach ($ad_to_check->images()->get() as $img)
-                    <img class="show_main_img "  src="{{$img->getUrl(300,450)}}" alt="">
+                        <img class="show_main_img "  src="{{$img->getUrl(300,450)}}" alt="">
+                        {{-- <h5></h5> --}}
 
 
-                    @endforeach 
+                        <div class="google_box p-2 mt-2">
+                            
+                            <div class="row">
+                                <div class="col-md-6 border-end">
+                                    <p>Adults content: <span class="{{$img->adult}}"></span></p>
+                                    <p>Counterfeit content: <span class="{{$img->spoof}}"></span></p>
+                                    <p>Medical content: <span class="{{$img->medical}}"></span></p>
+                                    <p>Violent content: <span class="{{$img->violence}}"></span></p>
+                                    <p>Provocative content: <span class="{{$img->racy}}"></span></p>                                    
+                                </div>
+
+                                <div class="col-md-6">                                   
+                                    @if ($img->labels)
+                                        @foreach ($img->labels as $label)
+                                            <p class="d-inline">{{$label}} - </p>
+                                        @endforeach
+                                    @endif
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    @endforeach
+
                     @endif
                     
                 </div>

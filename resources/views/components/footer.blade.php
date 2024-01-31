@@ -22,9 +22,9 @@
 
                 <h5>{{ __('ui.contact-us') }}</h5>
                 <p>{{ env('MAIL_FROM_ADDRESS') }}</p>
-                <p>tel. 7842548512</p>
-                <p>via garafa</p>
-                <p>00159 Torino&#40 TO &#41</p>
+                <p>Tel. 7842548512</p>
+                <p>Via Roma, 192</p>
+                <p>00159 Torino &#40TO&#41</p>
 
 
             </div>

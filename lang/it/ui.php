@@ -32,19 +32,19 @@ return[
 
 
     // FOOTER
-    'work'=>'lavora con noi',
+    'work'=>'LAVORA CON NOI',
     'click'=>'registrati e clicca qui',
-    'revisorF'=>'diventare un revisore',
+    'revisorF'=>'DIVENTARE UN REVISORE',
     'contact-us'=>'contattaci',
     'explore'=>'esplora',
     'partener'=>'partener',
 
     // FOOTER/ESPLORA
-    'ads'=>'annunci',
-    'careers'=>'carriere',
+    'ads'=>'Annunci',
+    'careers'=>'Carriere',
     'privacy'=>'Informativa sulla privacy',
     'cookie'=>'Informativa sui cookie',
-    'who'=>'chi siamo',
+    'who'=>'Chi siamo',
 
 
 

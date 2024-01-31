@@ -13,26 +13,57 @@ use Illuminate\Support\Facades\Mail;
 
 class RevisorController extends Controller
 {
+
    public function index(){
       $ads_to_check = Ad::where('is_accepted', null)
       ->where('user_id', '!=', auth()->user()->id)->get();
       return view('revisor.index', compact('ads_to_check'));
    }
 
+
    public function show(Ad $ad_to_check)
    {
        return view('revisor.showAdToCheck', compact('ad_to_check'));
    }
 
+
    public function acceptAd(Ad $ad){
       $ad->setAccepted(true);
-      return redirect()->back()->with('message', 'Complimenti, hai accettato l\'annuncio');
+      return redirect()->route('revisor.index')->with('message', 'Complimenti, hai accettato l\'annuncio');
    }
+
 
    public function rejectAd(Ad $ad){
       $ad->setAccepted(false);
-      return redirect()->back()->with('message', 'Complimenti, hai rifiutato l\'annuncio');
+      return redirect()->route('revisor.index')->with('message', 'Complimenti, hai rifiutato l\'annuncio');
    }
+
+
+   // public function update(Request $request, Movie $movie)
+   // {
+
+   //     $request->validate([
+   //         'image' => 'image|mimes:jpeg,png,jpg',
+   //     ]);
+
+   //     $movie->update([
+   //         'title'=>$request->title,
+   //         'genre_id'=>$request->genre_id,
+   //         'plot'=>$request->plot,
+   //     ]);
+
+   //     $movie->actors()->detach();
+   //     $movie->actors()->attach($request->actors);
+
+   //     if ($request->hasFile('image')) {
+   //         if ($request->File('image')->isValid()){
+   //             $movie->cover = $request->file('image')->storeAs('public/uploads/covers/' . $movie->id, 'movieCover.jpg');
+   //             $movie->save();
+   //         }} 
+
+   //     return redirect()->route('movie.index')->with(['success' => 'Movie modified successfully']);
+
+   // }
 
 
 
