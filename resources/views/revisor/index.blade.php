@@ -31,8 +31,6 @@
                 <h1 class="mt-5">
                     @if ($ads_to_check->isEmpty())
                         'Non ci sono annunci da revisionare'
-                    @else
-                        'Ecco l'annuncio da revisionare'
                     @endif
                 </h1>
             </div>
