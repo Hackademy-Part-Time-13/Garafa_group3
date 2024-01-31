@@ -187,9 +187,3 @@
 .adHidden{
     display: none;
 }
-
-.google_box {
-    background-color: var(--white);
-    border-radius: 10px;
-    border: none;
-}
