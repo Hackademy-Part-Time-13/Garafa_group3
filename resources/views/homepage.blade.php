@@ -100,17 +100,6 @@
                 </div>
 
             </div>
-            {{-- <div class="home_user_box_responsiv my_swiper">
-                <div class="swiper-wrapper">
-                    @foreach (App\Models\User::where('is_revisor', true)->get() as $user)
-                    <div class="swiper-slide">
-                        <x-user-card-h-ome :user="$user" />
-                    </div>
-                        
-                    @endforeach
-                </div>
-
-            </div> --}}
 
 
         </div>
