@@ -2,10 +2,11 @@
     <div class="navbar_main">
         <div class="navbar_component">
             <ul>
+                <a href="{{ route('home') }}">
                 <li class="navbar_home_button">
-                  
-                    <img class="logo" src="{{Storage::url('public/images/logonero2.png')}} " alt="">
+                    <img class="logo" src="{{Storage::url('public/images/logonero2.png')}} " alt=""><span class="logo_text">Presto.it</span>
                 </li>
+                </a>
             </ul>
         </div>
         <div class="big_nav">

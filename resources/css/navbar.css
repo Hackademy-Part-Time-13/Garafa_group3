@@ -67,13 +67,16 @@ ul li:hover{
     left: 85%;
 }
 
-.logo{
+.logo {
     height: 23px;
     width: auto;
-    background-size: contain;
-    border-radius: 2px;
     border-style: none;
     object-fit: cover;
+}
+
+.logo_text {
+    padding-left: 6px;
+    font-weight: 600;
 }
 
 

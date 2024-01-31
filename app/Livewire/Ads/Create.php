@@ -2,12 +2,14 @@
 
 namespace App\Livewire\Ads;
 
-use App\Jobs\GoogleVisionSafeSearch;
 use App\Models\Ad;
 use Livewire\Component;
+use App\Jobs\RemoveFaces;
 use App\Jobs\ResizeImage;
 use Livewire\WithFileUploads;
 use Livewire\Attributes\Validate;
+use App\Jobs\GoogleVisionLabelImage;
+use App\Jobs\GoogleVisionSafeSearch;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
@@ -59,25 +61,39 @@ class Create extends Component
 
     public function store()
     {
+            // PRENDO ID UTENTE LOGGATO
         $this->user_id = Auth::id();
+
+            // ESEGUO LE VALIDAZIONI
         $this->validate();
+
+            // CREO L'ANNUNCIO
         $this->ad = Ad::create($this->all());
+
+            // SALVO LE IMMAGINI ALLEGATE
         if(count($this->images)) {
+
             foreach($this->images as $this->index => $image) {
+                $name = $this->index + 1 . '.jpg'; //CREO NOME UNIVOCO PER OGNI IMG
+                $path = $image->storeAs('images/' . $this->ad->id , $name, 'public'); //CREO PATH INSERENDO TUTTE LE IMG NELLA STESSA CARTELLA
+                $newImage = $this->ad->images()->create(['path' => $path]); //SALVO IL PATH DELL'IMG NEL DATABASE
 
-                $name = $this->index + 1 . '.jpg';
-                $path = $image->storeAs('images/' . $this->ad->id , $name, 'public');
-                $newImage = $this->ad->images()->create(['path' => $path]);
+                    // APPLICO WATERMARK SUI VOLTI E CONCATENO JOBS SUCCESSIVI
+                RemoveFaces::withChain([
+                        // RIDIMENSIONE LE IMG
+                    new ResizeImage($newImage->path, 400, 400),
+                    new ResizeImage($newImage->path, 80, 80),               
+                    new ResizeImage($newImage->path, 300, 450),
+                        // CONTROLLO I CONTENUTI DELLE IMG
+                    new GoogleVisionSafeSearch($newImage->id),
+                    new GoogleVisionLabelImage($newImage->id),                    
+                ])->dispatch($newImage->id);
 
-                dispatch(new ResizeImage($newImage->path, 400, 400));
-                dispatch(new ResizeImage($newImage->path, 80, 80));               
-                dispatch(new ResizeImage($newImage->path, 300, 450));
-
-                // dispatch(new GoogleVisionSafeSearch($newImage->id));
             }
 
             File::deleteDirectory(storage_path('/app/livewire-tmp'));
         }
+            // SVUOTO LA FORM DI CREAZIONE ANNUNCIO
         $this->reset();
         return redirect()->route('ad.create')->with('success', 'Annuncio creato correttamente e in stato di revisione');
     }

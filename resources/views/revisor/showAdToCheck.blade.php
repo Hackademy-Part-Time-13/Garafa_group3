@@ -1,46 +1,51 @@
 <x-main>
     <x-secondary-header />
-    <div class="show_contaniner">
-        <div class="row">
 
-            <div class="col-xxl-6 col-xl-3 col-md-4 col-xs-3 responShow row justify-content-evenly">
-                
-                <div class="show_img_mini_container col-xxl-5 col-xl-3 col-md-4 col-xs-6">
+<div class="show_container2">
+
+    <div class="row justify-content-around">
+            <div class="box_images col-lg-5 col-md-6 col-sm-12 py-2">
                     
-                    @if ($ad_to_check->images->isEmpty()) 
-                    <img class="min_jsSelect" src="https://picsum.photos/80/80" alt="">
-                    <img class="min_jsSelect" src="https://picsum.photos/80/80"  alt="">
-                    <img class="min_jsSelect" src="https://picsum.photos/80/80"  alt="">
-                    <img class="min_jsSelect" src="https://picsum.photos/80/80"  alt="">
-                    @else 
+                @if ($ad_to_check->images->isEmpty()) 
+                    <img class="img-fluid m-1" src="https://picsum.photos/80/80" alt="">
+                    <img class="img-fluid m-1" src="https://picsum.photos/80/80"  alt="">
+                    <img class="img-fluid m-1" src="https://picsum.photos/80/80"  alt="">
+                    <img class="img-fluid m-1" src="https://picsum.photos/80/80"  alt="">
                     
+                @else 
+                <div class="row">
                     @foreach ($ad_to_check->images()->get() as $img)
-                    <img class="min_jsSelect" src="{{$img->getUrl(80,80)}}" alt="">
 
+                    <div class="col-lg-5 col-md-10 col-sm-10 mb-3 mx-auto">
+                        <img class="img-fluid my-2 " src="{{$img->getUrl(400,400)}}" alt="">
+                    </div>
+
+                    <div class="col-6 d-flex align-items-center">
+                        <div class="row border border-4 rounded w-100 d-flex flex-nowrap">
+                            <div class="col-lg-6 col-md-5 col-sm-4 border-end my-2 px-3">
+                                <p>Adults content: <span class="{{$img->adult}}"></span></p>
+                                <p>Counterfeit content: <span class="{{$img->spoof}}"></span></p>
+                                <p>Medical content: <span class="{{$img->medical}}"></span></p>
+                                <p>Violent content: <span class="{{$img->violence}}"></span></p>
+                                <p>Provocative content: <span class="{{$img->racy}}"></span></p>                                    
+                            </div>
+
+                            <div class="col-lg-6 col-md-10 col-sm-10 my-auto">                                   
+                                @if ($img->labels)
+                                    @foreach ($img->labels as $label)
+                                        <p class="d-inline">{{$label}} - </p>
+                                    @endforeach
+                                @endif
+                            </div>
+                        </div>
+                    </div>
                     @endforeach 
-                    @endif
-
                 </div>
-
-                <div class="col-xxl-7 col-xl-3 col-md-4 col-xs-6 ">
-                    @if ($ad_to_check->images->isEmpty()) 
-                    <img class="show_main_img adShow"  src="https://picsum.photos/300/451" alt="">
-                    <img class="show_main_img "  src="https://picsum.photos/300/452" alt="">
-                    <img class="show_main_img "  src="https://picsum.photos/300/453" alt="">
-                    <img class="show_main_img "  src="https://picsum.photos/300/454" alt="">
-                    @else 
-                    @foreach ($ad_to_check->images()->get() as $img)
-                    <img class="show_main_img "  src="{{$img->getUrl(300,450)}}" alt="">
-
-
-                    @endforeach 
-                    @endif
+                @endif
                     
-                </div>
-
             </div>
 
-            <div class="col-xxl-6 col-xl-3 col-md-4 col-xs-12 show_content_container">
+            <div class="col-lg-6 col-md-4 col-sm-10 show_content_container">
                 <h1>{{ $ad_to_check->title }}</h1>
                 <p>{{$ad_to_check->category->name_it}}</p>
                 <hr>
@@ -89,7 +94,7 @@
                     </div>
                 
                 </div>  
-        </div>        
+              
 
 
         </div>
