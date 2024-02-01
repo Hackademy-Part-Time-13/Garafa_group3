@@ -54,9 +54,9 @@ Route::middleware('isRevisor')->group(function() {
 
 // RICHIEDI PER DIVENTARE REVISORE
 Route::middleware('auth', 'verified')->group(function() {
-Route::get('/richiesta/revisore',[RevisorController::class,'becomeRevisor'])->name('become.revisor');
-Route::get('/workWithUs', [RevisorController::class,'workWithUs'])->name('work.with.us');
-Route::post('/revisorApplication', [RevisorController::class,'revisorApplication'])->name('revisor.application');
+    Route::get('/richiesta/revisore',[RevisorController::class,'becomeRevisor'])->name('become.revisor');
+    Route::get('/workWithUs', [RevisorController::class,'workWithUs'])->name('work.with.us');
+    Route::post('/revisorApplication', [RevisorController::class,'revisorApplication'])->name('revisor.application');
 });
 
 // RENDI UTENTE REVISORE
