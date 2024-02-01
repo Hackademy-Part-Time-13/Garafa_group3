@@ -94,7 +94,7 @@
                     @foreach (App\Models\User::where('is_revisor', true)->get() as $user)
                     <div class="col-xl-4 col-md-4 col-xs-12 ">
 
-                        <x-user-card-h-ome :user="$user" />
+                        <x-user-card-home :user="$user" />
                     </div>
                     @endforeach
                 </div>
