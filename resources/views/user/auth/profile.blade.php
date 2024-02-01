@@ -24,7 +24,7 @@
             <div>
 
                 <i class="bi bi-chat-square-text"></i>
-                <p>{{App\Models\ChMessage::where('to_id', $user->id)
+                <p>{{App\Models\ChMessage::where('to_id', auth()->user()->id)
                     ->where('seen', false)
                     ->count()}}</p>
             </div>
