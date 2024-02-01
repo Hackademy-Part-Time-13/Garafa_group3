@@ -27,7 +27,7 @@
      
 
 <div class="form_container row">
-    <div class="form_side col-12">
+    <div class="form_side presto_createad col-12">
         <p>Presto.it</p>
     </div>
 

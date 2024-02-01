@@ -98,4 +98,7 @@
 .ads_dettaglio_batton:hover a{
     color: var(--full-red);
 }
+.presto_createad{
+    padding: 40px 0px;
+}
 

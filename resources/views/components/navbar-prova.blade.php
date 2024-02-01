@@ -29,6 +29,11 @@
                         <li class=" @if (Illuminate\Support\Facades\Route::currentRouteName() == 'login') carent_root @endif">
                             {{ __('ui.login') }}</li>
                     </a>
+                    
+                    <a class="nav-link" href="{{ route('ads.index') }}">
+                        <li class="@if (Illuminate\Support\Facades\Route::currentRouteName() == 'ads.index') carent_root @endif">
+                            {{ __('ui.allAds') }}</li>
+                    </a>
 
                     <a href="{{ route('ad.create') }}">
                         <li class=" @if (Illuminate\Support\Facades\Route::currentRouteName() == 'ad.create') carent_root @endif">

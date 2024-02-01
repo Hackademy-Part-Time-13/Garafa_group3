@@ -16,7 +16,7 @@
         <div class="">
             <i class="bi bi-heart"></i>
             
-            {{-- <p>{{$allFavorites}}</p> --}}
+            <p>{{$allFavorites}}</p>
 
         </div>
         <div>
