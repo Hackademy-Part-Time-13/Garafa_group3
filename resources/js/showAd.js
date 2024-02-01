@@ -18,7 +18,10 @@ if (location.href.includes('/ad/') ||location.href.includes('/ad') || location.h
 
                 min_img.className = 'show_main_img';
             })
-            placeHoder_img.className = 'show_main_img_placeHoder_img';
+            if(placeHoder_img){
+
+                placeHoder_img.className = 'show_main_img_placeHoder_img';
+            }
 
             let big_img = document.getElementById(index + "_big_img");
 

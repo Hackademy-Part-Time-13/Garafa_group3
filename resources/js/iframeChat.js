@@ -14,9 +14,21 @@ if (location.href.includes('/ad/') || location.href.includes('/seller/profile'))
         event.preventDefault()
         // console.log(input_for_chat.value);
 
-        let srcFrame = 'http://localhost:8000/contact_seller/' + input_for_chat.value;
+        if(location.href.includes('localhost')){
 
-        iframe_chat.setAttribute('src', srcFrame);
+            let srcFrame = 'http://localhost:8000/contact_seller/' + input_for_chat.value;
+
+            iframe_chat.setAttribute('src', srcFrame);
+
+
+        }else if(location.href.includes('127.0.0.1')){
+
+            let srcFrame = 'http://127.0.0.1:8000/contact_seller/' + input_for_chat.value;
+
+            iframe_chat.setAttribute('src', srcFrame);
+        }
+
+
 
         iframe_chat_componet.style.display = 'block';
 
