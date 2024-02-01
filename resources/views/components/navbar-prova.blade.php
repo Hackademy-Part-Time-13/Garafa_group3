@@ -77,9 +77,9 @@
                                             {{ __('ui.messageRevisor') }}</span>
                                 </li>
                             @endif
-                            <li>
+                            {{-- <li>
                                 <a class="dropdown-item" href="">Opzione 3</a>
-                            </li>
+                            </li> --}}
 
 
                             {{-- LOGOUT --}}
@@ -202,9 +202,9 @@
                                             {{ __('ui.messageRevisor') }}</span>
                                 </li>
                             @endif
-                            <li>
-                                {{-- <a class="dropdown-item" href="">Opzione 3</a> --}}
-                            </li>
+                            {{-- <li>
+                                <a class="dropdown-item" href="">Opzione 3</a>
+                            </li> --}}
 
 
                             {{-- LOGOUT --}}
