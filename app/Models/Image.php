@@ -36,4 +36,12 @@ class Image extends Model
     public function getUrl($w = null, $h = null){
         return Image::getUrlByFilePath($this->path, $w, $h);
     }
+
+    public function delete()
+    {
+        // Elimina il file dallo storage prima di eliminare la riga nel database
+        Storage::delete($this->path);
+
+        parent::delete();
+    }
 }

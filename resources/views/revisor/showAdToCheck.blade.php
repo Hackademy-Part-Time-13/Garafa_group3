@@ -8,10 +8,18 @@
         <div class="box_images col-lg-5 col-md-6 col-sm-10 mt-2">
                     
             @if ($ad_to_check->images->isEmpty()) 
-                <img class="img-fluid m-1" src="https://picsum.photos/80/80" alt="">
-                <img class="img-fluid m-1" src="https://picsum.photos/80/80"  alt="">
-                <img class="img-fluid m-1" src="https://picsum.photos/80/80"  alt="">
-                <img class="img-fluid m-1" src="https://picsum.photos/80/80"  alt="">
+            <div class="col-lg-6 col-md-10 col-sm-10 mb-3">
+                <img class="img-fluid m-2" src="https://picsum.photos/350/350" alt="">
+            </div>
+            <div class="col-lg-6 col-md-10 col-sm-10 mb-3">
+                <img class="img-fluid m-2" src="https://picsum.photos/350/350" alt="">
+            </div>                
+            <div class="col-lg-6 col-md-10 col-sm-10 mb-3">
+                <img class="img-fluid m-2" src="https://picsum.photos/350/350" alt="">
+            </div>                
+            <div class="col-lg-6 col-md-10 col-sm-10 mb-3">
+                <img class="img-fluid m-2" src="https://picsum.photos/350/350" alt="">
+            </div>
             @else 
 
             <div class="row">
@@ -70,7 +78,7 @@
             <div class=" revisione_accrtta_rifiutabutton mt-auto">
                 <div class="row">
 
-                    <div class="col-lg-4 col-md-4 col-sm-6 mb-3 text-center">
+                    <div class="col-lg-6 col-md-6 col-sm-12 mb-3 text-center">
                         <form action="{{ route('revisor.accept_ad', ['ad' => $ad_to_check]) }}" method="POST">
                         @csrf
                         @method('PATCH')
@@ -78,18 +86,18 @@
                         </form>
                     </div>
 
-                    <div class="col-lg-4 col-md-4 col-sm-6 mb-3 text-center">
+                    {{-- <div class="col-lg-4 col-md-4 col-sm-12 mb-3 text-center">
                         <form action="{{ route('revisor.reject_ad', ['ad' => $ad_to_check]) }}" method="POST">
                         @csrf
                         @method('PATCH')
                         <button>Rifiuta</button>
                         </form>
-                    </div>
+                    </div> --}}
 
-                    <div class="col-lg-4 col-md-4 col-sm-6 mb-3 text-center">
-                        <form action="{{ route('revisor.reject_ad', ['ad' => $ad_to_check]) }}" method="POST">
+                    <div class="col-lg-6 col-md-6 col-sm-6 mb-3 text-center">
+                        <form action="{{ route('revisor.delete_ad', ['ad' => $ad_to_check]) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this Ad?')">
                         @csrf
-                        @method('PATCH')
+                        @method('DELETE')
                         <button>Elimina</button>
                         </form>
                     </div>

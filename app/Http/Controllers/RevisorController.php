@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 
 class RevisorController extends Controller
 {
@@ -33,37 +34,24 @@ class RevisorController extends Controller
    }
 
 
-   public function rejectAd(Ad $ad){
-      $ad->setAccepted(false);
-      return redirect()->route('revisor.index')->with('message', 'Complimenti, hai rifiutato l\'annuncio');
-   }
-
-
-   // public function update(Request $request, Movie $movie)
-   // {
-
-   //     $request->validate([
-   //         'image' => 'image|mimes:jpeg,png,jpg',
-   //     ]);
-
-   //     $movie->update([
-   //         'title'=>$request->title,
-   //         'genre_id'=>$request->genre_id,
-   //         'plot'=>$request->plot,
-   //     ]);
-
-   //     $movie->actors()->detach();
-   //     $movie->actors()->attach($request->actors);
-
-   //     if ($request->hasFile('image')) {
-   //         if ($request->File('image')->isValid()){
-   //             $movie->cover = $request->file('image')->storeAs('public/uploads/covers/' . $movie->id, 'movieCover.jpg');
-   //             $movie->save();
-   //         }} 
-
-   //     return redirect()->route('movie.index')->with(['success' => 'Movie modified successfully']);
-
+   // public function rejectAd(Ad $ad){
+   //    $ad->setAccepted(false);
+   //    return redirect()->route('revisor.index')->with('message', 'Complimenti, hai rifiutato l\'annuncio');
    // }
+
+   public function destroy(Ad $ad)
+   {
+      foreach ($ad->images as $image) {
+         Storage::delete($image->path);
+         $image->delete();
+      }
+
+      Storage::deleteDirectory('public/images/' . $ad->id);
+
+      $ad->delete();
+      return redirect()->route('revisor.index')->withInput()->with(['success' => 'Ad deleted successfully']);
+
+   }
 
 
 
