@@ -63,9 +63,7 @@
                 </form>
 
                 <div class="show_botom">
-                    <button class="buy_now_button">
-                        buy now
-                    </button>
+                    
 
                     <div >
                         <a class="seller_box " href="{{route('user.seller.profile', $ad->user)}}">

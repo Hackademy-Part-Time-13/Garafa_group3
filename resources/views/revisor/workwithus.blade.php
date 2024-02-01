@@ -37,6 +37,7 @@
 
             <form class="login_form " action="/revisorApplication" method="POST">
                 @csrf
+                @method('PATCH')
 
 
                 <div class="mb-3">

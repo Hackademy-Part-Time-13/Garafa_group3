@@ -51,11 +51,7 @@
             </div>
 
             <div class="col-xxl-6 col-xl-3 col-md-4 col-xs-12 p-5  d-flex justify-content-center align-items-center">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo aliquid, alias non ullam veritatis,
-                    impedit
-                    beatae enim ad repudiandae officiis recusandae. Laudantium adipisci similique esse magnam ducimus
-                    quae id
-                    tenetur?
+                <p>Presto.it è un sito per pubblicare annunci caratterizzato da un design pulito atto a mettere in evidenza gli annunci pubblicati e ad agevolare le ricerche degli utenti. E' progettato per essere responsive su ogni dispositivo e inoltre pensato per essere di semplice utilizzo e accessibile a tutti i tipi di utenti.
                 </p>
             </div>
 
@@ -91,7 +87,7 @@
 
             <div class="home_user_box">
                 <div class="row user_card_hm">
-                    @foreach (App\Models\User::where('is_revisor', true)->get() as $user)
+                    @foreach (App\Models\User::where('is_revisor', true)->take(3)->get() as $user)
                     <div class="col-xl-4 col-md-4 col-xs-12 ">
 
 
