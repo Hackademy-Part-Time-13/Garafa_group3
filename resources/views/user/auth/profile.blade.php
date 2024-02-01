@@ -27,7 +27,7 @@
                 <p>4</p>
             </div>
         </div>
-        <a type="button">get in contact</a>
+        {{-- <a type="button">get in contact</a> --}}
     </div>
 
 

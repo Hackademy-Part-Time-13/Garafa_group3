@@ -32,7 +32,7 @@ class DatabaseSeeder extends Seeder
         
         $this->categories();
         $this->call(AdsSeeder::class);
-        \App\Models\Ad::factory(50)->create();
+        // \App\Models\Ad::factory(50)->create();
     }
     
 

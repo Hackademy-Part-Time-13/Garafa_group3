@@ -214,5 +214,263 @@ class AdsSeeder extends Seeder
             'user_id' => '8',
             'is_accepted' => '1',
         ]);
+
+        \App\Models\Ad::create([
+            'title' => 'XVZ LED Albero Bonsai Lampada da Tavolo',
+            'description' => '36 LED Luce Notturna a Batteria e USB per decorazioni Natalizie, Pasquali, Arredo Casa, Soggiorno - Albero di Perle',
+            'price' => '18',
+            'category_id' => '6',
+            'user_id' => '7',
+            'is_accepted' => '1',
+        ]);
+
+        \App\Models\Ad::create([
+            'title' => 'Divano',
+            'description' => 'Divano in pelle beige 4 posti con penisola',
+            'price' => '650',
+            'category_id' => '6',
+            'user_id' => '17',
+            'is_accepted' => '1',
+        ]);
+
+        \App\Models\Ad::create([
+            'title' => 'Tappeti persiani pregiati',
+            'description' => '
+            Vendo 4 tappeti persiani di pregio come da foto. Le misure sono:
+            190x128
+            180x100
+            130x93
+            200x100
+            Il prezzo per vendita singola è di € 300 cad. .
+            Il prezzo può essere trattabile per acquisto in blocco.
+            A richiesta invio ulteriori foto.',
+            'price' => '300',
+            'category_id' => '6',
+            'user_id' => '8',
+            'is_accepted' => '1',
+        ]);
+
+        \App\Models\Ad::create([
+            'title' => 'LAVATRICE',
+            'description' => 'Vendo lavatrice AEG NUOVA ancora imballata.',
+            'price' => '1000',
+            'category_id' => '8',
+            'user_id' => '1',
+            'is_accepted' => '1',
+        ]);
+
+        \App\Models\Ad::create([
+            'title' => 'asciugacapelli professionale 5 in 1',
+            'description' => 'Descrizione prodotto L\'asciugacapelli professionale offre un flusso d\'aria forte per asciugare rapidamente anche i capelli mossi e spessi in meno tempo
+            . E\' un potente phon dotato di 5 accessori che si collegano attraverso un attacco magnetico. La particolare testa aperta cilindrica consente di concentrare il flusso d\'aria in modo preciso e di asciugare i capelli in modo rapido e preciso, riducendo al minimo i danni',
+            'price' => '38',
+            'category_id' => '8',
+            'user_id' => '5',
+            'is_accepted' => '1',
+        ]);
+
+        \App\Models\Ad::create([
+            'title' => 'Climatizzatore portatile',
+            'description' => 'Vendo climatizzatore nuovo di pacca, mai usato. Era in esposizione presso il rivemditore e l’ho portato a casa. Non l’ho mai nemmeno acceso. Pagato 479,00€ appena 6 (sei) mesi fa. Affarissimo!!!',
+            'price' => '290',
+            'category_id' => '8',
+            'user_id' => '19',
+            'is_accepted' => '1',
+        ]);
+
+        \App\Models\Ad::create([
+            'title' => 'Appartamento con garage e deposito a Fiumefreddo',
+            'description' => 'Codice immobile 638
+
+            APPARTAMENTO 3 VANI CON GARAGE 35MQ E DEPOSITO DI 220 MQ A FIUMEFREDDO
+            
+            La Diamond Immobiliare propone in vendita un appartamento di 80 mq, posto al primo piano senza ascensore , composto da : ingresso su corridoio centrale , piccolo soggiorno , camera da letto , cameretta , bagno , cucina , oltre a due balconi , di cui uno in parte verandato ; oltre all\'appartamento troviamo sia un garage di 35 mq che un deposito/magazzino/autorimessa di ca 220 mq .
+            
+            La richiesta è di 159.000
+            ',
+            'price' => '159000',
+            'category_id' => '10',
+            'user_id' => '3',
+            'is_accepted' => '1',
+        ]);
+
+        \App\Models\Ad::create([
+            'title' => 'Appartanvilla con giardino Fondachello di Mascali',
+            'description' => 'APPARTANVILLA CON GIARDINO A FONDACHELLO DI MASCALI
+
+            la Diamond Immobiliare propone in vendita a Mascali , nella frazione di Fondachello un\'appartanvilla di ca 80 mq posto al piano terra , facente parte di un complesso abitativo di solo 4 unità; l\'immobile è composto da due camere da letto , un soggiorno -cucina interamente verandato ed un bagno con box doccia. Ad esclusiva pertinenza troviamo un meraviglioso giardino di 200 mq ca , curato , con impianto a pioggia ; inoltre ancora , é presente anche un posto auto coperto. Distante solo pochi passi dal lungomare di Fonachello e di conseguenza alla spiaggia più vicina .
+            
+            La richiesta é di 150.000 €',
+            'price' => '150000',
+            'category_id' => '10',
+            'user_id' => '11',
+            'is_accepted' => '1',
+        ]);
+
+        \App\Models\Ad::create([
+            'title' => 'Palazzetto con locale a Fiumefreddo di Sicilia',
+            'description' => 'PALAZZETTO CON LOCALE COMMERCIALE ED ABITAZIONE A FIUMEFREDDO DI SICILIA
+
+            La Diamond immobiliare propone in vendita a Fiumefreddo di Sicilia un palazzetto distribuito su 3 livelli e composto da un piano terra di ca 60 mq destinato a locale commerciale ( c1) , un piano primo di civile abitazione , sempre di ca 60 mq , con accesso sia interno che esterno indipendente dalla parte retrostante dell\'immobile , infine troviamo una terrazza di ca 35 mq che si affaccia direttamente sulla piazza principale di Fiumefreddo di Sicilia.Collocato in zona centralissima , prospiciente la strada nazionale che taglia l\'intero paese favorendo un grande passaggio veicolare e pedonale .Ottimo per coloro che vogliono creare un\'attività commerciale ed una piccola abitazione o un ufficio nello stesso luogo .
+            
+            La richiesta è di 75.000',
+            'price' => '75000',
+            'category_id' => '10',
+            'user_id' => '14',
+            'is_accepted' => '1',
+        ]);
+
+        \App\Models\Ad::create([
+            'title' => 'FIAT PANDA 1.2 - NEOPATENTATI - POCHI KM',
+            'description' =>'Auto tenuta benissimo,. in ottime condizioni meccaniche , interni e carrozzeria.',
+            
+            'price' => '7500',
+            'category_id' => '1',
+            'user_id' => '16',
+            'is_accepted' => '1',
+        ]);
+
+        \App\Models\Ad::create([
+            'title' => 'Fiat 500 1.3 Multijet 16V 95 CV Lounge',
+            'description' => 'Fiat 500 1.3 multijet 95cv  anno 2015 140000km
+
+            Auto in ottime condizioni generali,
+            Interni in tessuto misto pelle, chiusura centralizzata e doppie chiavi, comandi al volante,bluetooth, navigatore, fendinebbia, aria condizionata,computer di bordo,specchietti elettrici,Cerchi in lega da 16 con gomme pari al 80%
+            Appena eseguito tagliando completo e controllo generale 
+            
+            ',
+            'price' => '7900',
+            'category_id' => '1',
+            'user_id' => '7',
+            'is_accepted' => '1',
+        ]);
+
+        \App\Models\Ad::create([
+            'title' => 'Ktm 890 adventure 2022',
+            'description' => 'vendo ktm 890 l 2022
+            condizioni moto pari a nuovo
+            tutti i tagliandi eseguiti presso ktm
+            in garanzia fino a marzo',
+            'price' => '11500',
+            'category_id' => '2',
+            'user_id' => '4',
+            'is_accepted' => '1',
+        ]);
+
+        \App\Models\Ad::create([
+            'title' => 'KTM 125 Duke - 2018',
+            'description' => 'Vendo la KTM DUKE 125 del 2018 in buone condizioni causa inutilizzo (mi sono comprando una macchina). Come da foto, ha 13000 km. La marmita è una Akrapovic con db killer smontato (sono in possesso sia del db killer che della marmita originale mai usata). La revisione è stata fatta di recente ed è valida fino a marzo 2025. Prezzo trattabile',
+            'price' => '3500',
+            'category_id' => '2',
+            'user_id' => '20',
+            'is_accepted' => '1',
+        ]);
+
+        \App\Models\Ad::create([
+            'title' => 'Monitor gaming MSI optix g24 series',
+            'description' => 'Vendo monitor gaming come nuovo',
+            'price' => '100',
+            'category_id' => '3',
+            'user_id' => '12',
+            'is_accepted' => '1',
+        ]);
+
+        \App\Models\Ad::create([
+            'title' => 'HP 640 G2 NOTEBOOK 14" 16GB RAM 512GB SSD',
+            'description' => 'Come da titolo vendo Portatile Usato Poco Hp 640 Notebook 16Gb di ram SSD NVM
+            (alta velocità di trasferimento dati) perfettamente funzionante.
+            - Risoluzione schermo 1366 x 768 pixel ?720p HD Ready Pixel
+            - Processore Core Intel I5 2,5 GHZ numero processori 2
+            - Ram 16Gb DDR4 SDRAM
+            - Scheda Grafica ?Intel HD Graphics 520
+            - Porte USB 3.0 N°3
+            - Sistema operativo Win 10',
+            'price' => '350',
+            'category_id' => '3',
+            'user_id' => '13',
+            'is_accepted' => '1',
+        ]);
+
+        \App\Models\Ad::create([
+            'title' => 'Iphone 14 pro max 256 gb',
+            'description' => 'Vendo iphone 14 pro max 256 gb, in perfette condizioni, nessun graffio, stato batteria 93%.
+            Cambio per passaggio ad altro modello.',
+            'price' => '850',
+            'category_id' => '4',
+            'user_id' => '6',
+            'is_accepted' => '1',
+        ]);
+
+        \App\Models\Ad::create([
+            'title' => 'Samsung Galaxy s23 ultra 512gb',
+            'description' => 'Vengo Samsung Galaxy s23 Ultra 512gb con regolare fattura di acquisto del 30 Aprile 2023
+            incluso nella vendita 6 cover di cui una originale samsung e una tetra Force della cellularline
+            compreso di scontrino mediaworld per cambiare la pellicola ogni volta che si vuole!
+            nessun segno di usura o graffio
+            Praticamente perfetto.',
+            'price' => '800',
+            'category_id' => '4',
+            'user_id' => '14',
+            'is_accepted' => '1',
+        ]);
+
+        \App\Models\Ad::create([
+            'title' => 'playstation 5 con FC24',
+            'description' => 'Vendo console ps5 825 gb come nuova con 2 joistyk e gioco FC24',
+            'price' => '450',
+            'category_id' => '5',
+            'user_id' => '9',
+            'is_accepted' => '1',
+        ]);
+
+        \App\Models\Ad::create([
+            'title' => 'Super Smash Bros Ultimate - Nintendo Switch',
+            'description' => 'Gioco in ottime condizioni per Nintendo Switch
+            Custodia in buone condizioni',
+            'price' => '35',
+            'category_id' => '5',
+            'user_id' => '8',
+            'is_accepted' => '1',
+        ]);
+
+        \App\Models\Ad::create([
+            'title' => 'Forno legna gas',
+            'description' => 'Forni sciumy produce forni professionali per pizze dal 1960
+            Ogni forno per pizza è realizzato in mattoni refrattari di alta qualità interamente a mano da abili artigiani qualificati. Forno per pizza con piano rotante in pietra lavica o piano fisso. Forni elettrici per pizza o forni a legna. Che sia un ristornate, una pizzeria o casa tua, Forni sciumy offre un’ampia gamma di possibilità per arrivare a trovare il giusto forno per pizza professionale su misura per te. FORNO ELETTRICO Rotante
+            Il forno elettrico sciumy è la soluzione ideale per chi desidera ottenere risultati di cottura eccellenti con una tecnologia innovativa.Realizzato con materiali di qualità, il forno è dotato di un’esclusiva tecnologia che permette di gestire in maniera ottimale il calore, garantendo una cottura perfetta delle pizze. Se vuoi acquistare un forno professionale per pizza ad alimentazione elettrica, scopri la gamma di forni per pizzerie e scrivici per un preventivo. Perché scegliere forni sciumy',
+            'price' => '1000',
+            'category_id' => '7',
+            'user_id' => '5',
+            'is_accepted' => '1',
+        ]);
+
+        \App\Models\Ad::create([
+            'title' => 'serra da giardino',
+            'description' => 'Serra da giardino 16,9m² verde in policarbonato',
+            'price' => '800',
+            'category_id' => '7',
+            'user_id' => '13',
+            'is_accepted' => '1',
+        ]);
+
+        \App\Models\Ad::create([
+            'title' => 'mtb trek procaliber t.M',
+            'description' => 'mtb trek procaliber t. m',
+            'price' => '1600',
+            'category_id' => '9',
+            'user_id' => '16',
+            'is_accepted' => '1',
+        ]);
+
+        \App\Models\Ad::create([
+            'title' => 'bici rockrider st530S',
+            'description' => 'cambio 9 rapporti
+            doppio freno a disco idraulico
+            sospensioni regolabili',
+            'price' => '650',
+            'category_id' => '9',
+            'user_id' => '14',
+            'is_accepted' => '1',
+        ]);
     }
 }

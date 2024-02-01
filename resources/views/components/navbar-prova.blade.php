@@ -203,7 +203,7 @@
                                 </li>
                             @endif
                             <li>
-                                <a class="dropdown-item" href="">Opzione 3</a>
+                                {{-- <a class="dropdown-item" href="">Opzione 3</a> --}}
                             </li>
 
 
@@ -226,9 +226,9 @@
                         {{__('ui.tema')}}
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#" id="them_red">red</a></li>
-                        <li><a class="dropdown-item" href="#" id="them_green">green</a></li>
-                        <li><a class="dropdown-item" href="#" id="them_blu">blu</a></li>
+                        <li><a class="dropdown-item" href="#" id="them_red_responsiv">red</a></li>
+                        <li><a class="dropdown-item" href="#" id="them_green_responsiv">green</a></li>
+                        <li><a class="dropdown-item" href="#" id="them_blu_responsiv">blu</a></li>
                     </ul>
                 </li>
 
