@@ -1,9 +1,6 @@
 
 <a class="category-card  col-4" href="{{ route('adsByCat', $category) }}">
 
-    
-    {{-- <img src="https://picsum.photos/400" class="card-img-top" style="height: 40mm"> --}}
-
         @switch($category->id)
             @case(1)
             <img src="https://i.postimg.cc/s2mDxXKH/sedan-car-front-1.png" alt="" class="category-icon">

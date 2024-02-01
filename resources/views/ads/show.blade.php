@@ -30,10 +30,10 @@
                     <img class="show_main_img "  src="https://picsum.photos/300/453" alt="">
                     <img class="show_main_img "  src="https://picsum.photos/300/454" alt="">
                     @else 
+
+                    <img class="show_main_img_placeHoder_img adShow" id="placeHoder_img"  src="{{$ad->images()->first()->getUrl(300,450)}}" alt="">
                     @foreach ($ad->images()->get() as $img)
                     <img class="show_main_img "  src="{{$img->getUrl(300,450)}}" alt="">
-
-
                     @endforeach 
                     @endif
                     

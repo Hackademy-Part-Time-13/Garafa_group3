@@ -25,5 +25,5 @@
             <p>4</p>
         </div>
     </div>
-    <a type="button">get in contact</a>
+    <a href="{{route('user.seller.profile', $user)}}" type="button">get in contact</a>
 </div>

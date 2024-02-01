@@ -9,7 +9,8 @@
 
 
 
-                <div class="messenger-favorites d-none"></div>
+                <div class="messenger-favorites" style="display: none">
+                </div>
 
 
 
